@@ -6,7 +6,7 @@ Reads the Sigma AgriScience scrape and the Terra Elemental logo files, then writ
   - src/data/products.json     normalized product data used by src/build.mjs
 
 Usage:
-  python scripts/prepare_assets.py <SigmaScrape dir> <logo-full.png> <logo-mark.png>
+  python scripts/prepare_assets.py <SigmaScrape dir> <logo-full.png> <logo-mark.png> [hero.jpg]
 """
 import json
 import re
@@ -39,22 +39,67 @@ PRODUCTS = {
 }
 
 # Descriptions rewritten lightly (typos fixed, line breaks removed) where the scraped copy needed it.
+# Descriptions rewritten for Terra Elemental: typos fixed, and kept use-neutral (no "for golf/vegetables" limits)
+# except the Bio Bridge blends, which are turf-specific products.
 DESCRIPTION_OVERRIDES = {
-    "sigma-4-3-2-bio-fine": (
-        "Sigma's 4-3-2 Bio formula with twice the concentration of value-added biologicals, "
-        "produced in a fine (specialty) grade for turf, athletic fields and landscape beds. "
-        "The label, SDS and full guaranteed analysis are available from Terra Elemental on request."
+    "sigma-4-4-4-bio": (
+        "A balanced formula containing all the macronutrients plants need all season long. This premium-grade organic "
+        "granular fertilizer contains nutrient-rich ingredients infused with value-added biologicals. Proprietary GranCORE "
+        "Technology combines humic acid and essential nutrients such as NPK, Ca and Fe into a slow-release, "
+        "easy-to-spread granule."
+    ),
+    "sigma-5-3-2-bio": (
+        "A blend of fast and slow-release organic nutrient sources and value-added biologicals to fuel plants and recharge "
+        "depleted soils, wherever a steady supply of nutrients is needed. Humic acids enrich the soil without burning roots, "
+        "strengthening root growth and overall plant health. Apply as is, or dry blend with conventional fertilizers to "
+        "maximize performance."
+    ),
+    "sigma-6-2-6-bio": (
+        "Made with 100% organic and natural ingredients for applications that need higher nitrogen and potash with just "
+        "the right amount of phosphorus. Beneficial microbes are granulated into a microbial food source for rapid nutrient "
+        "cycling. Higher nitrogen, lower phosphorus and enhanced carbon make this multi-purpose fertilizer beneficial "
+        "anywhere nutrients and biology are needed, with added potash for strong stem and root development."
+    ),
+    "sigma-8-5-1-bio": (
+        "Sigma's exclusive non-manure formula: an all-organic granular fertilizer made entirely from high-quality animal "
+        "proteins, including meat, bone and blood meal. Designed for any application that needs higher nitrogen, it is "
+        "enhanced with organic carbon minerals and humic acids for sustained, healthy growth, and releases nutrition slowly "
+        "and completely over 8 to 12 weeks."
     ),
     "sigma-4-4-4-bio-fine": (
         "This premium micro-granular fertilizer has a size grade number (SGN) of 110 and contains 100% organic, "
         "nutrient-rich ingredients infused with value-added biologicals. Humic acids and beneficial microorganisms "
-        "work together to strengthen roots for greater absorption of water and nutrients. Recommended for spring "
-        "and fall aeration recovery, midsummer stress management, winter dormant feeding, cool-season overseeding "
-        "nutrition and warm-season transition."
+        "work together to strengthen roots for greater absorption of water and nutrients, and the fine granule "
+        "spreads evenly for consistent coverage."
+    ),
+    "sigma-4-3-2-bio-fine": (
+        "Sigma's 4-3-2 Bio formula with twice the concentration of value-added biologicals, produced in a fine "
+        "(specialty) grade for even spreading. The label, SDS and full guaranteed analysis are available from "
+        "Terra Elemental on request."
+    ),
+    "sigma-5-3-2-bio-fine": (
+        "Sigma's 5-3-2 Bio in a fine (specialty) grade: a blend of fast and slow-release organic nutrients and value-added "
+        "biologicals. Humic acids enrich the soil without burning roots, building strong, healthy plants through every season."
+    ),
+    "sigma-6-2-6-bio-fine": (
+        "High nitrogen, high potassium and lower phosphorus make this a strong choice wherever phosphorus restrictions "
+        "are in place. Produced in a fine (specialty) grade with value-added biologicals to build strong, healthy plants "
+        "throughout the seasons."
+    ),
+    "sigma-12-2-6-bio-bridge": (
+        "A high-performance hybrid blend built specifically for turf. Sigma's 100% organic base fertilizer, with beneficial "
+        "biologicals, is dry blended in a two-to-one ratio with polymer-coated sulfur-coated urea and other nutrients. "
+        "The result is gradual, steady feeding for up to 10 weeks of plant response, while organic carbon and humic acids "
+        "build healthier soil."
+    ),
+    "sigma-15-5-10-bio-bridge": (
+        "A high-performance hybrid turf blend that combines the power of organic matter with the science of synthetic "
+        "fertilizer. Sigma 15-5-10 Bio Bridge provides fast green-up and recovery, while organic carbon and humic acids "
+        "strengthen roots for greater nutrient absorption and add essential organic matter for soil microbes."
     ),
     "sigma-si": (
         "Energize your soil with Sigma Si, a natural source of plant-available silicon that improves soil and "
-        "strengthens plants, which can result in higher yields and more resilient turf. Mined from unprocessed "
+        "strengthens plants, which can result in higher yields and more resilient growth. Mined from unprocessed "
         "volcanic tuff, it can be applied on its own or blended as a 10% inclusion with other Sigma granular products."
     ),
 }
@@ -66,9 +111,9 @@ SUBTITLE_OVERRIDES = {
 }
 
 LINE_LABELS = {
-    "agriculture": "Agriculture · Large Grade",
-    "specialty": "Specialty · Fine Grade",
-    "bridge": "Bio Bridge · Hybrid",
+    "agriculture": "Large Grade",
+    "specialty": "Fine Grade",
+    "bridge": "Bio Bridge · Turf Hybrid",
     "amendment": "Soil Amendment",
 }
 
@@ -149,7 +194,7 @@ def parse_sections(sections):
     return out
 
 
-def main(scrape, logo_full, logo_mark):
+def main(scrape, logo_full, logo_mark, hero=None):
     scrape = Path(scrape)
     products = []
     for folder, (slug, line, name, calc_name) in PRODUCTS.items():
@@ -198,7 +243,6 @@ def main(scrape, logo_full, logo_mark):
     # Site photography (Sigma AgriScience assets, used with permission).
     photos = scrape / "general_site" / "assets" / "2021" / "11"
     for name, out, w in [
-        ("banner.jpg", "hero-park.webp", 1920),
         ("contact-banner.jpg", "city-park.webp", 1920),
         ("sports.jpg", "athletic-field.webp", 1600),
         ("sports-05.jpg", "root-mass.webp", 900),
@@ -213,6 +257,10 @@ def main(scrape, logo_full, logo_mark):
         ("organic-fertilizer-growing-turf.png", "turf-ribbons.webp", 900),
     ]:
         save_webp(photos / name, OUT_IMG / out, w, quality=76)
+
+    # Homepage hero (roots in soil), supplied by Terra Elemental.
+    if hero:
+        save_webp(hero, OUT_IMG / "hero-roots.webp", 2000, quality=78)
 
     # Logos: full stacked logo, mark only, and a horizontal lockup built from the logo's own lettering.
     full = Image.open(logo_full).convert("RGBA")
@@ -270,4 +318,4 @@ def main(scrape, logo_full, logo_mark):
 
 
 if __name__ == "__main__":
-    main(*sys.argv[1:4])
+    main(*sys.argv[1:5])

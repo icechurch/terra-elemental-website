@@ -7,7 +7,6 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = path.join(ROOT, "docs");
 const PRODUCTS = JSON.parse(fs.readFileSync(path.join(ROOT, "src/data/products.json"), "utf8"));
-const BY_SLUG = Object.fromEntries(PRODUCTS.map((p) => [p.slug, p]));
 
 const SITE = {
   name: "Terra Elemental",
@@ -19,9 +18,9 @@ const SITE = {
 };
 
 const LINES = [
-  { id: "agriculture", label: "Agriculture · Large Grade", short: "Large Grade", blurb: "Large-granule organic fertilizers for broadcast spreading on farms, restoration sites, landscape beds and tree plantings." },
-  { id: "specialty", label: "Specialty · Fine Grade", short: "Fine Grade", blurb: "Micro-granular formulas that sift into turf canopies. Built for parks, athletic fields, golf greens and fairways." },
-  { id: "bridge", label: "Bio Bridge · Hybrid", short: "Bio Bridge", blurb: "Organic base plus polymer-coated nitrogen for fast green-up and up to 10 weeks of steady feeding." },
+  { id: "agriculture", label: "Large Grade", short: "Large Grade", blurb: "Large-granule organic biofertilizers for broadcast spreading, soil incorporation and dry blending." },
+  { id: "specialty", label: "Fine Grade", short: "Fine Grade", blurb: "Micro-granular organic biofertilizers that spread evenly for consistent coverage." },
+  { id: "bridge", label: "Bio Bridge · Turf Hybrid", short: "Bio Bridge", blurb: "High-performance turf blends: an organic base plus polymer-coated nitrogen for fast green-up and up to 10 weeks of steady feeding." },
   { id: "amendment", label: "Soil Amendment", short: "Silica", blurb: "Plant-available silicon from volcanic minerals to strengthen cell walls and plant resilience." },
 ];
 
@@ -252,12 +251,12 @@ function home() {
   ];
   const body = `
 <section class="relative isolate overflow-hidden bg-forest-950">
-  <img src="assets/img/hero-park.webp" alt="Green turf and mature trees in a well-kept park" class="absolute inset-0 -z-10 h-full w-full object-cover" fetchpriority="high">
+  <img src="assets/img/hero-roots.webp" alt="Healthy plant roots spreading through dark, living soil" class="absolute inset-0 -z-10 h-full w-full object-cover" fetchpriority="high">
   <div class="absolute inset-0 -z-10 bg-gradient-to-t from-forest-950/95 via-forest-950/70 to-forest-950/30 lg:bg-gradient-to-r lg:from-forest-950/95 lg:via-forest-950/70 lg:to-transparent"></div>
   <div class="container-site flex min-h-[34rem] flex-col justify-end pb-12 pt-24 sm:min-h-[38rem] lg:justify-center lg:pb-24">
     <p class="eyebrow !text-sun-300">Southern Colorado · Authorized Sigma AgriScience Distributor</p>
-    <h1 class="mt-4 max-w-3xl text-4xl font-semibold leading-[1.1] !text-white sm:text-5xl lg:text-6xl">Living soil for Colorado's parks, fields &amp; open spaces.</h1>
-    <p class="mt-5 max-w-xl text-base leading-relaxed text-forest-100 sm:text-lg">Organic granular biofertilizers loaded with beneficial bacteria, mycorrhizae and Trichoderma. They build deeper roots, use water more efficiently and hold up to heavy use.</p>
+    <h1 class="mt-4 max-w-3xl text-4xl font-semibold leading-[1.1] !text-white sm:text-5xl lg:text-6xl">Creating living soil for Colorado's parks, fields, farms &amp; gardens.</h1>
+    <p class="mt-5 max-w-xl text-base leading-relaxed text-forest-100 sm:text-lg">Building resilience through improved soil &amp; plant health.</p>
     <div class="mt-8 flex flex-col gap-3 sm:flex-row">
       <a href="products.html" class="btn-primary text-base">Explore Products ${icon("arrow", "h-4 w-4")}</a>
       <a href="calculator.html" class="btn-ghost-light text-base">${icon("calc", "h-4 w-4")}Estimate Your Cost</a>
@@ -270,7 +269,7 @@ function home() {
     ${[
       ["shield", "OMRI Listed", "Organic formulas with OMRI certificates on file"],
       ["sprout", "Biology in every bag", "Bacillus, mycorrhizae, Trichoderma &amp; humic acids"],
-      ["water", "Built for dry climates", "Stronger roots that make better use of water"],
+      ["water", "Suitable for wet or dry climates", "Healthier soil structure and stronger roots"],
       ["truck", "Bags, totes or bulk", "50 lb bags, 2,000 lb totes and bulk loads"],
     ].map(([ic, t, s]) => `<div class="flex gap-3"><span class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-field-50 text-field-700">${icon(ic)}</span><div><p class="text-sm font-semibold text-forest-950">${t}</p><p class="mt-0.5 text-xs leading-snug text-stone-600 sm:text-sm">${s}</p></div></div>`).join("\n    ")}
   </div>
@@ -327,8 +326,7 @@ function home() {
   <div class="container-site">
     <div class="max-w-2xl">
       <p class="eyebrow">Our product lines</p>
-      <h2 class="mt-3 text-3xl font-semibold sm:text-4xl">${PRODUCTS.length} professional formulas, one supplier</h2>
-      <p class="mt-4 text-stone-600">Every product ships with its label, safety data sheet and, where listed, its OMRI certificate, ready for procurement and compliance files.</p>
+      <h2 class="mt-3 text-3xl font-semibold sm:text-4xl">Harnessing the power of nature</h2>
     </div>
     <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
       ${LINES.map((l) => {
@@ -367,22 +365,6 @@ function home() {
         ["Side-by-side comparison", "See cost per acre and per 1,000 sq ft for every formula."],
       ].map(([t, d]) => `<li class="rounded-2xl bg-white/10 p-5 ring-1 ring-white/15 backdrop-blur"><p class="font-semibold text-white">${t}</p><p class="mt-1 text-sm text-forest-100">${d}</p></li>`).join("\n      ")}
     </ul>
-  </div>
-</section>
-
-<section class="py-16 sm:py-24">
-  <div class="container-site">
-    <div class="mx-auto max-w-2xl text-center">
-      <p class="eyebrow">Working with us</p>
-      <h2 class="mt-3 text-3xl font-semibold sm:text-4xl">Simple for parks departments and grounds crews</h2>
-    </div>
-    <ol class="mt-12 grid gap-6 md:grid-cols-3">
-      ${[
-        ["chat", "Tell us about your sites", "Share acreage, turf type, use level and any irrigation or phosphorus restrictions."],
-        ["doc", "Get a program and quote", "We recommend products, rates and timing, with labels, SDS sheets and OMRI certificates for your records."],
-        ["truck", "Delivered your way", "Order in 50 lb bags, 2,000 lb totes or bulk loads to fit your equipment and storage."],
-      ].map(([ic, t, d], i) => `<li class="card relative p-6"><span class="absolute right-6 top-6 font-serif text-5xl font-semibold text-forest-100">${i + 1}</span><span class="flex h-12 w-12 items-center justify-center rounded-xl bg-forest-900 text-white">${icon(ic, "h-6 w-6")}</span><h3 class="mt-5 text-xl font-semibold">${t}</h3><p class="mt-2 text-sm leading-relaxed text-stone-600">${d}</p></li>`).join("\n      ")}
-    </ol>
   </div>
 </section>
 
@@ -604,10 +586,6 @@ ${ctaBand(r)}`;
 }
 
 function solutionsPage() {
-  const link = (slug) => {
-    const p = BY_SLUG[slug];
-    return `<a href="products/${slug}.html" class="chip hover:bg-forest-100">${nameHtml(p.name)}</a>`;
-  };
   const sections = [
     {
       id: "parks", eyebrow: "Parks & open space", title: "Durable, green turf on less water", img: "city-park.webp",
@@ -616,7 +594,6 @@ function solutionsPage() {
         "Sigma's organic granules release nutrients slowly and won't burn, so there's less risk on hot days and less surge growth to mow. The biology in every bag keeps working between applications.",
       ],
       points: ["Slow, even release: fewer surge-mowing cycles", "Stronger roots for drought and heat tolerance", "Low-phosphorus options where P is restricted", "Organic, OMRI Listed formulas for public spaces"],
-      products: ["sigma-6-2-6-bio-fine", "sigma-4-4-4-bio-fine", "sigma-12-2-6-bio-bridge", "sigma-8-5-1-bio"],
     },
     {
       id: "athletic-fields", eyebrow: "Athletic fields", title: "Root mass that stands up to game day", img: "athletic-field.webp",
@@ -625,7 +602,6 @@ function solutionsPage() {
         "Fields stay dense and resilient, and they recover faster from damage, weather and heavy schedules. For quick green-up before a season or tournament, Bio Bridge hybrids pair organic biology with polymer-coated nitrogen.",
       ],
       points: ["Faster recovery from wear and divots", "Improved disease resistance through healthier soil", "Bio Bridge for fast green-up plus long feeding", "Silica to strengthen leaf blades"],
-      products: ["sigma-15-5-10-bio-bridge", "sigma-12-2-6-bio-bridge", "sigma-5-3-2-bio-fine", "sigma-si"],
     },
     {
       id: "landscape", eyebrow: "Landscape, trees & beds", title: "Healthy plantings along trails, medians and civic grounds", img: "landscape.webp",
@@ -634,7 +610,6 @@ function solutionsPage() {
         "Each formula lists rates for tree and shrub transplanting by trunk caliper, landscape beds and container stock, making them easy to roll out across a crew.",
       ],
       points: ["Faster establishment of new plantings", "Tree rates by trunk caliper at transplanting", "Bed and container rates on every label", "Reduces reliance on synthetic inputs"],
-      products: ["sigma-4-4-4-bio", "sigma-5-3-2-bio", "sigma-2-4-2-bio", "sigma-si"],
     },
     {
       id: "golf", eyebrow: "Golf courses", title: "Tournament-ready turf through every season", img: "golf.webp",
@@ -643,7 +618,6 @@ function solutionsPage() {
         "For fairways and roughs, Bio Bridge blends deliver up to 10 weeks of plant response per application.",
       ],
       points: ["Micro-granular sizing for greens and tees", "Aeration recovery and overseeding nutrition", "Low-P 6-2-6 for restricted areas", "Up to 10-week feeding with Bio Bridge"],
-      products: ["sigma-4-4-4-bio-fine", "sigma-5-3-2-bio-fine", "sigma-6-2-6-bio-fine", "sigma-4-3-2-bio-fine"],
     },
     {
       id: "agriculture", eyebrow: "Farms & restoration", title: "Rebuild soil biology on working and recovering land", img: "agriculture.webp",
@@ -652,7 +626,6 @@ function solutionsPage() {
         "Apply on their own or dry-blend with conventional fertilizer to improve performance, with vegetable rates listed by crop on every label.",
       ],
       points: ["Recharge depleted and disturbed soils", "Dry-blend with conventional programs", "Crop-specific vegetable rates", "Non-manure 8-5-1 option"],
-      products: ["sigma-2-4-2-bio", "sigma-5-3-2-bio", "sigma-7-2-1-bio", "sigma-6-2-6-bio"],
     },
   ];
 
@@ -674,10 +647,6 @@ ${sections.map((s, i) => `
       <h2 class="mt-3 text-3xl font-semibold sm:text-4xl">${s.title}</h2>
       ${s.text.map((t) => `<p class="mt-4 leading-relaxed text-stone-700">${t}</p>`).join("")}
       <ul class="mt-6 grid gap-2.5 sm:grid-cols-2">${s.points.map((pt) => `<li class="flex gap-2 text-sm text-stone-800"><span class="mt-0.5 text-field-600">${icon("check", "h-4 w-4")}</span>${pt}</li>`).join("")}</ul>
-      <div class="mt-7">
-        <p class="text-sm font-semibold text-forest-950">Recommended products</p>
-        <div class="mt-3 flex flex-wrap gap-2">${s.products.map(link).join("")}</div>
-      </div>
     </div>
   </div>
 </section>`).join("")}
