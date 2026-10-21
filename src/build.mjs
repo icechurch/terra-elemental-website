@@ -17,6 +17,9 @@ const SITE = {
   phone: "(813) 545-6993",
   phoneHref: "+18135456993",
   region: "San Luis Valley · Southern Colorado",
+  // Web3Forms access key (https://web3forms.com). Submissions go to the email the key was created for.
+  // While empty, the quote form falls back to opening a pre-filled email.
+  formAccessKey: "",
 };
 
 const LINES = [
@@ -770,7 +773,13 @@ ${pageHeader({ eyebrow: "Contact", title: "Let's talk about your sites", lede: "
     <div id="quote" class="card p-6 sm:p-8">
       <h2 class="text-2xl font-semibold">Request a quote</h2>
       <p class="mt-1 text-sm text-stone-600">Fields marked * are required.</p>
-      <form class="mt-6 grid gap-5 sm:grid-cols-2" data-quote-form novalidate>
+      <div class="mt-6 hidden rounded-2xl bg-field-50 p-6 ring-1 ring-field-100" data-form-success role="status" tabindex="-1">
+        <span class="flex h-11 w-11 items-center justify-center rounded-full bg-field-600 text-white">${icon("check", "h-5 w-5")}</span>
+        <h3 class="mt-4 text-xl font-semibold">Thanks, your request is on its way</h3>
+        <p class="mt-1 text-sm text-stone-700">We'll get back to you within one business day. For anything urgent, call ${SITE.phone}.</p>
+      </div>
+      <form class="mt-6 grid gap-5 sm:grid-cols-2" data-quote-form data-access-key="${SITE.formAccessKey}" novalidate>
+        <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div><label class="field-label" for="f-name">Name *</label><input class="field-input" id="f-name" name="name" autocomplete="name" required></div>
         <div><label class="field-label" for="f-org">Organization</label><input class="field-input" id="f-org" name="organization" autocomplete="organization" placeholder="e.g. City Parks & Recreation"></div>
         <div><label class="field-label" for="f-email">Email *</label><input class="field-input" id="f-email" name="email" type="email" autocomplete="email" required></div>
@@ -794,8 +803,8 @@ ${pageHeader({ eyebrow: "Contact", title: "Let's talk about your sites", lede: "
         <div class="sm:col-span-2"><label class="field-label" for="f-msg">Message</label><textarea class="field-input min-h-[8rem]" id="f-msg" name="message" placeholder="Timing, delivery location, packaging (bags, totes, bulk), documentation needed…"></textarea></div>
         <p class="hidden rounded-lg bg-red-50 p-3 text-sm text-red-800 sm:col-span-2" data-form-error role="alert"></p>
         <div class="flex flex-col gap-3 sm:col-span-2 sm:flex-row sm:items-center sm:justify-between">
-          <p class="text-xs text-stone-500">Submitting opens a pre-filled email to ${SITE.email} in your email app.</p>
-          <button type="submit" class="btn-primary">Send request ${icon("arrow", "h-4 w-4")}</button>
+          <p class="text-xs text-stone-500">${SITE.formAccessKey ? `Your request goes straight to our team. You can also email ${SITE.email}.` : `Submitting opens a pre-filled email to ${SITE.email} in your email app.`}</p>
+          <button type="submit" class="btn-primary disabled:cursor-wait disabled:opacity-70" data-submit>Send request ${icon("arrow", "h-4 w-4")}</button>
         </div>
       </form>
     </div>

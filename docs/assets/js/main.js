@@ -71,7 +71,48 @@
       const body = `${lines.join("\n")}\n\n${f.message.value.trim()}`;
       const org = f.organization.value.trim();
       const subject = `Quote request${org ? ` – ${org}` : ""}`;
-      location.href = `mailto:info@terraelemental.org?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const mailto = `mailto:info@terraelemental.org?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      // No form service configured yet: fall back to a pre-filled email.
+      const key = form.dataset.accessKey;
+      if (!key) { location.href = mailto; return; }
+
+      const btn = form.querySelector("[data-submit]");
+      btn.disabled = true;
+      const label = btn.innerHTML;
+      btn.textContent = "Sending…";
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: key,
+          subject,
+          from_name: "Terra Elemental website",
+          replyto: f.email.value.trim(),
+          botcheck: f.botcheck.checked,
+          Name: f.name.value.trim(),
+          Organization: f.organization.value.trim(),
+          Email: f.email.value.trim(),
+          Phone: f.phone.value.trim(),
+          "Type of site": f.site.value,
+          "Approximate area": f.area.value.trim(),
+          "Product of interest": f.product.value ? sel.textContent : "Please recommend",
+          Message: f.message.value.trim(),
+        }),
+      })
+        .then((res) => res.json().then((data) => { if (!res.ok || !data.success) throw new Error(data.message || "Submission failed"); }))
+        .then(() => {
+          form.reset();
+          form.classList.add("hidden");
+          const ok = document.querySelector("[data-form-success]");
+          ok.classList.remove("hidden");
+          ok.focus();
+        })
+        .catch(() => {
+          err.innerHTML = `Sorry, your request couldn't be sent. Please try again, or <a class="font-semibold underline" href="${mailto}">email us directly</a>.`;
+          err.classList.remove("hidden");
+        })
+        .finally(() => { btn.disabled = false; btn.innerHTML = label; });
     });
   }
 })();

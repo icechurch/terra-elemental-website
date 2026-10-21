@@ -74,7 +74,13 @@
     <div id="quote" class="card p-6 sm:p-8">
       <h2 class="text-2xl font-semibold">Request a quote</h2>
       <p class="mt-1 text-sm text-stone-600">Fields marked * are required.</p>
-      <form class="mt-6 grid gap-5 sm:grid-cols-2" data-quote-form novalidate>
+      <div class="mt-6 hidden rounded-2xl bg-field-50 p-6 ring-1 ring-field-100" data-form-success role="status" tabindex="-1">
+        <span class="flex h-11 w-11 items-center justify-center rounded-full bg-field-600 text-white"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+        <h3 class="mt-4 text-xl font-semibold">Thanks, your request is on its way</h3>
+        <p class="mt-1 text-sm text-stone-700">We'll get back to you within one business day. For anything urgent, call (813) 545-6993.</p>
+      </div>
+      <form class="mt-6 grid gap-5 sm:grid-cols-2" data-quote-form data-access-key="" novalidate>
+        <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div><label class="field-label" for="f-name">Name *</label><input class="field-input" id="f-name" name="name" autocomplete="name" required></div>
         <div><label class="field-label" for="f-org">Organization</label><input class="field-input" id="f-org" name="organization" autocomplete="organization" placeholder="e.g. City Parks & Recreation"></div>
         <div><label class="field-label" for="f-email">Email *</label><input class="field-input" id="f-email" name="email" type="email" autocomplete="email" required></div>
@@ -102,7 +108,7 @@
         <p class="hidden rounded-lg bg-red-50 p-3 text-sm text-red-800 sm:col-span-2" data-form-error role="alert"></p>
         <div class="flex flex-col gap-3 sm:col-span-2 sm:flex-row sm:items-center sm:justify-between">
           <p class="text-xs text-stone-500">Submitting opens a pre-filled email to info@terraelemental.org in your email app.</p>
-          <button type="submit" class="btn-primary">Send request <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+          <button type="submit" class="btn-primary disabled:cursor-wait disabled:opacity-70" data-submit>Send request <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
         </div>
       </form>
     </div>

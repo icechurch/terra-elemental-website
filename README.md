@@ -50,7 +50,9 @@ Product text, labels, SDS sheets and images are Sigma AgriScience's, used with p
 
 ## Quote form
 
-GitHub Pages has no form backend, so the quote form and the calculator's "Email this estimate" button open a pre-filled email to info@terraelemental.org. To receive submissions directly, point the form at a service such as Formspree or Netlify Forms.
+The quote form posts to [Web3Forms](https://web3forms.com), which emails each submission to the address the access key was created for. Visitors stay on the page and see a confirmation. Spam is filtered with a hidden honeypot field.
+
+To turn it on, create a free access key at web3forms.com using the inbox that should receive requests, paste it into `formAccessKey` in the `SITE` object in `src/build.mjs`, and run `npm run build`. The key is designed to be public, so it's safe in the page source. Until a key is set, the form opens a pre-filled email to info@terraelemental.org instead.
 
 ## Deploying on GitHub Pages
 
