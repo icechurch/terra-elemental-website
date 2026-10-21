@@ -93,9 +93,9 @@ DESCRIPTION_OVERRIDES = {
         "build healthier soil."
     ),
     "sigma-15-5-10-bio-bridge": (
-        "A high-performance hybrid turf blend that combines the power of organic matter with the science of synthetic "
-        "fertilizer. Sigma 15-5-10 Bio Bridge provides fast green-up and recovery, while organic carbon and humic acids "
-        "strengthen roots for greater nutrient absorption and add essential organic matter for soil microbes."
+        "Sigma 15-5-10 Bio Bridge provides fast green-up and recovery, while organic carbon and humic acids strengthen "
+        "roots for greater nutrient absorption and add essential organic matter for soil microbes. Formulated for high "
+        "performance turf."
     ),
     "sigma-si": (
         "Energize your soil with Sigma Si, a natural source of plant-available silicon that improves soil and "

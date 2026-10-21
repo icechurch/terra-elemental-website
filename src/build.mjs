@@ -184,9 +184,15 @@ ${body}
     </div>
   </div>
   <div class="border-t border-white/10">
-    <div class="container-site flex flex-col gap-2 py-6 text-xs text-forest-300 sm:flex-row sm:items-center sm:justify-between">
-      <p>&copy; <span data-year>2026</span> ${SITE.name}. All rights reserved.</p>
-      <p>Product information, labels and images courtesy of Sigma AgriScience. OMRI Listed status applies to specific products as noted.</p>
+    <div class="container-site flex flex-col gap-4 py-6 text-xs text-forest-300 md:flex-row md:items-center md:justify-between">
+      <div class="space-y-1">
+        <p>&copy; <span data-year>2026</span> ${SITE.name}. All rights reserved.</p>
+        <p>Product information, labels and images courtesy of Sigma AgriScience. OMRI Listed status applies to specific products as noted.</p>
+      </div>
+      <a href="https://www.weisschoice.org" target="_blank" rel="noopener" class="group inline-flex shrink-0 items-center gap-2.5 text-forest-200 hover:text-white">
+        <span>Website by</span>
+        <img src="${r}assets/img/weisschoice-logo-white.png" alt="WeissChoice" width="240" height="94" class="h-6 w-auto opacity-90 transition group-hover:opacity-100" loading="lazy">
+      </a>
     </div>
   </div>
 </footer>
@@ -225,7 +231,14 @@ const ctaBand = (r = "") => `
   </div>
 </section>`;
 
-const npkOf = (p) => (p.npk ? p.npk.split("-") : null);
+// Sigma 16-2-3 Bio Bridge is sold but has no product page; mention it wherever Bridge products are listed.
+const alsoBridge = (r = "") => `
+      <div class="mt-6 flex flex-col gap-3 rounded-2xl border border-dashed border-forest-300 bg-forest-50/60 p-5 sm:flex-row sm:items-center sm:justify-between">
+        <p class="text-sm text-stone-700"><span class="font-semibold text-forest-950">Also available: Sigma <span class="whitespace-nowrap">16-2-3</span> Bio Bridge.</span> Another high-performance Bridge turf blend. Contact us for details and custom pricing.</p>
+        <a href="${r}contact.html#quote" class="btn-outline shrink-0">Ask about 16-2-3</a>
+      </div>`;
+
+const npkOf = (p) =>(p.npk ? p.npk.split("-") : null);
 
 function productCard(p, r = "") {
   const npk = npkOf(p);
@@ -429,6 +442,7 @@ ${pageHeader({ eyebrow: "Products", title: "Organic biofertilizers built on livi
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         ${PRODUCTS.filter((p) => p.line === l.id).map((p) => productCard(p)).join("")}
       </div>
+      ${l.id === "bridge" ? alsoBridge() : ""}
     </div>`).join("")}
 
     <div class="mt-16 grid gap-6 rounded-3xl border border-stone-200 bg-stone-50 p-6 sm:p-10 md:grid-cols-2">
@@ -558,6 +572,7 @@ function productPage(p) {
         ${calcLink ? `<a href="${calcLink}" class="btn-outline">${icon("calc", "h-4 w-4")}Estimate Cost</a>` : ""}
         ${localDocs[0] ? `<a href="${r}${localDocs[0].href}" class="btn-outline" download>${icon("download", "h-4 w-4")}Label (PDF)</a>` : ""}
       </div>
+      ${p.line === "bridge" ? alsoBridge(r) : ""}
       ${p.placeholder ? `<p class="mt-6 rounded-xl bg-sun-300/30 p-4 text-sm text-forest-950">Full specifications for this product are being finalized. Contact us for the current label, analysis and pricing.</p>` : ""}
     </div>
   </div>
@@ -699,7 +714,7 @@ ${pageHeader({ eyebrow: "About Terra Elemental", title: "Regenerating soil. Rest
       <p class="eyebrow">Who we are</p>
       <h2 class="mt-3 text-3xl font-semibold sm:text-4xl">Soil biotechnology for the land Coloradans care for</h2>
       <div class="prose-site mt-5">
-        <p>Terra Elemental provides access to regenerative, sustainable and holistic biotechnology that serves the needs of soil, plants and people. We work with parks and recreation departments, grounds managers, golf courses, growers and restoration teams across Southern Colorado.</p>
+        <p>Terra Elemental provides access to regenerative, sustainable and holistic biotechnology that serves the needs of soil, plants and people. We work with parks and recreation departments, grounds managers, golf courses, growers and restoration teams across Colorado.</p>
         <p>Through consulting and supply, we help clients replace costly conventional amendments with effective, affordable biological programs that rebuild soil from the ground up, so it holds water, cycles nutrients and supports healthy plants year after year.</p>
         <p>We address these challenges at the source, below the surface.</p>
       </div>
@@ -1000,6 +1015,11 @@ function pricingSheet() {
       if (!pr) return row(p, `${rate}<td colspan="2" class="quote">Contact for pricing</td>`);
       return row(p, `${rate}<td class="num">${usd(pr.ton / 40)}</td><td class="num">${usd(pr.ton)}</td>`);
     });
+    // Sigma 16-2-3 Bio Bridge is also sold but has no product page, so it's listed here directly.
+    if (l.id === "bridge") {
+      const b = PRICING.products.find((x) => x.name.includes("16-2-3"));
+      items.push(`<tr><td class="name">Sigma 16-2-3 Bio Bridge</td><td>16-2-3</td><td class="num">${b ? `${b.rate} lb` : "—"}</td><td colspan="2" class="quote">Contact for custom quote</td></tr>`);
+    }
     return `<tr class="group"><td colspan="5">${l.label}</td></tr>${items.join("")}`;
   }).join("");
 
