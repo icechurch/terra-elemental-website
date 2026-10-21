@@ -21,13 +21,16 @@ The HTML in `docs/` is **generated**, so edit the sources and rebuild:
 - `src/build.mjs`: page layouts, copy, navigation, contact details (the `SITE` object) and owners (`TEAM`)
 - `src/data/products.json`: product data (descriptions, analysis, rates, documents)
 - `src/styles.css` and `tailwind.config.js`: brand colors, fonts, shared component classes
-- `docs/assets/js/calculator.js`: calculator pricing and math (hand-written, not generated)
+- `src/data/pricing.json`: wholesale prices and rates. Feeds both the calculator and the Pricing at a Glance PDF; update the `effective` date when prices change
+- `docs/assets/js/calculator.js`: calculator math and the Bridge custom-pricing notice (hand-written)
 - `docs/assets/js/main.js`: mobile menu, product filter, quote form
 
 ```bash
 npm install
 npm run build
 ```
+
+`npm run build` also renders `docs/assets/docs/terra-elemental-pricing.pdf` with a locally installed Chrome or Edge (set `CHROME_PATH` if it isn't found).
 
 Preview locally with `python -m http.server 8080 --directory docs`, then open http://localhost:8080.
 

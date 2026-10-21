@@ -1,23 +1,10 @@
 // Fertilizer cost calculator. Pricing and math are carried over unchanged from the original
 // TerraElementalCalc tool; only the markup/styling moved into the site layout.
 
-// Wholesale price per ton (40 x 50 lb bags) and application rate in lbs per 1,000 sq ft
-// at 1.0 lb N per 1,000 sq ft; rates scale linearly for lower N targets. Source: Sigma product cost analysis sheet.
-// `slug` links each row to its product page (null when there is no page for it).
-const PRODUCTS = [
-  { group: "Agriculture (Dry) Bio", name: "OMRI Sigma 2-4-2 Bio 2x",    ton: 795.2,  rate: 50,   slug: "sigma-2-4-2-bio" },
-  { group: "Agriculture (Dry) Bio", name: "OMRI Sigma 4-4-4 Bio",       ton: 911.4,  rate: 25,   slug: "sigma-4-4-4-bio" },
-  { group: "Agriculture (Dry) Bio", name: "OMRI Sigma 5-3-2 Bio",       ton: 784,    rate: 20,   slug: "sigma-5-3-2-bio" },
-  { group: "Agriculture (Dry) Bio", name: "OMRI Sigma 6-2-6 Bio",       ton: 1199.8, rate: 17,   slug: "sigma-6-2-6-bio" },
-  { group: "Agriculture (Dry) Bio", name: "OMRI Sigma 7-2-1 Bio",       ton: 1069.6, rate: 14,   slug: "sigma-7-2-1-bio" },
-  { group: "Agriculture (Dry) Bio", name: "OMRI Sigma 8-5-1 Bio",       ton: 1600.2, rate: 12,   slug: "sigma-8-5-1-bio" },
-  { group: "Specialty (Dry) Bio",   name: "OMRI Sigma 4-4-4 Bio Fine",  ton: 957.6,  rate: 25,   slug: "sigma-4-4-4-bio-fine" },
-  { group: "Specialty (Dry) Bio",   name: "OMRI Sigma 5-3-2 Bio Fine",  ton: 862.4,  rate: 20,   slug: "sigma-5-3-2-bio-fine" },
-  { group: "Specialty (Dry) Bio",   name: "OMRI Sigma 6-2-6 Bio Fine",  ton: 1320.2, rate: 17,   slug: "sigma-6-2-6-bio-fine" },
-  { group: "Specialty (Dry) Bio",   name: "Sigma 12-2-6 BRIDGE",        ton: 1525,   rate: 8.25, slug: "sigma-12-2-6-bio-bridge" },
-  { group: "Specialty (Dry) Bio",   name: "Sigma 15-5-10 BRIDGE",       ton: 1702.4, rate: 6.7,  slug: "sigma-15-5-10-bio-bridge" },
-  { group: "Specialty (Dry) Bio",   name: "Sigma 16-2-3 BRIDGE",        ton: 1787.8, rate: 6.25, slug: null },
-];
+// Prices and rates come from src/data/pricing.json (loaded as window.TE_PRICING by pricing-data.js),
+// the same data used for the Pricing at a Glance PDF.
+const PRODUCTS = window.TE_PRICING.products;
+const BRIDGE_NOTE = "Due to fluctuating cost of inputs, Bridge products require custom pricing. Most recent prices used, pricing subject to change. Please inquire for current price.";
 
 const BAG_LBS = 50;
 const BAGS_PER_TON = 40;
@@ -50,6 +37,24 @@ function calc(p, sqft, apps) {
     perK: (rate / BAG_LBS) * bagPrice,
     bagsPerAcre,
   };
+}
+
+// Selecting a Bridge product pops up the custom-pricing notice (once per selection, not on every re-render).
+function select(i) {
+  const changed = i !== selected;
+  selected = i;
+  $("product").value = i;
+  render();
+  if (changed && PRODUCTS[i].bridge) showBridgeNotice();
+}
+
+function showBridgeNotice() {
+  const dlg = $("bridge-dialog");
+  if (typeof dlg.showModal === "function") {
+    if (!dlg.open) dlg.showModal();
+  } else {
+    alert(BRIDGE_NOTE);
+  }
 }
 
 function inputs() {
@@ -86,6 +91,7 @@ function render() {
   $("per-ton").textContent = usd.format(p.ton);
   $("per-acre").textContent = usd.format(r.perAcre);
   $("per-k").textContent = usd.format(r.perK);
+  $("bridge-note").classList.toggle("hidden", !p.bridge);
 
   const link = $("product-link");
   link.href = p.slug ? `products/${p.slug}.html` : "products.html";
@@ -108,25 +114,28 @@ function render() {
     tr.className = `cursor-pointer border-b border-stone-100 transition-colors ${sel ? "bg-field-50 font-semibold text-forest-950" : "hover:bg-stone-50"}`;
     tr.tabIndex = 0;
     tr.setAttribute("aria-selected", String(sel));
-    const cells = [q.name, `${num(rateFor(q), 2)} lbs`, num(c.bagsPerAcre, 2), usd.format(c.perAcre), usd.format(c.perK), num(c.bags), usd.format(c.total)];
+    const cells = [q.bridge ? `${q.name} *` : q.name, `${num(rateFor(q), 2)} lbs`, num(c.bagsPerAcre, 2), usd.format(c.perAcre), usd.format(c.perK), num(c.bags), usd.format(c.total)];
     cells.forEach((t, j) => {
       const td = document.createElement("td");
       td.className = j === 0 ? "whitespace-nowrap py-2.5 pl-5 pr-3 text-left sm:pl-0" : j === 6 ? "whitespace-nowrap py-2.5 pl-3 pr-5 text-right sm:pr-0" : "whitespace-nowrap px-3 py-2.5 text-right";
       td.textContent = t;
       tr.appendChild(td);
     });
-    const choose = () => { selected = i; $("product").value = i; render(); };
+    const choose = () => select(i);
     tr.addEventListener("click", choose);
     tr.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); choose(); } });
     tbody.appendChild(tr);
   });
 
   const areaText = unit === "acres" ? `${num(area, 2)} acres` : `${num(area)} sq ft`;
-  const body = `Hello Terra Elemental,\n\nI'd like a quote for:\n\nProduct: ${p.name.trim()}\nArea: ${areaText}\nNitrogen rate: ${nLevel} lb N per 1,000 sq ft\nApplications: ${apps}\nBags (50 lb): ${r.bags}\nCalculator estimate: ${usd.format(r.total)}\n\nThank you.`;
+  const body = `Hello Terra Elemental,\n\nI'd like a quote for:\n\nProduct: ${p.name.trim()}\nArea: ${areaText}\nNitrogen rate: ${nLevel} lb N per 1,000 sq ft\nApplications: ${apps}\nBags (50 lb): ${r.bags}\nCalculator estimate: ${usd.format(r.total)}${p.bridge ? " (Bridge product: please confirm current custom pricing)" : ""}\n\nThank you.`;
   $("quote").href = `mailto:info@terraelemental.org?subject=${encodeURIComponent("Quote request: " + p.name.trim())}&body=${encodeURIComponent(body)}`;
 }
 
 function init() {
+  document.querySelectorAll("[data-bridge-text]").forEach((el) => { el.textContent = BRIDGE_NOTE; });
+  $("bridge-dialog").addEventListener("click", (e) => { if (e.target === e.currentTarget) e.currentTarget.close(); });
+
   const sel = $("product");
   const groups = {};
   PRODUCTS.forEach((p, i) => {
@@ -145,8 +154,9 @@ function init() {
   const wanted = new URLSearchParams(location.search).get("product");
   const idx = PRODUCTS.findIndex((p) => p.slug && p.slug === wanted);
   if (idx >= 0) { selected = idx; sel.value = idx; }
+  if (PRODUCTS[selected].bridge) showBridgeNotice();
 
-  sel.addEventListener("change", () => { selected = +sel.value; render(); });
+  sel.addEventListener("change", () => select(+sel.value));
   $("area").addEventListener("input", render);
   $("apps").addEventListener("input", render);
 

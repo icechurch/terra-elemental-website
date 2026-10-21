@@ -7,6 +7,8 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = path.join(ROOT, "docs");
 const PRODUCTS = JSON.parse(fs.readFileSync(path.join(ROOT, "src/data/products.json"), "utf8"));
+const PRICING = JSON.parse(fs.readFileSync(path.join(ROOT, "src/data/pricing.json"), "utf8"));
+const PRICE_PDF = "assets/docs/terra-elemental-pricing.pdf";
 
 const SITE = {
   name: "Terra Elemental",
@@ -153,6 +155,7 @@ ${body}
         <li><a class="hover:text-white" href="${r}products.html">All Products</a></li>
         <li><a class="hover:text-white" href="${r}solutions.html">Solutions</a></li>
         <li><a class="hover:text-white" href="${r}calculator.html">Cost Calculator</a></li>
+        <li><a class="hover:text-white" href="${r}${PRICE_PDF}" download>Pricing at a Glance (PDF)</a></li>
         <li><a class="hover:text-white" href="${r}about.html">About Us</a></li>
       </ul>
     </div>
@@ -313,8 +316,8 @@ function home() {
       <dl class="mt-8 space-y-6">
         ${[
           ["Beneficial Bacillus bacteria", "Attach to roots and help plants take up nitrogen, phosphorus and potassium, while crowding out harmful bacteria."],
-          ["Mycorrhizal fungi", "Extend the root system's reach several hundredfold through fine fungal filaments, improving access to water and nutrients."],
-          ["Trichoderma fungi", "Colonize the root zone, reduce soil pathogens and promote vigorous, healthy growth."],
+          ["Mycorrhizal fungi", "Colonize the root zone while connecting plants under the surface, reduce soil pathogens and promote vigorous, healthy growth."],
+          ["Trichoderma fungi", "Extend the root system's reach several hundredfold through fine fungal filaments, improving access to water and nutrients."],
           ["Humic acids & organic carbon", "Hold nutrients and moisture in the root zone and feed the soil's microbial life."],
         ].map(([t, d]) => `<div class="flex gap-4"><span class="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-field-600 text-white">${icon("check", "h-3.5 w-3.5")}</span><div><dt class="font-semibold text-forest-950">${t}</dt><dd class="mt-1 text-sm leading-relaxed text-stone-600">${d}</dd></div></div>`).join("\n        ")}
       </dl>
@@ -426,7 +429,7 @@ ${pageHeader({ eyebrow: "Products", title: "Organic biofertilizers built on livi
         <p class="mt-2 text-stone-600">Start with our solutions guide for parks, athletic fields, landscapes and golf, or let us build a program around your sites.</p>
       </div>
       <div class="flex flex-col gap-3 sm:flex-row md:items-center md:justify-end">
-        <a href="solutions.html" class="btn-outline">Solutions guide</a>
+        <a href="${PRICE_PDF}" class="btn-outline" download>${icon("download", "h-4 w-4")}Pricing PDF</a>
         <a href="calculator.html" class="btn-dark">${icon("calc", "h-4 w-4")}Compare costs</a>
       </div>
     </div>
@@ -838,6 +841,7 @@ function calculatorPage() {
     <p class="eyebrow">Planning tool</p>
     <h1 class="mt-2 text-3xl font-semibold sm:text-5xl">Fertilizer Cost Calculator</h1>
     <p class="mt-3 max-w-2xl text-stone-600 sm:text-lg">Choose a Sigma AgriScience product and enter the area you're treating. We'll work out how many 50&nbsp;lb bags you need and what it costs at wholesale pricing.</p>
+    <a href="${PRICE_PDF}" class="btn-outline mt-6" download>${icon("download", "h-4 w-4")}Pricing at a Glance (PDF)</a>
   </div>
 </section>
 
@@ -886,6 +890,7 @@ function calculatorPage() {
           <p class="mt-1 font-serif text-4xl font-semibold tabular-nums sm:text-5xl" id="total">$0.00</p>
           <p class="mt-2 text-sm text-forest-100" id="total-sub"></p>
         </div>
+        <p id="bridge-note" class="mt-4 hidden rounded-xl bg-sun-300/30 p-4 text-sm text-forest-950 ring-1 ring-sun-400/60" role="note"><strong class="font-semibold">Custom pricing:</strong> <span data-bridge-text></span> <a href="contact.html#quote" class="font-semibold underline">Request current price</a></p>
         <div class="mt-4 grid grid-cols-2 gap-3">
           ${stat("bags", "50 lb bags to order", "0")}
           ${stat("weight", "Product weight", "0 lbs")}
@@ -922,18 +927,35 @@ function calculatorPage() {
           <tbody id="cmp"></tbody>
         </table>
       </div>
+      <p class="mt-4 text-xs text-stone-500">* Bridge products require custom pricing because input costs fluctuate. Figures use the most recent prices and are subject to change.</p>
     </div>
 
     <p class="mt-6 max-w-3xl text-sm text-stone-500">Estimates use wholesale pricing per ton (40 × 50&nbsp;lb bags) and round up to whole bags. Cost per acre and per 1,000&nbsp;sq&nbsp;ft are based on exact product use. Prices are subject to change; shipping and tax are not included. <a href="contact.html#quote" class="font-medium text-field-700 underline">Contact us</a> for a formal quote.</p>
   </div>
-</section>`;
+</section>
+
+<dialog id="bridge-dialog" aria-labelledby="bridge-dialog-title" class="w-[calc(100%-2rem)] max-w-lg rounded-2xl p-0 shadow-2xl backdrop:bg-forest-950/60">
+  <form method="dialog" class="p-6 sm:p-7">
+    <div class="flex items-start gap-4">
+      <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-sun-300/50 text-forest-950">${icon("calc")}</span>
+      <div>
+        <h2 id="bridge-dialog-title" class="text-xl font-semibold">Bridge products: custom pricing</h2>
+        <p class="mt-2 text-sm leading-relaxed text-stone-700" data-bridge-text></p>
+      </div>
+    </div>
+    <div class="mt-6 flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
+      <a href="contact.html#quote" class="btn-outline">Inquire for current price</a>
+      <button class="btn-primary" autofocus>Continue to estimate</button>
+    </div>
+  </form>
+</dialog>`;
   return layout({
     file: "calculator.html",
     title: "Fertilizer Cost Calculator",
     active: "calculator",
     description: "Estimate how many 50 lb bags of Sigma AgriScience fertilizer you need and what it will cost for your acreage or square footage.",
     body,
-    scripts: ["assets/js/calculator.js"],
+    scripts: ["assets/js/pricing-data.js", "assets/js/calculator.js"],
   });
 }
 
@@ -948,6 +970,81 @@ function notFound() {
   </div>
 </section>`;
   return layout({ file: "404.html", title: "Page not found", active: "", description: "Page not found.", body });
+}
+
+function pricingSheet() {
+  const usd = (n) => n.toLocaleString("en-US", { style: "currency", currency: "USD" });
+  const priceBySlug = Object.fromEntries(PRICING.products.filter((x) => x.slug).map((x) => [x.slug, x]));
+  const logo = path.join(OUT, "assets/img/logo-lockup.png").split(path.sep).join("/");
+  const row = (p, cells) =>
+    `<tr><td class="name">${esc(p.name)}${p.omri ? ' <span class="omri">OMRI</span>' : ""}</td><td>${p.npk || "72% SiO₂"}</td>${cells}</tr>`;
+  const rows = LINES.map((l) => {
+    const items = PRODUCTS.filter((p) => p.line === l.id).map((p) => {
+      const pr = priceBySlug[p.slug];
+      const rate = `<td class="num">${pr ? `${pr.rate} lb` : "—"}</td>`;
+      if (p.line === "bridge" || pr?.bridge) return row(p, `${rate}<td colspan="2" class="quote">Contact for custom quote</td>`);
+      if (!pr) return row(p, `${rate}<td colspan="2" class="quote">Contact for pricing</td>`);
+      return row(p, `${rate}<td class="num">${usd(pr.ton / 40)}</td><td class="num">${usd(pr.ton)}</td>`);
+    });
+    return `<tr class="group"><td colspan="5">${l.label}</td></tr>${items.join("")}`;
+  }).join("");
+
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Terra Elemental Pricing at a Glance</title>
+<style>
+  @page { size: Letter; margin: 0.5in 0.55in; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 10pt/1.35 "Segoe UI", Arial, sans-serif; color: #1c2a20; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 3px solid #183022; padding-bottom: 10px; }
+  header img { height: 54px; }
+  header .t { text-align: right; }
+  h1 { margin: 0; font: 600 20pt Georgia, serif; color: #0d1d14; }
+  .sub { color: #5b6657; font-size: 9pt; margin-top: 2px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 14px; }
+  th { text-align: left; font-size: 7.5pt; text-transform: uppercase; letter-spacing: .05em; color: #5b6657; font-weight: 600; padding: 6px 8px; border-bottom: 1.5px solid #c3d9c9; }
+  th.num, td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  td { padding: 6px 8px; border-bottom: 1px solid #e4e8e2; }
+  tr.group td { background: #183022; color: #fff; font-weight: 600; font-size: 9pt; letter-spacing: .03em; padding: 5px 8px; border: 0; }
+  td.name { font-weight: 600; }
+  td.quote { text-align: right; color: #22659a; font-weight: 600; font-style: italic; }
+  .omri { display: inline-block; font-size: 6.5pt; font-weight: 700; letter-spacing: .06em; color: #028a19; border: 1px solid #028a19; border-radius: 3px; padding: 0 3px; margin-left: 4px; vertical-align: 1px; }
+  .notes { margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; font-size: 8.5pt; color: #3d4a3f; }
+  .notes h2 { font: 600 10pt Georgia, serif; margin: 0 0 4px; color: #0d1d14; }
+  .notes ul { margin: 0; padding-left: 14px; }
+  .notes li { margin-bottom: 2px; }
+  footer { margin-top: 18px; padding-top: 10px; border-top: 1px solid #c3d9c9; display: flex; justify-content: space-between; font-size: 9pt; }
+  footer b { color: #0d1d14; }
+</style></head><body>
+<header>
+  <img src="file:///${logo}" alt="Terra Elemental">
+  <div class="t"><h1>Pricing at a Glance</h1><div class="sub">Sigma AgriScience organic biofertilizers · Effective ${PRICING.effective}</div></div>
+</header>
+<table>
+  <thead><tr><th>Product</th><th>Analysis</th><th class="num">Rate / 1,000 sq ft*</th><th class="num">Per 50 lb bag</th><th class="num">Per ton (40 bags)</th></tr></thead>
+  <tbody>${rows}</tbody>
+</table>
+<div class="notes">
+  <div>
+    <h2>About this pricing</h2>
+    <ul>
+      <li>Wholesale prices. Shipping and tax are not included.</li>
+      <li>Bridge products require custom pricing due to fluctuating input costs.</li>
+      <li>Prices are subject to change. Contact us for a formal quote.</li>
+    </ul>
+  </div>
+  <div>
+    <h2>Good to know</h2>
+    <ul>
+      <li>*Product rate to deliver 1 lb N per 1,000 sq ft. Scale down for lower N targets.</li>
+      <li>Available in 50 lb bags, 2,000 lb totes and bulk loads.</li>
+      <li>Estimate your order online at terraelemental.org/calculator.html</li>
+    </ul>
+  </div>
+</div>
+<footer>
+  <div><b>Terra Elemental</b> · ${SITE.region}</div>
+  <div><b>${SITE.email}</b> · ${SITE.phone} · terraelemental.org</div>
+</footer>
+</body></html>`;
 }
 
 // ---------- write ----------
@@ -972,4 +1069,11 @@ const urls = Object.keys(pages).filter((f) => f !== "404.html").map((f) => `  <u
 fs.writeFileSync(path.join(OUT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join("\n")}\n</urlset>\n`);
 fs.writeFileSync(path.join(OUT, "robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${SITE.url}/sitemap.xml\n`);
 fs.writeFileSync(path.join(OUT, ".nojekyll"), "");
+
+// Shared pricing for the calculator.
+fs.writeFileSync(path.join(OUT, "assets/js/pricing-data.js"), `// Generated from src/data/pricing.json by src/build.mjs. Do not edit.\nwindow.TE_PRICING = ${JSON.stringify(PRICING)};\n`);
+
+// One-page "Pricing at a Glance" sheet, rendered to PDF by scripts/render-pdf.mjs (npm run build:pdf).
+fs.mkdirSync(path.join(ROOT, "build"), { recursive: true });
+fs.writeFileSync(path.join(ROOT, "build/pricing-sheet.html"), pricingSheet());
 console.log(`Built ${Object.keys(pages).length} pages.`);

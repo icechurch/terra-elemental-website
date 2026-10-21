@@ -6,9 +6,10 @@
   "scripts": {
     "build:html": "node src/build.mjs",
     "build:css": "tailwindcss -i src/styles.css -o docs/assets/css/site.css --minify",
-    "build": "npm run build:html && npm run build:css",
+    "build": "npm run build:html && npm run build:css && npm run build:pdf",
     "watch": "tailwindcss -i src/styles.css -o docs/assets/css/site.css --watch",
-    "serve": "npx --yes http-server@14.1.1 docs -p 8080 -c-1"
+    "serve": "npx --yes http-server@14.1.1 docs -p 8080 -c-1",
+    "build:pdf": "node scripts/render-pdf.mjs"
   },
   "devDependencies": {
     "tailwindcss": "3.4.17"
