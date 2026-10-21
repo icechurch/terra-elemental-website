@@ -1,0 +1,16 @@
+{
+  "name": "terra-elemental-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Website for Terra Elemental, a Southern Colorado distributor of Sigma AgriScience organic biofertilizers.",
+  "scripts": {
+    "build:html": "node src/build.mjs",
+    "build:css": "tailwindcss -i src/styles.css -o docs/assets/css/site.css --minify",
+    "build": "npm run build:html && npm run build:css",
+    "watch": "tailwindcss -i src/styles.css -o docs/assets/css/site.css --watch",
+    "serve": "npx --yes http-server@14.1.1 docs -p 8080 -c-1"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  }
+}

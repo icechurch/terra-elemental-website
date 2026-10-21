@@ -1,0 +1,2753 @@
+[
+  {
+    "slug": "sigma-2-4-2-bio",
+    "name": "Sigma 2-4-2 Bio 2x",
+    "npk": "2-4-2",
+    "line": "agriculture",
+    "lineLabel": "Agriculture · Large Grade",
+    "subtitle": "With Twice the Value-Added Biologicals",
+    "description": "Sigma’s base formula containing 100% organic and natural ingredients plus twice the concentration of biological additions compared to other dry formulas. Organic minerals such as carbon and humic acids work together to strengthen root growth and overall plant health. Apply “as is” or dry blend with conventional fertilizers to maximize performance.",
+    "omri": true,
+    "packaging": [
+      "50 lb poly bag (22.68 kg)",
+      "2,000 lb tote (907 kg)",
+      "Bulk load"
+    ],
+    "image": "assets/img/products/sigma-2-4-2-bio.webp",
+    "docs": [
+      {
+        "type": "Label",
+        "label": "Product Label",
+        "href": "assets/docs/sigma-2-4-2-bio/sigma-2-4-2-new.pdf",
+        "size": 4624479
+      },
+      {
+        "type": "OMRI",
+        "label": "OMRI Listing Certificate",
+        "href": "https://www.omri.org/mfg/sig/certificate/8509",
+        "external": true
+      },
+      {
+        "type": "SDS",
+        "label": "Safety Data Sheet (SDS)",
+        "href": "assets/docs/sigma-2-4-2-bio/sds-sigma-2-4-2-bio-1.pdf",
+        "size": 435221
+      }
+    ],
+    "calcName": "OMRI Sigma 2-4-2 Bio 2x",
+    "placeholder": false,
+    "analysis": [
+      {
+        "item": "Total Nitrogen (N)",
+        "value": "2.0%",
+        "sub": false
+      },
+      {
+        "item": "Ammoniacal Nitrogen",
+        "value": "0.1%",
+        "sub": true
+      },
+      {
+        "item": "Other Water Soluble Nitrogen",
+        "value": "0.3%",
+        "sub": true
+      },
+      {
+        "item": "Water Insoluble Nitrogen",
+        "value": "1.6%",
+        "sub": true
+      },
+      {
+        "item": "Available Phosphate (P2O5)",
+        "value": "4.0%",
+        "sub": false
+      },
+      {
+        "item": "Soluble Potash (K2O)",
+        "value": "2.0%",
+        "sub": false
+      },
+      {
+        "item": "Calcium (Ca)",
+        "value": "10.0%",
+        "sub": false
+      },
+      {
+        "item": "Magnesium (Mg)",
+        "value": "0.5%",
+        "sub": false
+      },
+      {
+        "item": "Iron (Fe)",
+        "value": "0.5%",
+        "sub": false
+      }
+    ],
+    "derived": "Derived from processed poultry manure, feather meal, bone meal and sulfate of potash.",
+    "notes": [
+      "Also available without BIO Package (beneficial bacteria, endomycorrhizae, trichoderma)"
+    ],
+    "biologicals": [
+      {
+        "item": "Humic Acids",
+        "value": "6.0%"
+      },
+      {
+        "item": "Beneficial Bacteria",
+        "value": "4,200,000 CFU/Lb"
+      },
+      {
+        "item": "Endomycorrhizae",
+        "value": "9.4 Prop/Lb."
+      },
+      {
+        "item": "Trichoderma",
+        "value": "716,000 CFU/Lb"
+      }
+    ],
+    "rates": [
+      {
+        "heading": "Turf",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Natural",
+            "text": "Medium: 38 lbs. (0.75 lb. N) / 1000 sq ft"
+          },
+          {
+            "label": "Lawns",
+            "text": "High: 50 lbs. (1 lb. N) / 1000 sq ft."
+          }
+        ]
+      },
+      {
+        "heading": "Golf Course",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Low Rate",
+            "text": "24 lbs. (0.50 lb. N) / 1000 sq ft."
+          },
+          {
+            "label": "Medium Rate",
+            "text": "38 lbs. (0.75 lb. N) / 1000 sq ft"
+          },
+          {
+            "label": "High Rate",
+            "text": "50 lbs. (1 lb. N) / 1000 sq ft."
+          }
+        ]
+      },
+      {
+        "heading": "Vegetable",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Low Rate",
+            "text": "(Examples - peas, beans) Incorporate 2000 lbs. per acre 2-3 weeks prior to planting."
+          },
+          {
+            "label": "Medium Rate",
+            "text": "(Examples - asparagus, beet, carrot, melon,pepper, cauliflower, broccoli, brussels sprout, and celery) Incorporate 5000 lbs. per acre 2-3 weeks prior to planting."
+          },
+          {
+            "label": "High Rate",
+            "text": "(Examples - onion, sweet corn, potato, tomato) Incorporate 5000 lbs. per acre 2-3 weeks prior to planting."
+          }
+        ]
+      },
+      {
+        "heading": "Tree & Palm",
+        "intro": "Rate based on 1” of trunk diameter (caliper). Example: for 10” trunk diameter (caliper) multiply label rate by 10.",
+        "rows": [
+          {
+            "label": "Incorporation",
+            "text": "Mix with soil in bottom of holes prior to transplanting. Apply 12.0 lbs. at transplanting."
+          },
+          {
+            "label": "Broadcast",
+            "text": "Apply 24.0 lbs. at transplanting."
+          }
+        ]
+      },
+      {
+        "heading": "Ornamentals",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Low Rate",
+            "text": "(for heavy substrates with porosity < 60%)"
+          },
+          {
+            "label": "Incorporation",
+            "text": "60 lb. per cubic yard of media"
+          },
+          {
+            "label": "Landscape",
+            "text": "98 lb. per 1000 sq. ft."
+          },
+          {
+            "label": "Medium Rate",
+            "text": "(for most nursery stock and foliage plants)"
+          },
+          {
+            "label": "Incorporation",
+            "text": "90 lb. per cubic yard of media"
+          },
+          {
+            "label": "Landscape",
+            "text": "173 lb. per 1000 sq. ft."
+          },
+          {
+            "label": "High Rate",
+            "text": "(for light substrates with porosity > 80%)"
+          },
+          {
+            "label": "Incorporation",
+            "text": "112 lb. per cubic yard of media"
+          },
+          {
+            "label": "Landscape",
+            "text": "248 lb. per 1000 sq. ft."
+          }
+        ]
+      }
+    ],
+    "containers": [
+      {
+        "size": "1 Gallon",
+        "low": "113 grams",
+        "high": "225 grams"
+      },
+      {
+        "size": "2 Gallon",
+        "low": "225 grams",
+        "high": "450 grams"
+      },
+      {
+        "size": "3 Gallon",
+        "low": "338 grams",
+        "high": "712 grams"
+      },
+      {
+        "size": "5 Gallon",
+        "low": "450 grams",
+        "high": "975 grams"
+      },
+      {
+        "size": "7 Gallon",
+        "low": "675 grams",
+        "high": "1462 grams"
+      },
+      {
+        "size": "10 Gallon",
+        "low": "825 grams",
+        "high": "1762 grams"
+      },
+      {
+        "size": "15 Gallon",
+        "low": "900 grams",
+        "high": "1875 grams"
+      }
+    ],
+    "features": []
+  },
+  {
+    "slug": "sigma-4-4-4-bio",
+    "name": "Sigma 4-4-4 Bio",
+    "npk": "4-4-4",
+    "line": "agriculture",
+    "lineLabel": "Agriculture · Large Grade",
+    "subtitle": "With Value-Added Biologicals",
+    "description": "A balanced formula containing all the macronutrients plants need all season long. Formulated for organic use/farming, this premium-grade granular fertilizer contains nutrient-rich ingredients infused with value-added biologicals. Proprietary GranCORE Technology combines humic acid and essential nutrients such as NPK, Ca, and Fe into a slow-release and easy-to-spread granule. Our large grade size is an excellent choice for organic vegetable crop input.",
+    "omri": true,
+    "packaging": [
+      "50 lb poly bag (22.68 kg)",
+      "2,000 lb tote (907 kg)",
+      "Bulk load"
+    ],
+    "image": "assets/img/products/sigma-4-4-4-bio.webp",
+    "docs": [
+      {
+        "type": "Label",
+        "label": "Product Label",
+        "href": "assets/docs/sigma-4-4-4-bio/SIG_Sigma4-4-4Bio_Label_50lb_US01_V08_2022-Nov-15.pdf",
+        "size": 7868252
+      },
+      {
+        "type": "OMRI",
+        "label": "OMRI Listing Certificate",
+        "href": "https://www.omri.org/mfg/sig/certificate/8511",
+        "external": true
+      },
+      {
+        "type": "SDS",
+        "label": "Safety Data Sheet (SDS)",
+        "href": "assets/docs/sigma-4-4-4-bio/sds-sigma-4-4-4-bio.pdf",
+        "size": 448077
+      },
+      {
+        "type": "FLYER",
+        "label": "Product Flyer",
+        "href": "assets/docs/sigma-4-4-4-bio/Sigma-4-4-4-Bio-SIGMA-Flier.pdf",
+        "size": 3109560
+      }
+    ],
+    "calcName": "OMRI Sigma 4-4-4 Bio",
+    "placeholder": false,
+    "analysis": [
+      {
+        "item": "Total Nitrogen (N)",
+        "value": "4.0%",
+        "sub": false
+      },
+      {
+        "item": "Ammoniacal Nitrogen",
+        "value": "0.2%",
+        "sub": true
+      },
+      {
+        "item": "Other Water Soluble Nitrogen",
+        "value": "0.6%",
+        "sub": true
+      },
+      {
+        "item": "Water Insoluble Nitrogen",
+        "value": "3.2%",
+        "sub": true
+      },
+      {
+        "item": "Available Phosphate (P2O5)",
+        "value": "4.0%",
+        "sub": false
+      },
+      {
+        "item": "Soluble Potash (K2O)",
+        "value": "4.0%",
+        "sub": false
+      },
+      {
+        "item": "Calcium (Ca)",
+        "value": "6.0%",
+        "sub": false
+      },
+      {
+        "item": "Iron (Fe)",
+        "value": "0.1%",
+        "sub": false
+      }
+    ],
+    "derived": "Derived from processed poultry manure, feather meal, bone meal, and sulfate of potash.",
+    "notes": [
+      "Also available without BIO Package (beneficial bacteria, endomycorrhizae, trichoderma)"
+    ],
+    "biologicals": [
+      {
+        "item": "Humic Acids",
+        "value": "3.0%"
+      },
+      {
+        "item": "Beneficial Bacteria",
+        "value": "2,800,000 CFU/Lb"
+      },
+      {
+        "item": "Endomycorrhizae",
+        "value": "6.1 Prop/Lb."
+      },
+      {
+        "item": "Trichoderma",
+        "value": "480,000 CFU/Lb"
+      }
+    ],
+    "rates": [
+      {
+        "heading": "Turf",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Natural",
+            "text": "Medium: 19 lbs. (0.75 lb. N) / 1000 sq ft"
+          },
+          {
+            "label": "Lawns",
+            "text": "High: 25 lbs. (1 lb. N) / 1000 sq ft."
+          }
+        ]
+      },
+      {
+        "heading": "Golf Course",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Low Rate",
+            "text": "12 lbs. (0.50 lb. N) / 1000 sq ft."
+          },
+          {
+            "label": "Medium Rate",
+            "text": "19 lbs. (0.75 lb. N) / 1000 sq ft."
+          },
+          {
+            "label": "High Rate",
+            "text": "25 lbs. (1 lb. N) / 1000 sq ft."
+          }
+        ]
+      },
+      {
+        "heading": "Vegetable",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Low Rate",
+            "text": "(Examples - peas, beans) Incorporate 1000 lbs. per acre 2-3 weeks prior to planting."
+          },
+          {
+            "label": "Medium Rate",
+            "text": "(Examples - asparagus, beet, carrot, melon, pepper, cauliflower, broccoli, brussels sprout, and celery) Incorporate 2500 lbs. per acre 2-3 weeks prior to planting."
+          },
+          {
+            "label": "High Rate",
+            "text": "(Examples - onion, sweet corn, potato, tomato) Incorporate 2500 lbs. per acre 2-3 weeks prior to planting."
+          }
+        ]
+      },
+      {
+        "heading": "Tree & Palm",
+        "intro": "Rate based on 1” of trunk diameter (caliper). Example: for 10” trunk diameter (caliper) multiply label rate by 10.",
+        "rows": [
+          {
+            "label": "Incorporation",
+            "text": "Mix with soil in bottom of holes prior to transplanting. Apply 6.0 lb. at Transplanting."
+          },
+          {
+            "label": "Broadcast",
+            "text": "Apply 12.0 lb. at Transplanting."
+          }
+        ]
+      },
+      {
+        "heading": "Ornamentals",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Low Rate",
+            "text": "(for heavy substrates with porosity < 60%)"
+          },
+          {
+            "label": "Incorporation",
+            "text": "30 lb. per cubic yard of media"
+          },
+          {
+            "label": "Landscape",
+            "text": "49 lb. per 1000 sq. ft."
+          },
+          {
+            "label": "Medium Rate",
+            "text": "(for most nursery stock and foliage plants)"
+          },
+          {
+            "label": "Incorporation",
+            "text": "45 lb. per cubic yard of media"
+          },
+          {
+            "label": "Landscape",
+            "text": "86 lb. per 1000 sq. ft."
+          },
+          {
+            "label": "High Rate",
+            "text": "(for light substrates with porosity > 80%)"
+          },
+          {
+            "label": "Incorporation",
+            "text": "56 lb. per cubic yard of media"
+          },
+          {
+            "label": "Landscape",
+            "text": "124 lb. per 1000 sq. ft."
+          }
+        ]
+      }
+    ],
+    "containers": [
+      {
+        "size": "1 Gallon",
+        "low": "40 grams",
+        "high": "75 grams"
+      },
+      {
+        "size": "2 Gallon",
+        "low": "75 grams",
+        "high": "150 grams"
+      },
+      {
+        "size": "3 Gallon",
+        "low": "115 grams",
+        "high": "240 grams"
+      },
+      {
+        "size": "5 Gallon",
+        "low": "150 grams",
+        "high": "325 grams"
+      },
+      {
+        "size": "7 Gallon",
+        "low": "225 grams",
+        "high": "490 grams"
+      },
+      {
+        "size": "10 Gallon",
+        "low": "275 grams",
+        "high": "590 grams"
+      },
+      {
+        "size": "15 Gallon",
+        "low": "300 grams",
+        "high": "625 grams"
+      }
+    ],
+    "features": []
+  },
+  {
+    "slug": "sigma-5-3-2-bio",
+    "name": "Sigma 5-3-2 Bio",
+    "npk": "5-3-2",
+    "line": "agriculture",
+    "lineLabel": "Agriculture · Large Grade",
+    "subtitle": "With Value-Added Biologicals",
+    "description": "A fantastic blend of fast and slow release organic nutrient sources and value-added biologicals to fuel plants and recharge depleted soils. An excellent choice for a wide range of crops requiring a steady supply of nutrients. Using minerals like humic acids, our fertilizer is guaranteed to enrich soil content in a way that won't burn roots. Strengthens root growth and overall plant health. Apply “as is” or dry blend with conventional fertilizers to maximize performance.",
+    "omri": true,
+    "packaging": [
+      "50 lb poly bag (22.68 kg)",
+      "2,000 lb tote (907 kg)",
+      "Bulk load"
+    ],
+    "image": "assets/img/products/sigma-5-3-2-bio.webp",
+    "docs": [
+      {
+        "type": "Label",
+        "label": "Product Label",
+        "href": "assets/docs/sigma-5-3-2-bio/SIG_Sigma5-3-2Bio_Label_50lb_US01_V14_2023-Aug-30.pdf",
+        "size": 1006659
+      },
+      {
+        "type": "OMRI",
+        "label": "OMRI Listing Certificate",
+        "href": "https://www.omri.org/mfg/sig/certificate/13802",
+        "external": true
+      },
+      {
+        "type": "SDS",
+        "label": "Safety Data Sheet (SDS)",
+        "href": "assets/docs/sigma-5-3-2-bio/Sigma-5-3-2-Bio-SDS_EN.pdf",
+        "size": 100249
+      },
+      {
+        "type": "FLYER",
+        "label": "Product Flyer",
+        "href": "assets/docs/sigma-5-3-2-bio/Sigma_5-3-2_Bio_Flier_5-5x8-5_ONLINE_122022.pdf",
+        "size": 450897
+      }
+    ],
+    "calcName": "OMRI Sigma 5-3-2 Bio",
+    "placeholder": false,
+    "analysis": [
+      {
+        "item": "Total Nitrogen (N)",
+        "value": "5.0%",
+        "sub": false
+      },
+      {
+        "item": "Water Soluble Nitrogen",
+        "value": "1.2%",
+        "sub": true
+      },
+      {
+        "item": "Water Insoluble Nitrogen*",
+        "value": "3.8%",
+        "sub": true
+      },
+      {
+        "item": "Available Phosphate (P2O5)",
+        "value": "3.0%",
+        "sub": false
+      },
+      {
+        "item": "Soluble Potash (K2O)",
+        "value": "2.0%",
+        "sub": false
+      },
+      {
+        "item": "Calcium (Ca)",
+        "value": "7.0%",
+        "sub": false
+      },
+      {
+        "item": "Iron (Fe)",
+        "value": "0.1%",
+        "sub": false
+      }
+    ],
+    "derived": "Derived from processed poultry manure, bone meal, feather meal, and sulfate of potash.",
+    "notes": [
+      "Also available without BIO Package (beneficial bacteria, endomycorrhizae, trichoderma)"
+    ],
+    "biologicals": [
+      {
+        "item": "Humic Acids",
+        "value": "3.0%"
+      },
+      {
+        "item": "Beneficial Bacteria",
+        "value": "2,800,000 CFU/Lb"
+      },
+      {
+        "item": "Endomycorrhizae",
+        "value": "6.1 Prop/Lb."
+      },
+      {
+        "item": "Trichoderma",
+        "value": "480,000 CFU/Lb"
+      }
+    ],
+    "rates": [
+      {
+        "heading": "Turf",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Natural",
+            "text": "15 lb. (0.75 lb. N) / 1000 sq ft"
+          },
+          {
+            "label": "Lawns",
+            "text": "20 lb. (1 lb. N) / 1000 sq ft."
+          }
+        ]
+      },
+      {
+        "heading": "Golf Course",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Low Rate",
+            "text": "10 lb. (0.50 lb. N) / 1000 sq ft."
+          },
+          {
+            "label": "Medium Rate",
+            "text": "15 lb. (0.75 lb. N) / 1000 sq ft."
+          },
+          {
+            "label": "High Rate",
+            "text": "20 lb. (1 lb. N) / 1000 sq ft."
+          }
+        ]
+      },
+      {
+        "heading": "Vegetable",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Low Rate",
+            "text": "(Examples - peas, beans) Incorporate 800 lb. per acre 2-3 weeks prior to planting."
+          },
+          {
+            "label": "Medium Rate",
+            "text": "(Examples - asparagus, beet, carrot, melon, pepper, cauliflower, broccoli, brussels sprout, and celery) Incorporate 2000 lb. per acre 2-3 weeks prior to planting."
+          },
+          {
+            "label": "High Rate",
+            "text": "(Examples - onion, sweet corn, potato, tomato) Incorporate 2000 lb. per acre 2-3 weeks prior to planting."
+          }
+        ]
+      },
+      {
+        "heading": "Tree & Palm",
+        "intro": "Rate based on 1” of trunk diameter (caliper). Example: for 10” trunk diameter (caliper) multiply label rate by 10.",
+        "rows": [
+          {
+            "label": "Incorporation",
+            "text": "Mix with soil in bottom of holes prior to transplanting. Apply 5.0 lb. at transplanting"
+          },
+          {
+            "label": "Broadcast",
+            "text": "Apply 10.0 lb. at transplanting."
+          }
+        ]
+      },
+      {
+        "heading": "Ornamentals",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Low Rate",
+            "text": "(for heavy substrates with porosity < 60%)"
+          },
+          {
+            "label": "Incorporation",
+            "text": "24 lb. per cubic yard of media"
+          },
+          {
+            "label": "Landscape",
+            "text": "40 lb. per 1000 sq. ft."
+          },
+          {
+            "label": "Medium Rate",
+            "text": "(for most nursery stock and foliage plants)"
+          },
+          {
+            "label": "Incorporation",
+            "text": "36 lb. per cubic yard of media"
+          },
+          {
+            "label": "Landscape",
+            "text": "69 lb. per 1000 sq. ft."
+          },
+          {
+            "label": "High Rate",
+            "text": "(for light substrates with porosity > 80%)"
+          },
+          {
+            "label": "Incorporation",
+            "text": "45 lb. per cubic yard of media"
+          },
+          {
+            "label": "Landscape",
+            "text": "100 lb. per 1000 sq. ft."
+          }
+        ]
+      }
+    ],
+    "containers": [
+      {
+        "size": "1 Gallon",
+        "low": "30 grams",
+        "high": "60 grams"
+      },
+      {
+        "size": "2 Gallon",
+        "low": "60 grams",
+        "high": "120 grams"
+      },
+      {
+        "size": "3 Gallon",
+        "low": "92 grams",
+        "high": "192 grams"
+      },
+      {
+        "size": "5 Gallon",
+        "low": "120 grams",
+        "high": "260 grams"
+      },
+      {
+        "size": "7 Gallon",
+        "low": "180 grams",
+        "high": "392 grams"
+      },
+      {
+        "size": "10 Gallon",
+        "low": "220 grams",
+        "high": "472 grams"
+      },
+      {
+        "size": "15 Gallon",
+        "low": "240 grams",
+        "high": "500 grams"
+      }
+    ],
+    "features": []
+  },
+  {
+    "slug": "sigma-6-2-6-bio",
+    "name": "Sigma 6-2-6 Bio",
+    "npk": "6-2-6",
+    "line": "agriculture",
+    "lineLabel": "Agriculture · Large Grade",
+    "subtitle": "With Value-Added Biologicals",
+    "description": "Made with 100% organic and natural ingredients. This fertilizer is intended for applications requiring higher Nitrogen and Potash needs with just the right amount of Phosphorus. Sigma 6-2-6 Bio contains beneficial microbes that are granulated into a microbial food source for rapid nutrient cycling. Higher nitrogen, lower phosphorus, and enhanced carbon intake make this multi-purpose fertilizer beneficial anywhere nutrients and biology are needed. Potash is added for stem and root development on leafy vegetables, fruit and textile crops.",
+    "omri": true,
+    "packaging": [
+      "50 lb poly bag (22.68 kg)",
+      "2,000 lb tote (907 kg)",
+      "Bulk load"
+    ],
+    "image": "assets/img/products/sigma-6-2-6-bio.webp",
+    "docs": [
+      {
+        "type": "Label",
+        "label": "Product Label",
+        "href": "assets/docs/sigma-6-2-6-bio/Sigma-6-2-6-Bio-new.pdf",
+        "size": 4716924
+      },
+      {
+        "type": "OMRI",
+        "label": "OMRI Listing Certificate",
+        "href": "https://www.omri.org/mfg/sig/certificate/8512",
+        "external": true
+      },
+      {
+        "type": "SDS",
+        "label": "Safety Data Sheet (SDS)",
+        "href": "assets/docs/sigma-6-2-6-bio/sds-sigma-6-2-6-bio.pdf",
+        "size": 411923
+      },
+      {
+        "type": "FLYER",
+        "label": "Product Flyer",
+        "href": "assets/docs/sigma-6-2-6-bio/Sigma_6-2-6-Bio_Flier_5-5x8-5_ONLINE_122022.pdf",
+        "size": 403702
+      }
+    ],
+    "calcName": "OMRI Sigma 6-2-6 Bio",
+    "placeholder": false,
+    "analysis": [
+      {
+        "item": "Total Nitrogen (N)",
+        "value": "6.0%",
+        "sub": false
+      },
+      {
+        "item": "Water Soluble Nitrogen",
+        "value": "0.79%",
+        "sub": true
+      },
+      {
+        "item": "Water Insoluble Nitrogen",
+        "value": "3.36%",
+        "sub": true
+      },
+      {
+        "item": "Available Phosphate (P2O5)",
+        "value": "2.0%",
+        "sub": false
+      },
+      {
+        "item": "Soluble Potash (K2O)",
+        "value": "6.0%",
+        "sub": false
+      },
+      {
+        "item": "Calcium (Ca)",
+        "value": "5.0%",
+        "sub": false
+      },
+      {
+        "item": "Iron (Fe)",
+        "value": "0.2%",
+        "sub": false
+      }
+    ],
+    "derived": "Derived from processed poultry manure and bone meal.",
+    "notes": [
+      "Also available without BIO Package (beneficial bacteria, endomycorrhizae, trichoderma)"
+    ],
+    "biologicals": [
+      {
+        "item": "Humic Acids",
+        "value": "3.0%"
+      },
+      {
+        "item": "Beneficial Bacteria",
+        "value": "2,800,000 CFU/Lb"
+      },
+      {
+        "item": "Endomycorrhizae",
+        "value": "6.2 Prop/Lb."
+      },
+      {
+        "item": "Trichoderma",
+        "value": "480,000 CFU/Lb"
+      }
+    ],
+    "rates": [
+      {
+        "heading": "Turf",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Natural",
+            "text": "Medium: 12.5 lb. / 1000 sq ft. (0.75 lb. N)"
+          },
+          {
+            "label": "Lawns",
+            "text": "High: 17 lb. / 1000 sq ft.(1.0 lb. N)"
+          }
+        ]
+      },
+      {
+        "heading": "Golf Course",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Low Rate",
+            "text": "8.5 lb. / 1000 sq ft.(0.50 lb. N)"
+          },
+          {
+            "label": "Medium Rate",
+            "text": "12.5 lb. / 1000 sq ft. (0.75 lb. N)"
+          },
+          {
+            "label": "High Rate",
+            "text": "17 lb. / 1000 sq ft. (1.0 lb. N)"
+          }
+        ]
+      },
+      {
+        "heading": "Vegetable",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Low Rate",
+            "text": "(Examples - peas, beans) Incorporate 650 lb. at planting or per organic certification rules."
+          },
+          {
+            "label": "Medium Rate",
+            "text": "(Examples - asparagus, beet, carrot, melon, pepper, cauliflower, broccoli, brussels sprouts, and celery) Incorporate 1300 lb. per acre at planting or per organic certification rules."
+          },
+          {
+            "label": "High Rate",
+            "text": "(Examples - onion, sweet corn, potato, tomato) Apply 1300 lb. per acre at planting then broadcast or band additional fertilizer after plants are well established or per organic certification rules."
+          }
+        ]
+      },
+      {
+        "heading": "Tree & Palm",
+        "intro": "Rate based on 1” of trunk diameter (caliper). Example: for 10” trunk diameter (caliper) multiply label rate by 10",
+        "rows": [
+          {
+            "label": "Incorporation",
+            "text": "Mix with soil in bottom of holes prior to transplanting. Apply 4.0 lb. at Transplanting."
+          },
+          {
+            "label": "Broadcast",
+            "text": "Apply 8.0 lb. at Transplanting."
+          }
+        ]
+      },
+      {
+        "heading": "Ornamentals",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Low Rate",
+            "text": "(for heavy substrates with porosity < 60%)"
+          },
+          {
+            "label": "Incorporation",
+            "text": "20 lb. per cubic yard of media"
+          },
+          {
+            "label": "Landscape",
+            "text": "33 lb. per 1000 sq. ft."
+          },
+          {
+            "label": "Medium Rate",
+            "text": "(for most nursery stock and foliage plants)"
+          },
+          {
+            "label": "Incorporation",
+            "text": "30 lb. per cubic yard of media"
+          },
+          {
+            "label": "Landscape",
+            "text": "58 lb. per 1000 sq. ft."
+          },
+          {
+            "label": "High Rate",
+            "text": "(for light substrates with porosity > 80%)"
+          },
+          {
+            "label": "Incorporation",
+            "text": "38 lb. per cubic yard of media"
+          },
+          {
+            "label": "Landscape",
+            "text": "82 lb. per 1000 sq. ft."
+          }
+        ]
+      }
+    ],
+    "containers": [
+      {
+        "size": "1 Gallon",
+        "low": "40 grams",
+        "high": "75 grams"
+      },
+      {
+        "size": "2 Gallon",
+        "low": "75 grams",
+        "high": "150 grams"
+      },
+      {
+        "size": "3 Gallon",
+        "low": "115 grams",
+        "high": "240 grams"
+      },
+      {
+        "size": "5 Gallon",
+        "low": "150 grams",
+        "high": "325 grams"
+      },
+      {
+        "size": "7 Gallon",
+        "low": "225 grams",
+        "high": "490 grams"
+      },
+      {
+        "size": "10 Gallon",
+        "low": "275 grams",
+        "high": "590 grams"
+      },
+      {
+        "size": "15 Gallon",
+        "low": "300 grams",
+        "high": "625 grams"
+      }
+    ],
+    "features": []
+  },
+  {
+    "slug": "sigma-7-2-1-bio",
+    "name": "Sigma 7-2-1 Bio",
+    "npk": "7-2-1",
+    "line": "agriculture",
+    "lineLabel": "Agriculture · Large Grade",
+    "subtitle": "With Value-Added Biologicals",
+    "description": "For higher organic nitrogen requirements, a value-added fertilizer functioning at the rhizosphere to fuel metabolic nutrient cycling and organic mineralization. Between the carbon-inducing and humic acid-rich content, your roots will have the nourishment needed for sustainable yields. Boost root growth and overall plant health with Sigma 7-2-1 true granular microbial fertilizer.",
+    "omri": true,
+    "packaging": [
+      "50 lb poly bag (22.68 kg)",
+      "2,000 lb tote (907 kg)",
+      "Bulk load"
+    ],
+    "image": "assets/img/products/sigma-7-2-1-bio.webp",
+    "docs": [
+      {
+        "type": "Label",
+        "label": "Product Label",
+        "href": "assets/docs/sigma-7-2-1-bio/SIG_Sigma7-2-1Bio_Label_50lb_US01_V05_2022-Nov-15.pdf",
+        "size": 7429114
+      },
+      {
+        "type": "OMRI",
+        "label": "OMRI Listing Certificate",
+        "href": "https://www.omri.org/mfg/sig/certificate/8513",
+        "external": true
+      },
+      {
+        "type": "SDS",
+        "label": "Safety Data Sheet (SDS)",
+        "href": "assets/docs/sigma-7-2-1-bio/sds-sigma-7-2-1-bio.pdf",
+        "size": 405653
+      },
+      {
+        "type": "FLYER",
+        "label": "Product Flyer",
+        "href": "assets/docs/sigma-7-2-1-bio/Sigma_7-2-1_Bio_Flier_5-5x8-5_ONLINE_122022.pdf",
+        "size": 329046
+      }
+    ],
+    "calcName": "OMRI Sigma 7-2-1 Bio",
+    "placeholder": false,
+    "analysis": [
+      {
+        "item": "Total Nitrogen (N)",
+        "value": "7.0%",
+        "sub": false
+      },
+      {
+        "item": "Water Soluble Nitrogen",
+        "value": "1.9%",
+        "sub": true
+      },
+      {
+        "item": "Water Insoluble Nitrogen",
+        "value": "5.1%",
+        "sub": true
+      },
+      {
+        "item": "Available Phosphate (P2O5)",
+        "value": "2.0%",
+        "sub": false
+      },
+      {
+        "item": "Soluble Potash (K2O)",
+        "value": "1.0%",
+        "sub": false
+      },
+      {
+        "item": "Calcium (Ca)",
+        "value": "5.0%",
+        "sub": false
+      },
+      {
+        "item": "Iron (Fe)",
+        "value": "0.1%",
+        "sub": false
+      }
+    ],
+    "derived": "Derived from poultry manure and feather meal.",
+    "notes": [
+      "Also available without BIO Package (beneficial bacteria, endomycorrhizae, trichoderma)"
+    ],
+    "biologicals": [
+      {
+        "item": "Humic Acids",
+        "value": "3.0%"
+      },
+      {
+        "item": "Beneficial Bacteria",
+        "value": "2,800,000 CFU/Lb"
+      },
+      {
+        "item": "Endomycorrhizae",
+        "value": "6.1 Prop/Lb."
+      },
+      {
+        "item": "Trichoderma",
+        "value": "480,000 CFU/Lb"
+      }
+    ],
+    "rates": [
+      {
+        "heading": "Turf",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Natural",
+            "text": "Medium: 11 lb. / 1000 sq ft. (0.75 lb. N)"
+          },
+          {
+            "label": "Lawns",
+            "text": "High: 14 lb. / 1000 sq ft.(1.0 lb. N)"
+          }
+        ]
+      },
+      {
+        "heading": "Golf Course",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Low Rate",
+            "text": "7 lb. / 1000 sq ft.(0.50 lb. N)"
+          },
+          {
+            "label": "Medium Rate",
+            "text": "11 lb. / 1000 sq ft. (0.75 lb. N)"
+          },
+          {
+            "label": "High Rate",
+            "text": "14 lb. / 1000 sq ft. (1.0 lb. N)"
+          }
+        ]
+      },
+      {
+        "heading": "Vegetable",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Low Rate",
+            "text": "(Examples – peas, beans) Incorporate 571 lb. at planting or per organic certification rules."
+          },
+          {
+            "label": "Medium Rate",
+            "text": "(Examples – asparagus, beet, carrot, melon, pepper, cauliflower, broccoli, brussels sprouts, and celery) Incorporate 1430 lb. per acre at planting or per organic certification rules."
+          },
+          {
+            "label": "High Rate",
+            "text": "(Examples – onion, sweet corn, potato, tomato) Incorporate 1430 lb. per acre at planting then broadcast or band additional fertilizer after plants are well established or per organic certification rules."
+          }
+        ]
+      },
+      {
+        "heading": "Tree & Palm",
+        "intro": "Rate based on 1” of trunk diameter (caliper). Example: for 10” trunk diameter (caliper) multiply label rate by 10.",
+        "rows": [
+          {
+            "label": "Incorporation",
+            "text": "Mix with soil in bottom of holes prior to transplanting. Apply 3.5 lb. at Transplanting."
+          },
+          {
+            "label": "Broadcast",
+            "text": "Apply 7.0 lb. at Transplanting."
+          }
+        ]
+      },
+      {
+        "heading": "Ornamentals",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Low Rate",
+            "text": "(for heavy substrates with porosity < 60%)"
+          },
+          {
+            "label": "Incorporation",
+            "text": "17 lb. per cubic yard of media"
+          },
+          {
+            "label": "Landscape",
+            "text": "28 lb. per 1000 sq. ft."
+          },
+          {
+            "label": "Medium Rate",
+            "text": "(for most nursery stock and foliage plants)"
+          },
+          {
+            "label": "Incorporation",
+            "text": "26 lb. per cubic yard of media"
+          },
+          {
+            "label": "Landscape",
+            "text": "49 lb. per 1000 sq. ft."
+          },
+          {
+            "label": "High Rate",
+            "text": "(for light substrates with porosity > 80%)"
+          },
+          {
+            "label": "Incorporation",
+            "text": "32 lb. per cubic yard of media"
+          },
+          {
+            "label": "Landscape",
+            "text": "70 lb. per 1000 sq. ft."
+          }
+        ]
+      }
+    ],
+    "containers": [
+      {
+        "size": "1 Gallon",
+        "low": "23 grams",
+        "high": "43 grams"
+      },
+      {
+        "size": "2 Gallon",
+        "low": "43 grams",
+        "high": "86 grams"
+      },
+      {
+        "size": "3 Gallon",
+        "low": "66 grams",
+        "high": "137 grams"
+      },
+      {
+        "size": "5 Gallon",
+        "low": "150 grams",
+        "high": "186 grams"
+      },
+      {
+        "size": "7 Gallon",
+        "low": "129 grams",
+        "high": "280 grams"
+      },
+      {
+        "size": "10 Gallon",
+        "low": "157 grams",
+        "high": "337 grams"
+      },
+      {
+        "size": "15 Gallon",
+        "low": "171 grams",
+        "high": "357 grams"
+      }
+    ],
+    "features": []
+  },
+  {
+    "slug": "sigma-8-5-1-bio",
+    "name": "Sigma 8-5-1 Bio",
+    "npk": "8-5-1",
+    "line": "agriculture",
+    "lineLabel": "Agriculture · Large Grade",
+    "subtitle": "With Value-Added Biologicals",
+    "description": "Sigma’s exclusive non-manure based formula. An all organic granular fertilizer consisting entirely of high quality animal proteins including meat, bone and blood meal. Designed for all turf and organic farming applications requiring higher nitrogen. Our fertilizer is enhanced with organic carbon minerals and humic acids to provide sustainable crop yields. Provides a slow and complete release of nutrition over 8 - 12 weeks.",
+    "omri": true,
+    "packaging": [
+      "50 lb poly bag (22.68 kg)",
+      "2,000 lb tote (907 kg)",
+      "Bulk load"
+    ],
+    "image": "assets/img/products/sigma-8-5-1-bio.webp",
+    "docs": [
+      {
+        "type": "Label",
+        "label": "Product Label",
+        "href": "assets/docs/sigma-8-5-1-bio/Sigma_8-5-1_Bio_Label_111522.pdf",
+        "size": 599939
+      },
+      {
+        "type": "OMRI",
+        "label": "OMRI Listing Certificate",
+        "href": "https://www.omri.org/mfg/sig/certificate/8514",
+        "external": true
+      },
+      {
+        "type": "SDS",
+        "label": "Safety Data Sheet (SDS)",
+        "href": "assets/docs/sigma-8-5-1-bio/sds-sigma-9-6-1-bio.pdf",
+        "size": 323783
+      },
+      {
+        "type": "FLYER",
+        "label": "Product Flyer",
+        "href": "assets/docs/sigma-8-5-1-bio/Sigma_8-5-1_Bio_Flier_5-5x8-5_ONLINE_122022.pdf",
+        "size": 390560
+      }
+    ],
+    "calcName": "OMRI Sigma 8-5-1 Bio",
+    "placeholder": false,
+    "analysis": [
+      {
+        "item": "Total Nitrogen (N)",
+        "value": "8.0%",
+        "sub": false
+      },
+      {
+        "item": "Water Soluble Nitrogen",
+        "value": "1.25%",
+        "sub": true
+      },
+      {
+        "item": "Water Insoluble Nitrogen",
+        "value": "6.75%",
+        "sub": true
+      },
+      {
+        "item": "Available Phosphate (P2O5)",
+        "value": "5.0%",
+        "sub": false
+      },
+      {
+        "item": "Soluble Potash (K2O)",
+        "value": "1.0%",
+        "sub": false
+      },
+      {
+        "item": "Calcium (Ca)",
+        "value": "5.0%",
+        "sub": false
+      }
+    ],
+    "derived": "Derived from meat and bone meal",
+    "notes": [
+      "Also available without BIO Package (beneficial bacteria, endomycorrhizae, trichoderma)"
+    ],
+    "biologicals": [
+      {
+        "item": "Humic Acids",
+        "value": "3.0%"
+      },
+      {
+        "item": "Beneficial Bacteria",
+        "value": "2,800,000 CFU/Lb"
+      },
+      {
+        "item": "Endomycorrhizae",
+        "value": "6.2 Prop/Lb."
+      },
+      {
+        "item": "Trichoderma",
+        "value": "480,000 CFU/Lb"
+      }
+    ],
+    "rates": [
+      {
+        "heading": "Turf",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Natural",
+            "text": "Medium: 9 lb. / 1000 sq ft. (0.75 lb. N)"
+          },
+          {
+            "label": "Lawns",
+            "text": "High: 12 lb. / 1000 sq ft.(1.0 lb. N)"
+          }
+        ]
+      },
+      {
+        "heading": "Golf Course",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Low Rate",
+            "text": "6 lb. / 1000 sq ft.(0.50 lb. N)"
+          },
+          {
+            "label": "Medium Rate",
+            "text": "9 lb. / 1000 sq ft. (0.75 lb. N)"
+          },
+          {
+            "label": "High Rate",
+            "text": "12 lb. / 1000 sq ft. (1.0 lb. N)"
+          }
+        ]
+      },
+      {
+        "heading": "Vegetable",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Low Rate",
+            "text": "Examples - peas, beans) Incorporate 300 lb.per acre 2-3 weeks prior to planting."
+          },
+          {
+            "label": "Medium Rate",
+            "text": "(Examples - asparagus, beet, carrot, melon, pepper, cauliflower, broccoli, brussels sprout, and celery) Incorporate 950 lb. per acre 2-3 weeks prior to planting."
+          },
+          {
+            "label": "High Rate",
+            "text": "(Examples - onion, sweet corn, potato, tomato) Incorporate 950 lb. per acre 2-3 weeks prior to planting."
+          }
+        ]
+      },
+      {
+        "heading": "Tree & Palm",
+        "intro": "Rate based on 1” of trunk diameter (caliper). Example: for 10” trunk diameter (caliper) multiply label rate by 10.",
+        "rows": [
+          {
+            "label": "Incorporation",
+            "text": "Mix with soil in bottom of holes prior to transplanting. Apply 3 lb. at Transplanting."
+          },
+          {
+            "label": "Broadcast",
+            "text": "Apply 6.0 lb. at Transplanting."
+          }
+        ]
+      },
+      {
+        "heading": "Ornamentals",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Low Rate",
+            "text": "(for heavy substrates with porosity < 50%)"
+          },
+          {
+            "label": "Incorporation",
+            "text": "14 lb. per cubic yard of media"
+          },
+          {
+            "label": "Landscape",
+            "text": "24 lb. per 1000 sq. ft."
+          },
+          {
+            "label": "Medium Rate",
+            "text": "(for most nursery stock and foliage plants)"
+          },
+          {
+            "label": "Incorporation",
+            "text": "22 lb. per cubic yard of media"
+          },
+          {
+            "label": "Landscape",
+            "text": "41 lb. per 1000 sq. ft."
+          },
+          {
+            "label": "High Rate",
+            "text": "(for light substrates with porosity > 67%)"
+          },
+          {
+            "label": "Incorporation",
+            "text": "27 lb. per cubic yard of media"
+          },
+          {
+            "label": "Landscape",
+            "text": "59 lb. per 1000 sq. ft."
+          }
+        ]
+      }
+    ],
+    "containers": [
+      {
+        "size": "1 Gallon",
+        "low": "27 grams",
+        "high": "54 grams"
+      },
+      {
+        "size": "2 Gallon",
+        "low": "54 grams",
+        "high": "108 grams"
+      },
+      {
+        "size": "3 Gallon",
+        "low": "81 grams",
+        "high": "171 grams"
+      },
+      {
+        "size": "5 Gallon",
+        "low": "108 grams",
+        "high": "234 grams"
+      },
+      {
+        "size": "7 Gallon",
+        "low": "162 grams",
+        "high": "351 grams"
+      },
+      {
+        "size": "10 Gallon",
+        "low": "198 grams",
+        "high": "423 grams"
+      },
+      {
+        "size": "15 Gallon",
+        "low": "216 grams",
+        "high": "449 grams"
+      }
+    ],
+    "features": []
+  },
+  {
+    "slug": "sigma-4-4-4-bio-fine",
+    "name": "Sigma 4-4-4 Bio Fine Grade",
+    "npk": "4-4-4",
+    "line": "specialty",
+    "lineLabel": "Specialty · Fine Grade",
+    "subtitle": "With Value-Added Biologicals",
+    "description": "This premium micro-granular fertilizer has a size grade number (SGN) of 110 and contains 100% organic, nutrient-rich ingredients infused with value-added biologicals. Humic acids and beneficial microorganisms work together to strengthen roots for greater absorption of water and nutrients. Recommended for spring and fall aeration recovery, midsummer stress management, winter dormant feeding, cool-season overseeding nutrition and warm-season transition.",
+    "omri": true,
+    "packaging": [
+      "50 lb poly bag (22.68 kg)",
+      "2,000 lb tote (907 kg)",
+      "Bulk load"
+    ],
+    "image": "assets/img/products/sigma-4-4-4-bio-fine.webp",
+    "docs": [
+      {
+        "type": "Label",
+        "label": "Product Label",
+        "href": "assets/docs/sigma-4-4-4-bio-fine/SIG_Sigma4-4-4BioFineGrade_Label_50lb_US01_V01_2023-Aug-08.pdf",
+        "size": 1007993
+      },
+      {
+        "type": "OMRI",
+        "label": "OMRI Listing Certificate",
+        "href": "https://www.omri.org/mfg/sig/certificate/8511",
+        "external": true
+      },
+      {
+        "type": "SDS",
+        "label": "Safety Data Sheet (SDS)",
+        "href": "assets/docs/sigma-4-4-4-bio-fine/sds-sigma-4-4-4-bio-1.pdf",
+        "size": 448077
+      },
+      {
+        "type": "FLYER",
+        "label": "Product Flyer",
+        "href": "assets/docs/sigma-4-4-4-bio-fine/Sigma_4-4-4_Bio_FG_Flier_5-5x8-5_ONLINE_022023.pdf",
+        "size": 3410112
+      }
+    ],
+    "calcName": "OMRI Sigma 4-4-4 Bio Fine",
+    "placeholder": false,
+    "analysis": [
+      {
+        "item": "Total Nitrogen (N)",
+        "value": "4.0%",
+        "sub": false
+      },
+      {
+        "item": "Ammoniacal Nitrogen",
+        "value": "0.2%",
+        "sub": true
+      },
+      {
+        "item": "Other Water Soluble Nitrogen",
+        "value": "0.6%",
+        "sub": true
+      },
+      {
+        "item": "Water Insoluble Nitrogen",
+        "value": "3.2%",
+        "sub": true
+      },
+      {
+        "item": "Available Phosphate (P2O5)",
+        "value": "4.0%",
+        "sub": false
+      },
+      {
+        "item": "Soluble Potash (K2O)",
+        "value": "4.0%",
+        "sub": false
+      },
+      {
+        "item": "Calcium (Ca)",
+        "value": "6.0%",
+        "sub": false
+      },
+      {
+        "item": "Iron (Fe)",
+        "value": "0.1%",
+        "sub": false
+      }
+    ],
+    "derived": "Derived from processed poultry manure, feather meal, bone meal and sulfate of potash",
+    "notes": [
+      "Also available without BIO Package (beneficial bacteria, endomycorrhizae, trichoderma)"
+    ],
+    "biologicals": [
+      {
+        "item": "Humic Acids",
+        "value": "3.0%"
+      },
+      {
+        "item": "Beneficial Bacteria",
+        "value": "2,800,000 CFU/Lb"
+      },
+      {
+        "item": "Endomycorrhizae",
+        "value": "6.1 Prop/Lb."
+      },
+      {
+        "item": "Trichoderma",
+        "value": "480,000 CFU/Lb"
+      }
+    ],
+    "rates": [
+      {
+        "heading": "Turf",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Natural",
+            "text": "Medium: 19 lb. / 1000 sq ft. (0.75 lb. N)"
+          },
+          {
+            "label": "Lawns",
+            "text": "High: 25 lb. / 1000 sq ft.(1.0 lb. N)"
+          }
+        ]
+      },
+      {
+        "heading": "Golf Course",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Low Rate",
+            "text": "12.5 lb. / 1000 sq ft.(0.50 lb. N)"
+          },
+          {
+            "label": "Medium Rate",
+            "text": "19 lb. / 1000 sq ft. (0.75 lb. N)"
+          },
+          {
+            "label": "High Rate",
+            "text": "25 lb. / 1000 sq ft. (1.0 lb. N)"
+          }
+        ]
+      },
+      {
+        "heading": "Vegetable",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Low Rate",
+            "text": "(Examples - peas, beans) Incorporate 1000 lb. per acre 2-3 weeks prior to planting."
+          },
+          {
+            "label": "Medium Rate",
+            "text": "(Examples - asparagus, beet, carrot, melon, pepper, cauliflower, broccoli, brussels sprouts, and celery) Incorporate 2500 lb. per acre 2-3 weeks prior to planting."
+          },
+          {
+            "label": "High Rate",
+            "text": "(Examples - onion, sweet corn, potato, tomato) Apply 2500 lb. per acre at planting then broadcast or band additional fertilizer after plants are well established or per organic certification rules."
+          }
+        ]
+      },
+      {
+        "heading": "Tree & Palm",
+        "intro": "Rate based on 1” of trunk diameter (caliper). Example: for 10” trunk diameter (caliper) multiply label rate by 10.",
+        "rows": [
+          {
+            "label": "Incorporation",
+            "text": "Mix with soil in bottom of holes prior to transplanting. Apply 6.0 lb. at Transplanting."
+          },
+          {
+            "label": "Broadcast",
+            "text": "Apply 12.0 lb. at Transplanting."
+          }
+        ]
+      },
+      {
+        "heading": "Ornamentals",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Low Rate",
+            "text": "(for heavy substrates with porosity < 60%)"
+          },
+          {
+            "label": "Incorporation",
+            "text": "30 lb. per cubic yard of media"
+          },
+          {
+            "label": "Landscape",
+            "text": "49 lb. per 1000 sq. ft."
+          },
+          {
+            "label": "Medium Rate",
+            "text": "(for most nursery stock and foliage plants)"
+          },
+          {
+            "label": "Incorporation",
+            "text": "45 lb. per cubic yard of media"
+          },
+          {
+            "label": "Landscape",
+            "text": "86 lb. per 1000 sq. ft."
+          },
+          {
+            "label": "High Rate",
+            "text": "(for light substrates with porosity > 80%)"
+          },
+          {
+            "label": "Incorporation",
+            "text": "56 lb. per cubic yard of media"
+          },
+          {
+            "label": "Landscape",
+            "text": "124 lb. per 1000 sq. ft."
+          }
+        ]
+      }
+    ],
+    "containers": [
+      {
+        "size": "1 Gallon",
+        "low": "56 grams",
+        "high": "112 grams"
+      },
+      {
+        "size": "2 Gallon",
+        "low": "112 grams",
+        "high": "225 grams"
+      },
+      {
+        "size": "3 Gallon",
+        "low": "169 grams",
+        "high": "356 grams"
+      },
+      {
+        "size": "5 Gallon",
+        "low": "225 grams",
+        "high": "488 grams"
+      },
+      {
+        "size": "7 Gallon",
+        "low": "338 grams",
+        "high": "731 grams"
+      },
+      {
+        "size": "10 Gallon",
+        "low": "413 grams",
+        "high": "881 grams"
+      },
+      {
+        "size": "15 Gallon",
+        "low": "450 grams",
+        "high": "938 grams"
+      }
+    ],
+    "features": []
+  },
+  {
+    "slug": "sigma-4-3-2-bio-fine",
+    "name": "Sigma 4-3-2 Bio 2x Fine Grade",
+    "npk": "4-3-2",
+    "line": "specialty",
+    "lineLabel": "Specialty · Fine Grade",
+    "subtitle": "With Twice the Value-Added Biologicals",
+    "description": "Sigma's 4-3-2 Bio formula with twice the concentration of value-added biologicals, produced in a fine (specialty) grade for turf, athletic fields and landscape beds. The label, SDS and full guaranteed analysis are available from Terra Elemental on request.",
+    "omri": false,
+    "packaging": [
+      "50 lb poly bag (22.68 kg)",
+      "2,000 lb tote (907 kg)",
+      "Bulk load"
+    ],
+    "image": null,
+    "docs": [],
+    "calcName": null,
+    "placeholder": true,
+    "analysis": [],
+    "derived": "",
+    "notes": [],
+    "biologicals": [],
+    "rates": [],
+    "containers": [],
+    "features": []
+  },
+  {
+    "slug": "sigma-5-3-2-bio-fine",
+    "name": "Sigma 5-3-2 Bio Fine Grade",
+    "npk": "5-3-2",
+    "line": "specialty",
+    "lineLabel": "Specialty · Fine Grade",
+    "subtitle": "With Value-Added Biologicals",
+    "description": "Perfect for Spring and Fall aeration recovery, midsummer stress management, winter dormant feeding, cool-season overseeding nutrition, and warm-season transition. Scientifically formulated to make your golf course tournament ready and deliver strong & healthy turf throughout the seasons.",
+    "omri": true,
+    "packaging": [
+      "50 lb poly bag (22.68 kg)",
+      "2,000 lb tote (907 kg)",
+      "Bulk load"
+    ],
+    "image": "assets/img/products/sigma-5-3-2-bio-fine.webp",
+    "docs": [
+      {
+        "type": "Label",
+        "label": "Product Label",
+        "href": "assets/docs/sigma-5-3-2-bio-fine/SIG_Sigma5-3-2Bio_Label_50lb_US01_V14_2023-Aug-30.pdf",
+        "size": 1006659
+      },
+      {
+        "type": "OMRI",
+        "label": "OMRI Listing Certificate",
+        "href": "https://www.omri.org/mfg/sig/certificate/13802",
+        "external": true
+      },
+      {
+        "type": "SDS",
+        "label": "Safety Data Sheet (SDS)",
+        "href": "assets/docs/sigma-5-3-2-bio-fine/Sigma-5-3-2-Bio-SDS_EN.pdf",
+        "size": 100249
+      },
+      {
+        "type": "FLYER",
+        "label": "Product Flyer",
+        "href": "assets/docs/sigma-5-3-2-bio-fine/Sigma_5-3-2_Bio_FG_Flier_5-5x8-5_ONLINE_122022.pdf",
+        "size": 824872
+      }
+    ],
+    "calcName": "OMRI Sigma 5-3-2 Bio Fine",
+    "placeholder": false,
+    "analysis": [
+      {
+        "item": "Total Nitrogen (N)",
+        "value": "5.0%",
+        "sub": false
+      },
+      {
+        "item": "Water Soluble Nitrogen",
+        "value": "1.2%",
+        "sub": true
+      },
+      {
+        "item": "Water Insoluble Nitrogen*",
+        "value": "3.8%",
+        "sub": true
+      },
+      {
+        "item": "Available Phosphate (P2O5)",
+        "value": "3.0%",
+        "sub": false
+      },
+      {
+        "item": "Soluble Potash (K2O)",
+        "value": "2.0%",
+        "sub": false
+      },
+      {
+        "item": "Calcium (Ca)",
+        "value": "7.0%",
+        "sub": false
+      },
+      {
+        "item": "Iron (Fe)",
+        "value": "0.1%",
+        "sub": false
+      }
+    ],
+    "derived": "Derived from processed poultry manure, bone meal, feather meal, and sulfate of potash.",
+    "notes": [
+      "Also available without BIO Package (beneficial bacteria, endomycorrhizae, trichoderma)"
+    ],
+    "biologicals": [
+      {
+        "item": "Humic Acids",
+        "value": "3.0%"
+      },
+      {
+        "item": "Beneficial Bacteria",
+        "value": "2,800,000 CFU/Lb"
+      },
+      {
+        "item": "Endomycorrhizae",
+        "value": "6.1 Prop/Lb."
+      },
+      {
+        "item": "Trichoderma",
+        "value": "480,000 CFU/Lb"
+      }
+    ],
+    "rates": [
+      {
+        "heading": "Turf",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Natural",
+            "text": "15 lb. (0.75 lb. N) / 1000 sq ft"
+          },
+          {
+            "label": "Lawns",
+            "text": "20 lb. (1 lb. N) / 1000 sq ft."
+          }
+        ]
+      },
+      {
+        "heading": "Golf Course",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Low Rate",
+            "text": "10 lb. (0.50 lb. N) / 1000 sq ft."
+          },
+          {
+            "label": "Medium Rate",
+            "text": "15 lb. (0.75 lb. N) / 1000 sq ft."
+          },
+          {
+            "label": "High Rate",
+            "text": "20 lb. (1 lb. N) / 1000 sq ft."
+          }
+        ]
+      },
+      {
+        "heading": "Vegetable",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Low Rate",
+            "text": "(Examples - peas, beans) Incorporate 800 lb. per acre 2-3 weeks prior to planting."
+          },
+          {
+            "label": "Medium Rate",
+            "text": "(Examples - asparagus, beet, carrot, melon, pepper, cauliflower, broccoli, brussels sprout, and celery) Incorporate 2000 lb. per acre 2-3 weeks prior to planting."
+          },
+          {
+            "label": "High Rate",
+            "text": "(Examples - onion, sweet corn, potato, tomato) Incorporate 2000 lb. per acre 2-3 weeks prior to planting."
+          }
+        ]
+      },
+      {
+        "heading": "Tree & Palm",
+        "intro": "Rate based on 1” of trunk diameter (caliper). Example: for 10” trunk diameter (caliper) multiply label rate by 10.",
+        "rows": [
+          {
+            "label": "Incorporation",
+            "text": "Mix with soil in bottom of holes prior to transplanting. Apply 5.0 lb. at transplanting"
+          },
+          {
+            "label": "Broadcast",
+            "text": "Apply 10.0 lb. at transplanting."
+          }
+        ]
+      },
+      {
+        "heading": "Ornamentals",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Low Rate",
+            "text": "(for heavy substrates with porosity < 60%)"
+          },
+          {
+            "label": "Incorporation",
+            "text": "24 lb. per cubic yard of media"
+          },
+          {
+            "label": "Landscape",
+            "text": "40 lb. per 1000 sq. ft."
+          },
+          {
+            "label": "Medium Rate",
+            "text": "(for most nursery stock and foliage plants)"
+          },
+          {
+            "label": "Incorporation",
+            "text": "36 lb. per cubic yard of media"
+          },
+          {
+            "label": "Landscape",
+            "text": "69 lb. per 1000 sq. ft."
+          },
+          {
+            "label": "High Rate",
+            "text": "(for light substrates with porosity > 80%)"
+          },
+          {
+            "label": "Incorporation",
+            "text": "45 lb. per cubic yard of media"
+          },
+          {
+            "label": "Landscape",
+            "text": "100 lb. per 1000 sq. ft."
+          }
+        ]
+      }
+    ],
+    "containers": [
+      {
+        "size": "1 Gallon",
+        "low": "30 grams",
+        "high": "60 grams"
+      },
+      {
+        "size": "2 Gallon",
+        "low": "60 grams",
+        "high": "120 grams"
+      },
+      {
+        "size": "3 Gallon",
+        "low": "92 grams",
+        "high": "192 grams"
+      },
+      {
+        "size": "5 Gallon",
+        "low": "120 grams",
+        "high": "260 grams"
+      },
+      {
+        "size": "7 Gallon",
+        "low": "180 grams",
+        "high": "392 grams"
+      },
+      {
+        "size": "10 Gallon",
+        "low": "220 grams",
+        "high": "472 grams"
+      },
+      {
+        "size": "15 Gallon",
+        "low": "240 grams",
+        "high": "500 grams"
+      }
+    ],
+    "features": []
+  },
+  {
+    "slug": "sigma-6-2-6-bio-fine",
+    "name": "Sigma 6-2-6 Bio Fine Grade",
+    "npk": "6-2-6",
+    "line": "specialty",
+    "lineLabel": "Specialty · Fine Grade",
+    "subtitle": "With Value-Added Biologicals",
+    "description": "High nitrogen, high potassium and lower phosphorus make this a perfect choice in areas with phosphorus restrictions in place. Great for Spring and Fall aeration recovery, cool-season overseeding nutrition, and warm-season transition. Scientifically formulated to make your golf course tournament ready and deliver strong & healthy turf throughout the seasons.",
+    "omri": true,
+    "packaging": [
+      "50 lb poly bag (22.68 kg)",
+      "2,000 lb tote (907 kg)",
+      "Bulk load"
+    ],
+    "image": "assets/img/products/sigma-6-2-6-bio-fine.webp",
+    "docs": [
+      {
+        "type": "Label",
+        "label": "Product Label",
+        "href": "assets/docs/sigma-6-2-6-bio-fine/Sigma-6-2-6-Bio-new.pdf",
+        "size": 4716924
+      },
+      {
+        "type": "OMRI",
+        "label": "OMRI Listing Certificate",
+        "href": "https://www.omri.org/mfg/sig/certificate/8512",
+        "external": true
+      },
+      {
+        "type": "SDS",
+        "label": "Safety Data Sheet (SDS)",
+        "href": "assets/docs/sigma-6-2-6-bio-fine/sds-sigma-6-2-6-bio.pdf",
+        "size": 411923
+      },
+      {
+        "type": "FLYER",
+        "label": "Product Flyer",
+        "href": "assets/docs/sigma-6-2-6-bio-fine/Sigma_6-2-6_Bio_FG_Flier_5-5x8-5_ONLINE_022023.pdf",
+        "size": 2330119
+      }
+    ],
+    "calcName": "OMRI Sigma 6-2-6 Bio Fine",
+    "placeholder": false,
+    "analysis": [
+      {
+        "item": "Total Nitrogen (N)",
+        "value": "6.0%",
+        "sub": false
+      },
+      {
+        "item": "Water Soluble Nitrogen",
+        "value": "0.79%",
+        "sub": true
+      },
+      {
+        "item": "Water Insoluble Nitrogen",
+        "value": "3.36%",
+        "sub": true
+      },
+      {
+        "item": "Available Phosphate (P2O5)",
+        "value": "2.0%",
+        "sub": false
+      },
+      {
+        "item": "Soluble Potash (K2O)",
+        "value": "6.0%",
+        "sub": false
+      },
+      {
+        "item": "Calcium (Ca)",
+        "value": "5.0%",
+        "sub": false
+      },
+      {
+        "item": "Iron (Fe)",
+        "value": "0.2%",
+        "sub": false
+      }
+    ],
+    "derived": "Derived from processed poultry manure and bone meal.",
+    "notes": [
+      "Also available without BIO Package (beneficial bacteria, endomycorrhizae, trichoderma)"
+    ],
+    "biologicals": [
+      {
+        "item": "Humic Acids",
+        "value": "3.0%"
+      },
+      {
+        "item": "Beneficial Bacteria",
+        "value": "2,800,000 CFU/Lb"
+      },
+      {
+        "item": "Endomycorrhizae",
+        "value": "6.2 Prop/Lb."
+      },
+      {
+        "item": "Trichoderma",
+        "value": "480,000 CFU/Lb"
+      }
+    ],
+    "rates": [
+      {
+        "heading": "Turf",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Natural",
+            "text": "Medium: 12.5 lb. / 1000 sq ft. (0.75 lb. N)"
+          },
+          {
+            "label": "Lawns",
+            "text": "High: 17 lb. / 1000 sq ft.(1.0 lb. N)"
+          }
+        ]
+      },
+      {
+        "heading": "Golf Course",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Low Rate",
+            "text": "8.5 lb. / 1000 sq ft.(0.50 lb. N)"
+          },
+          {
+            "label": "Medium Rate",
+            "text": "12.5 lb. / 1000 sq ft. (0.75 lb. N)"
+          },
+          {
+            "label": "High Rate",
+            "text": "17 lb. / 1000 sq ft. (1.0 lb. N)"
+          }
+        ]
+      },
+      {
+        "heading": "Vegetable",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Low Rate",
+            "text": "(Examples - peas, beans) Incorporate 650 lb. at planting or per organic certification rules."
+          },
+          {
+            "label": "Medium Rate",
+            "text": "(Examples - asparagus, beet, carrot, melon, pepper, cauliflower, broccoli, brussels sprouts, and celery) Incorporate 1300 lb. per acre at planting or per organic certification rules."
+          },
+          {
+            "label": "High Rate",
+            "text": "(Examples - onion, sweet corn, potato, tomato) Apply 1300 lb. per acre at planting then broadcast or band additional fertilizer after plants are well established or per organic certification rules."
+          }
+        ]
+      },
+      {
+        "heading": "Tree & Palm",
+        "intro": "Rate based on 1” of trunk diameter (caliper). Example: for 10” trunk diameter (caliper) multiply label rate by 10",
+        "rows": [
+          {
+            "label": "Incorporation",
+            "text": "Mix with soil in bottom of holes prior to transplanting. Apply 4.0 lb. at Transplanting."
+          },
+          {
+            "label": "Broadcast",
+            "text": "Apply 8.0 lb. at Transplanting."
+          }
+        ]
+      },
+      {
+        "heading": "Ornamentals",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Low Rate",
+            "text": "(for heavy substrates with porosity < 60%)"
+          },
+          {
+            "label": "Incorporation",
+            "text": "20 lb. per cubic yard of media"
+          },
+          {
+            "label": "Landscape",
+            "text": "33 lb. per 1000 sq. ft."
+          },
+          {
+            "label": "Medium Rate",
+            "text": "(for most nursery stock and foliage plants)"
+          },
+          {
+            "label": "Incorporation",
+            "text": "30 lb. per cubic yard of media"
+          },
+          {
+            "label": "Landscape",
+            "text": "58 lb. per 1000 sq. ft."
+          },
+          {
+            "label": "High Rate",
+            "text": "(for light substrates with porosity > 80%)"
+          },
+          {
+            "label": "Incorporation",
+            "text": "38 lb. per cubic yard of media"
+          },
+          {
+            "label": "Landscape",
+            "text": "82 lb. per 1000 sq. ft."
+          }
+        ]
+      }
+    ],
+    "containers": [
+      {
+        "size": "1 Gallon",
+        "low": "40 grams",
+        "high": "75 grams"
+      },
+      {
+        "size": "2 Gallon",
+        "low": "75 grams",
+        "high": "150 grams"
+      },
+      {
+        "size": "3 Gallon",
+        "low": "115 grams",
+        "high": "240 grams"
+      },
+      {
+        "size": "5 Gallon",
+        "low": "150 grams",
+        "high": "325 grams"
+      },
+      {
+        "size": "7 Gallon",
+        "low": "225 grams",
+        "high": "490 grams"
+      },
+      {
+        "size": "10 Gallon",
+        "low": "275 grams",
+        "high": "590 grams"
+      },
+      {
+        "size": "15 Gallon",
+        "low": "300 grams",
+        "high": "625 grams"
+      }
+    ],
+    "features": []
+  },
+  {
+    "slug": "sigma-12-2-6-bio-bridge",
+    "name": "Sigma 12-2-6 Bio Bridge",
+    "npk": "12-2-6",
+    "line": "bridge",
+    "lineLabel": "Bio Bridge · Hybrid",
+    "subtitle": "With Value-Added Biologicals",
+    "description": "HYBRID FERTILIZER A two-to-one ratio high-performance dry blended fertilizer. Contains Sigma’s base fertilizer comprised of 100% organic ingredients including beneficial biologicals dry blended with several ingredients including polymer-coated sulfur-coated urea into a heterogeneous mixture. A slow-release fertilizer providing gradual, steady nutritional uptake for up to 10 weeks of plant response. Between the enhancement of organic carbon and humic acids, this fertilizer is proven to enhance plant growth and sustainability. Excellent for golf fairways and other turf and landscape applications.",
+    "omri": false,
+    "packaging": [
+      "50 lb poly bag (22.68 kg)",
+      "2,000 lb tote (907 kg)",
+      "Bulk load"
+    ],
+    "image": "assets/img/products/sigma-12-2-6-bio-bridge.webp",
+    "docs": [
+      {
+        "type": "Label",
+        "label": "Product Label",
+        "href": "assets/docs/sigma-12-2-6-bio-bridge/sigma-12-2-6-Bio-Bridge.pdf",
+        "size": 3873882
+      }
+    ],
+    "calcName": "Sigma 12-2-6 BRIDGE",
+    "placeholder": false,
+    "analysis": [
+      {
+        "item": "Total Nitrogen (N)",
+        "value": "12.0%",
+        "sub": false
+      },
+      {
+        "item": "Water Soluble Nitrogen",
+        "value": "10.8%",
+        "sub": true
+      },
+      {
+        "item": "Water Insoluble Nitrogen*",
+        "value": "1.2%",
+        "sub": true
+      },
+      {
+        "item": "Available Phosphate (P2O5)",
+        "value": "2.0%",
+        "sub": false
+      },
+      {
+        "item": "Soluble Potash (K2O)",
+        "value": "6.0%",
+        "sub": false
+      },
+      {
+        "item": "Magnesium (Mg)",
+        "value": "5.0%",
+        "sub": false
+      },
+      {
+        "item": "Sulfur (S)",
+        "value": "4.0%",
+        "sub": false
+      },
+      {
+        "item": "Combined Sulfur (S)",
+        "value": "4.0%",
+        "sub": true
+      },
+      {
+        "item": "Iron (Fe)",
+        "value": "0.3%",
+        "sub": false
+      },
+      {
+        "item": "Soluble Iron (Fe)",
+        "value": "0.3%",
+        "sub": true
+      }
+    ],
+    "derived": "Derived from composted poultry manure, urea, polymer coated sulfur coated urea, potassium magnesium sulfate, copper oxide, iron sulfate, iron oxide, manganese sulfate, manganese oxide, zinc sulfate, zinc oxide and sulfate of potash.",
+    "notes": [
+      "*10.8% Slow release nitrogen from polymer coated sulfur coated urea and poultry manure.",
+      "Also available without BIO Package (beneficial bacteria, endomycorrhizae, trichoderma)"
+    ],
+    "biologicals": [
+      {
+        "item": "Humic Acids",
+        "value": "3.0%"
+      },
+      {
+        "item": "Beneficial Bacteria",
+        "value": "2,800,000 CFU/Lb"
+      },
+      {
+        "item": "Endomycorrhizae",
+        "value": "6.2 Prop/Lb."
+      },
+      {
+        "item": "Trichoderma",
+        "value": "480,000 CFU/Lb"
+      }
+    ],
+    "rates": [
+      {
+        "heading": "Turf",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Natural",
+            "text": "Medium: 6.25 lb. / 1000 sq ft. (0.75 lb. N)"
+          },
+          {
+            "label": "Lawns",
+            "text": "High: 8.25 lb. / 1000 sq ft.(1.0 lb. N)"
+          }
+        ]
+      },
+      {
+        "heading": "Golf Course",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Low Rate",
+            "text": "4.25 lb. / 1000 sq ft.(0.50 lb. N)"
+          },
+          {
+            "label": "Medium Rate",
+            "text": "6.25 lb. / 1000 sq ft. (0.75 lb. N)"
+          },
+          {
+            "label": "High Rate",
+            "text": "8.25 lb. / 1000 sq ft. (1.0 lb. N)"
+          }
+        ]
+      }
+    ],
+    "containers": [],
+    "features": [
+      {
+        "heading": "Slow Release Formula",
+        "text": "Specially formulated with XCU® polymercoated sulfur-coated urea. This advanced dual coating technology results in a slow-release fertilizer providing gradual, steady nutritional uptake for up to 10 weeks of plant response. Combined with organic granules enhanced with humate, biologicals and micronutrients; this professional fertilizer is loaded for performance. Widely used by superintendents, LCOs, municipal turf managers and professional landscapers to economically and efficiently promote a plant response of health, growth and color for up to 10 weeks per application."
+      }
+    ]
+  },
+  {
+    "slug": "sigma-15-5-10-bio-bridge",
+    "name": "Sigma 15-5-10 Bio Bridge",
+    "npk": "15-5-10",
+    "line": "bridge",
+    "lineLabel": "Bio Bridge · Hybrid",
+    "subtitle": "Bridge Product with Value-Added Biologicals",
+    "description": "HYBRID FERTILIZER The ideal bridge product that combines the power of organic matter with the science of synthetic fertilizer. SIGMA 15-5-10 BIO BRIDGE provides fast green-up and recovery. Minerals such as organic carbon and humic acids help to strengthen plant roots for greater absorption of essential nutrients. Adds essential organic matter for microbes.",
+    "omri": false,
+    "packaging": [
+      "50 lb poly bag (22.68 kg)",
+      "2,000 lb tote (907 kg)",
+      "Bulk load"
+    ],
+    "image": "assets/img/products/sigma-15-5-10-bio-bridge.webp",
+    "docs": [
+      {
+        "type": "Label",
+        "label": "Product Label",
+        "href": "assets/docs/sigma-15-5-10-bio-bridge/Sigma_15-5-10_Bio_BRIDGE_Label_051623-R.pdf",
+        "size": 591047
+      },
+      {
+        "type": "SDS",
+        "label": "Safety Data Sheet (SDS)",
+        "href": "assets/docs/sigma-15-5-10-bio-bridge/SDS-Sigma15-5-10-Bio-BRIDGE.pdf",
+        "size": 246578
+      }
+    ],
+    "calcName": "Sigma 15-5-10 BRIDGE",
+    "placeholder": false,
+    "analysis": [
+      {
+        "item": "Total Nitrogen (N)",
+        "value": "15.00%",
+        "sub": false
+      },
+      {
+        "item": "Ammoniacal Nitrogen",
+        "value": "9.4%",
+        "sub": true
+      },
+      {
+        "item": "Urea Nitrogen*",
+        "value": "5.6%",
+        "sub": true
+      },
+      {
+        "item": "Available Phosphate (P2O5)",
+        "value": "5.00%",
+        "sub": false
+      },
+      {
+        "item": "Soluble Potash (K2O)",
+        "value": "10.00%",
+        "sub": false
+      },
+      {
+        "item": "Sulfur (S)",
+        "value": "10.00%",
+        "sub": false
+      },
+      {
+        "item": "Calcium (Ca)",
+        "value": "1.50%",
+        "sub": false
+      },
+      {
+        "item": "Magnesium (Mg)",
+        "value": "1.00%",
+        "sub": false
+      },
+      {
+        "item": "Boron (B)",
+        "value": "0.03%",
+        "sub": false
+      },
+      {
+        "item": "Copper (Cu)",
+        "value": "0.05%",
+        "sub": false
+      },
+      {
+        "item": "Iron (Fe)",
+        "value": "0.50%",
+        "sub": false
+      },
+      {
+        "item": "Manganese (Mn)",
+        "value": "0.05%",
+        "sub": false
+      },
+      {
+        "item": "Molybdenum (Mo)",
+        "value": "0.0005%",
+        "sub": false
+      },
+      {
+        "item": "Zinc (Zn)",
+        "value": "0.50%",
+        "sub": false
+      }
+    ],
+    "derived": "Derived from: Poultry Meal, Polymer Coated Urea, Polymer Coated Ammonium Sulfate, Ammonium Sulfate, Diammonium Phosphate, Zinc Sulfate, Sulfate of Potash, Boric Acid, Sodium Borate, Copper Oxide, Copper Sulfate, Iron Oxide, Iron Sulfate, Iron Amino Acid Complex, Manganese Oxide, Manganese Sulfate, Sodium Molybdate, Zinc Sulfate, Zinc Oxide, Gypsum, Calcium Oxide.",
+    "notes": [
+      "*5.6% Slowly Available Urea Nitrogen from Polymer Coated Urea and 2.7% Slowly Available Ammoniacal Nitrogen from Polymer Coated Ammonium Sulfate."
+    ],
+    "biologicals": [
+      {
+        "item": "Humic Acids",
+        "value": "3.0%"
+      },
+      {
+        "item": "Beneficial Bacteria",
+        "value": "420,000 CFU/Lb"
+      },
+      {
+        "item": "Endomycorrhizae",
+        "value": "0.91 Prop/Lb."
+      },
+      {
+        "item": "Trichoderma",
+        "value": "72,000 CFU/Lb"
+      }
+    ],
+    "rates": [],
+    "containers": [],
+    "features": []
+  },
+  {
+    "slug": "sigma-si",
+    "name": "Sigma Si (Silica)",
+    "npk": null,
+    "line": "amendment",
+    "lineLabel": "Soil Amendment",
+    "subtitle": "Plant-available silicon from volcanic minerals",
+    "description": "Energize your soil with Sigma Si, a natural source of plant-available silicon that improves soil and strengthens plants, which can result in higher yields and more resilient turf. Mined from unprocessed volcanic tuff, it can be applied on its own or blended as a 10% inclusion with other Sigma granular products.",
+    "omri": true,
+    "packaging": [
+      "50 lb poly bag (22.68 kg)",
+      "2,000 lb tote (907 kg)",
+      "Bulk load"
+    ],
+    "image": "assets/img/products/sigma-si.webp",
+    "docs": [
+      {
+        "type": "Label",
+        "label": "Product Label",
+        "href": "assets/docs/sigma-si/sigma-SI-new.pdf",
+        "size": 3480748
+      },
+      {
+        "type": "OMRI",
+        "label": "OMRI Listing Certificate",
+        "href": "https://www.omri.org/mfg/sig/certificate/13535",
+        "external": true
+      },
+      {
+        "type": "SDS",
+        "label": "Safety Data Sheet (SDS)",
+        "href": "assets/docs/sigma-si/sigma-si-sds-1.pdf",
+        "size": 130550
+      }
+    ],
+    "calcName": null,
+    "placeholder": false,
+    "analysis": [
+      {
+        "item": "Silicon Dioxide (SiO2)",
+        "value": "72.0%",
+        "sub": false
+      },
+      {
+        "item": "Inert Material",
+        "value": "23.0%",
+        "sub": false
+      },
+      {
+        "item": "Organic Binder",
+        "value": "5.0%",
+        "sub": false
+      }
+    ],
+    "derived": "Derived from Volcanic Tuff Mined Minerals Unprocessed.",
+    "notes": [],
+    "biologicals": [],
+    "rates": [
+      {
+        "heading": "Turf",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Natural",
+            "text": "Medium: 4 lb. / 1000 sq ft. (0.75 lb. N)"
+          },
+          {
+            "label": "Lawns",
+            "text": "High: 6 lb. / 1000 sq ft.(1.0 lb. N)"
+          }
+        ]
+      },
+      {
+        "heading": "Golf Course",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Low Rate",
+            "text": "2 lb. / 1000 sq ft.(0.50 lb. N)"
+          },
+          {
+            "label": "Medium Rate",
+            "text": "4 lb. / 1000 sq ft. (0.75 lb. N)"
+          },
+          {
+            "label": "High Rate",
+            "text": "6 lb. / 1000 sq ft. (1.0 lb. N)"
+          }
+        ]
+      },
+      {
+        "heading": "Vegetable",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Low Rate",
+            "text": "(Examples – peas, beans) Incorporate 75 lb. per acre 2-3 weeks prior to planting."
+          },
+          {
+            "label": "Medium Rate",
+            "text": "(Examples – asparagus, beet, carrot, melon, pepper, cauliflower, broccoli, brussels sprout, and celery) Incorporate 125 lb. per acre 2-3 weeks prior to planting."
+          },
+          {
+            "label": "High Rate",
+            "text": "(Examples – onion, sweet corn, potato, tomato) Incorporate 200 lb. per acre 2-3 weeks prior to planting."
+          }
+        ]
+      },
+      {
+        "heading": "Tree & Palm",
+        "intro": "Rate based on 1” of trunk diameter (caliper). Example: for 10” trunk diameter (caliper) multiply label rate by 10.",
+        "rows": [
+          {
+            "label": "Incorporation",
+            "text": "Mix with soil in bottom of holes prior to transplanting. Apply 3.0 lb. at Transplanting."
+          },
+          {
+            "label": "Broadcast",
+            "text": "Apply 6.0 lb. at Transplanting."
+          }
+        ]
+      },
+      {
+        "heading": "Ornamentals",
+        "intro": "",
+        "rows": [
+          {
+            "label": "Low Rate",
+            "text": "(for heavy substrates with porosity < 60%)"
+          },
+          {
+            "label": "Incorporation",
+            "text": "15 lb. per cubic yard of media"
+          },
+          {
+            "label": "Landscape",
+            "text": "195 lb. per 1000 sq. ft."
+          },
+          {
+            "label": "Medium Rate",
+            "text": "(for most nursery stock and foliage plants)"
+          },
+          {
+            "label": "Incorporation",
+            "text": "20 lb. per cubic yard of media"
+          },
+          {
+            "label": "Landscape",
+            "text": "35 lb. per 1000 sq. ft."
+          },
+          {
+            "label": "High Rate",
+            "text": "(for light substrates with porosity > 80%)"
+          },
+          {
+            "label": "Incorporation",
+            "text": "30 lb. per cubic yard of media"
+          },
+          {
+            "label": "Landscape",
+            "text": "50 lb. per 1000 sq. ft."
+          }
+        ]
+      }
+    ],
+    "containers": [
+      {
+        "size": "1 Gallon",
+        "low": "21 grams",
+        "high": "42 grams"
+      },
+      {
+        "size": "2 Gallon",
+        "low": "42 grams",
+        "high": "84 grams"
+      },
+      {
+        "size": "3 Gallon",
+        "low": "56 grams",
+        "high": "112 grams"
+      },
+      {
+        "size": "5 Gallon",
+        "low": "98 grams",
+        "high": "196 grams"
+      },
+      {
+        "size": "7 Gallon",
+        "low": "126 grams",
+        "high": "252 grams"
+      },
+      {
+        "size": "10 Gallon",
+        "low": "196 grams",
+        "high": "392 grams"
+      },
+      {
+        "size": "15 Gallon",
+        "low": "294 grams",
+        "high": "588 grams"
+      }
+    ],
+    "features": []
+  }
+]

@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { @apply bg-white text-stone-800 font-sans antialiased; }
+  h1, h2, h3 { @apply font-serif text-forest-950; text-wrap: balance; }
+  :focus-visible { @apply outline-none ring-2 ring-sky-600 ring-offset-2; }
+  [id] { scroll-margin-top: 6rem; }
+}
+
+@layer components {
+  .container-site { @apply mx-auto w-full max-w-site px-4 sm:px-6 lg:px-8; }
+  .eyebrow { @apply text-xs font-semibold uppercase tracking-[0.16em] text-field-600; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-colors duration-150; }
+  .btn-primary { @apply btn bg-field-600 text-white hover:bg-field-700; }
+  .btn-dark { @apply btn bg-forest-900 text-white hover:bg-forest-800; }
+  .btn-outline { @apply btn border border-stone-300 bg-white text-forest-900 hover:border-forest-400 hover:bg-forest-50; }
+  .btn-ghost-light { @apply btn border border-white/40 text-white hover:bg-white/10; }
+  .card { @apply rounded-2xl border border-stone-200 bg-white; }
+  .chip { @apply inline-flex items-center gap-1 rounded-full bg-forest-50 px-2.5 py-1 text-xs font-medium text-forest-800; }
+  .prose-site p { @apply mb-4 leading-relaxed text-stone-700; }
+  .field-label { @apply mb-1.5 block text-sm font-medium text-stone-800; }
+  .field-input { @apply block w-full rounded-lg border border-stone-300 bg-white px-3 py-2.5 text-base text-stone-900 shadow-sm placeholder:text-stone-400 focus:border-field-600 focus:outline-none focus:ring-2 focus:ring-field-600/30; }
+  .data-table th { @apply py-2.5 pr-4 text-left text-sm font-normal text-stone-600; }
+  .data-table td { @apply py-2.5 text-right text-sm font-semibold tabular-nums text-forest-950; }
+  .data-table tr { @apply border-b border-stone-200 last:border-0; }
+}
