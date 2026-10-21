@@ -91,6 +91,11 @@ function layout({ file, title, description, active, body, scripts = [] }) {
 <html lang="en">
 <head>
 <meta charset="utf-8">
+${file === "404.html" ? `<script>
+  // GitHub Pages serves this page at any missing path, so resolve links from the site root
+  // (the /terra-elemental-website/ project path, or / on the custom domain).
+  document.write('<base href="' + (location.pathname.startsWith("/terra-elemental-website/") ? "/terra-elemental-website/" : "/") + '">');
+</script>` : ""}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(fullTitle)}</title>
 <meta name="description" content="${esc(description)}">
@@ -975,7 +980,7 @@ function notFound() {
     <p class="eyebrow">404</p>
     <h1 class="mt-3 text-4xl font-semibold">We couldn't find that page</h1>
     <p class="mt-3 text-stone-600">It may have moved. Try one of these instead.</p>
-    <div class="mt-8 flex flex-wrap justify-center gap-3"><a href="/index.html" class="btn-primary">Home</a><a href="/products.html" class="btn-outline">Products</a><a href="/calculator.html" class="btn-outline">Cost Calculator</a></div>
+    <div class="mt-8 flex flex-wrap justify-center gap-3"><a href="index.html" class="btn-primary">Home</a><a href="products.html" class="btn-outline">Products</a><a href="calculator.html" class="btn-outline">Cost Calculator</a></div>
   </div>
 </section>`;
   return layout({ file: "404.html", title: "Page not found", active: "", description: "Page not found.", body });
