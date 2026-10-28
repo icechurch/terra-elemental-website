@@ -22,7 +22,7 @@ The HTML in `docs/` is **generated**, so edit the sources and rebuild:
 - `src/data/products.json`: product data (descriptions, analysis, rates, documents)
 - `src/styles.css` and `tailwind.config.js`: brand colors, fonts, shared component classes
 - `src/data/pricing.json`: wholesale prices and rates. Feeds both the calculator and the Pricing at a Glance PDF; update the `effective` date when prices change
-- `docs/assets/js/calculator.js`: calculator math and the Bridge custom-pricing notice (hand-written)
+- `docs/assets/js/calculator.js`: calculator math for all six application types and the Bridge custom-pricing notice (hand-written). Turf uses the N-based rates in `pricing.json`; beds, crops, containers, potting media and trees use the label rates parsed from `products.json` by `applicationRates()` in `src/build.mjs`
 - `docs/assets/js/main.js`: mobile menu, product filter, quote form
 
 ```bash

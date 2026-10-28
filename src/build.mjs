@@ -9,6 +9,38 @@ const OUT = path.join(ROOT, "docs");
 const PRODUCTS = JSON.parse(fs.readFileSync(path.join(ROOT, "src/data/products.json"), "utf8"));
 const PRICING = JSON.parse(fs.readFileSync(path.join(ROOT, "src/data/pricing.json"), "utf8"));
 const PRICE_PDF = "assets/docs/terra-elemental-pricing.pdf";
+const BY_SLUG = Object.fromEntries(PRODUCTS.map((p) => [p.slug, p]));
+
+// Turns a product's label rate text into numbers for the calculator's non-turf modes:
+// veg (lb/acre), beds (lb/1,000 sq ft), media (lb/cu yd), tree (lb per inch of trunk caliper), containers (grams/pot).
+function applicationRates(p) {
+  const amount = (t) => {
+    const m = t.replace(/,/g, "").match(/(\d+(?:\.\d+)?)\s*(?:lbs?|grams?)\b/i);
+    return m ? +m[1] : null;
+  };
+  const level = (label) => ({ "Low Rate": "low", "Medium Rate": "med", "High Rate": "high" })[label];
+  const out = {};
+  for (const s of p.rates) {
+    if (s.heading === "Vegetable") {
+      out.veg = {};
+      for (const r of s.rows) if (level(r.label)) out.veg[level(r.label)] = amount(r.text);
+    } else if (s.heading === "Tree & Palm") {
+      out.tree = {};
+      for (const r of s.rows) out.tree[r.label === "Broadcast" ? "broadcast" : "incorporation"] = amount(r.text);
+    } else if (s.heading === "Ornamentals") {
+      out.media = {};
+      out.beds = {};
+      let lv;
+      for (const r of s.rows) {
+        if (level(r.label)) lv = level(r.label);
+        else if (r.label === "Incorporation") out.media[lv] = amount(r.text);
+        else if (r.label === "Landscape") out.beds[lv] = amount(r.text);
+      }
+    }
+  }
+  if (p.containers.length) out.containers = p.containers.map((c) => ({ gal: parseInt(c.size, 10), low: amount(c.low), high: amount(c.high) }));
+  return out;
+}
 
 const SITE = {
   name: "Terra Elemental",
@@ -378,12 +410,12 @@ function home() {
     <div>
       <p class="eyebrow !text-sun-300">Free planning tool</p>
       <h2 class="mt-3 text-3xl font-semibold !text-white sm:text-4xl">Budget your season in under a minute</h2>
-      <p class="mt-4 max-w-xl text-forest-100">Enter your acreage or square footage, choose a nitrogen rate, and the calculator works out how many 50 lb bags you need and what they cost. It compares every product side by side.</p>
+      <p class="mt-4 max-w-xl text-forest-100">Turf, garden beds, crops, containers, potting media or trees: enter your project and the calculator works out how many 50 lb bags you need and what they cost. It compares every product side by side.</p>
       <a href="calculator.html" class="btn mt-8 bg-sun-400 text-forest-950 hover:bg-sun-300">${icon("calc", "h-4 w-4")}Open the Cost Calculator</a>
     </div>
     <ul class="grid gap-3 sm:grid-cols-2">
       ${[
-        ["Acres or sq ft", "Switch units and the area converts automatically."],
+        ["Six application types", "Turf, beds, crops, containers, potting media and trees."],
         ["Low, medium or high N", "Rates scale to 0.25, 0.5 or 1 lb N per 1,000 sq ft."],
         ["Multiple applications", "Plan a full season of feedings in one estimate."],
         ["Side-by-side comparison", "See cost per acre and per 1,000 sq ft for every formula."],
@@ -863,13 +895,13 @@ ${pageHeader({ eyebrow: "Contact", title: "Let's talk about your sites", lede: "
 
 function calculatorPage() {
   const seg = "rounded-md px-3 py-2 text-sm font-medium text-stone-600 transition aria-pressed:bg-white aria-pressed:text-forest-950 aria-pressed:shadow-sm";
-  const stat = (id, label, val) => `<div class="rounded-xl bg-stone-100 px-4 py-3"><p class="text-xs text-stone-600">${label}</p><p class="mt-0.5 text-lg font-semibold tabular-nums text-forest-950" id="${id}">${val}</p></div>`;
+  const stat = (id, label, val) => `<div class="rounded-xl bg-stone-100 px-4 py-3"><p class="text-xs text-stone-600" id="${id}-k">${label}</p><p class="mt-0.5 text-lg font-semibold tabular-nums text-forest-950" id="${id}">${val}</p></div>`;
   const body = `
 <section class="border-b border-stone-200 bg-gradient-to-b from-forest-50 to-white">
   <div class="container-site py-10 sm:py-14">
     <p class="eyebrow">Planning tool</p>
     <h1 class="mt-2 text-3xl font-semibold sm:text-5xl">Fertilizer Cost Calculator</h1>
-    <p class="mt-3 max-w-2xl text-stone-600 sm:text-lg">Choose a Sigma AgriScience product and enter the area you're treating. We'll work out how many 50&nbsp;lb bags you need and what it costs at wholesale pricing.</p>
+    <p class="mt-3 max-w-2xl text-stone-600 sm:text-lg">Pick how you're applying it (turf, garden beds, crops, containers, potting media or trees), choose a Sigma AgriScience product, and we'll work out how many 50&nbsp;lb bags you need and what it costs at wholesale pricing.</p>
     <a href="${PRICE_PDF}" class="btn-outline mt-6" download>${icon("download", "h-4 w-4")}Pricing at a Glance (PDF)</a>
   </div>
 </section>
@@ -881,12 +913,19 @@ function calculatorPage() {
         <h2 id="in-h" class="text-xl font-semibold">Your project</h2>
 
         <div class="mt-5">
+          <p class="field-label" id="mode-label">Application type</p>
+          <div class="grid grid-cols-2 gap-1 rounded-lg bg-stone-100 p-1 sm:grid-cols-3" id="mode-seg" role="group" aria-labelledby="mode-label">
+            ${[["turf", "Turf &amp; lawns"], ["beds", "Garden &amp; landscape beds"], ["veg", "Vegetables &amp; crops"], ["containers", "Containers &amp; nursery"], ["media", "Potting media"], ["trees", "Trees &amp; shrubs"]].map(([m, l]) => `<button type="button" data-mode="${m}" aria-pressed="${m === "turf"}" class="${seg} py-2.5 leading-tight">${l}</button>`).join("\n            ")}
+          </div>
+        </div>
+
+        <div class="mt-6">
           <label for="product" class="field-label">Product</label>
           <select id="product" class="field-input"></select>
           <div class="mt-3 flex flex-wrap gap-2" id="meta"></div>
         </div>
 
-        <div class="mt-6">
+        <div class="mt-6" data-show="turf beds veg">
           <label for="area" class="field-label">Area to treat</label>
           <div class="flex gap-2">
             <input id="area" type="number" inputmode="decimal" min="0" step="any" value="10" class="field-input min-w-0 flex-1">
@@ -898,7 +937,36 @@ function calculatorPage() {
           <p class="mt-1.5 text-sm text-stone-500" id="area-hint"></p>
         </div>
 
-        <div class="mt-6">
+        <div class="mt-6 grid grid-cols-2 gap-3" data-show="containers">
+          <div>
+            <label for="pot-size" class="field-label">Container size</label>
+            <select id="pot-size" class="field-input"></select>
+          </div>
+          <div>
+            <label for="pot-count" class="field-label">Number of containers</label>
+            <input id="pot-count" type="number" inputmode="numeric" min="0" step="1" value="100" class="field-input">
+          </div>
+        </div>
+
+        <div class="mt-6" data-show="media">
+          <label for="yards" class="field-label">Potting media to amend (cubic yards)</label>
+          <input id="yards" type="number" inputmode="decimal" min="0" step="any" value="10" class="field-input">
+          <p class="mt-1.5 text-sm text-stone-500">1 cubic yard is about 27 cubic feet, or roughly 202 gallons.</p>
+        </div>
+
+        <div class="mt-6 grid grid-cols-2 gap-3" data-show="trees">
+          <div>
+            <label for="tree-count" class="field-label">Number of trees or shrubs</label>
+            <input id="tree-count" type="number" inputmode="numeric" min="0" step="1" value="25" class="field-input">
+          </div>
+          <div>
+            <label for="caliper" class="field-label">Average trunk diameter (in)</label>
+            <input id="caliper" type="number" inputmode="decimal" min="0" step="any" value="2" class="field-input">
+          </div>
+          <p class="col-span-2 text-sm text-stone-500">Label rates are per inch of trunk diameter (caliper), applied at transplanting.</p>
+        </div>
+
+        <div class="mt-6" data-show="turf">
           <p class="field-label" id="n-label">Nitrogen rate per application</p>
           <div class="grid grid-cols-3 gap-1 rounded-lg bg-stone-100 p-1" id="n-seg" role="group" aria-labelledby="n-label">
             ${[["0.25", "Low"], ["0.5", "Medium"], ["1", "High"]].map(([n, l]) => `<button type="button" data-n="${n}" aria-pressed="${n === "1"}" class="${seg} py-2.5"><span class="block">${l}</span><span class="block text-xs font-normal opacity-75">${n} lb N</span></button>`).join("\n            ")}
@@ -906,7 +974,13 @@ function calculatorPage() {
           <p class="mt-1.5 text-sm text-stone-500">Pounds of nitrogen (N) per 1,000 sq ft. Product rates scale to deliver this amount.</p>
         </div>
 
-        <div class="mt-6">
+        <div class="mt-6" data-show="beds veg containers media trees">
+          <p class="field-label" id="level-label">Application rate</p>
+          <div class="grid gap-1 rounded-lg bg-stone-100 p-1" id="level-seg" role="group" aria-labelledby="level-label"></div>
+          <p class="mt-1.5 text-sm text-stone-500" id="level-hint"></p>
+        </div>
+
+        <div class="mt-6" data-show="turf beds containers">
           <label for="apps" class="field-label">Applications per season</label>
           <input id="apps" type="number" inputmode="numeric" min="1" step="1" value="1" class="field-input">
         </div>
@@ -925,8 +999,8 @@ function calculatorPage() {
           ${stat("weight", "Product weight", "0 lbs")}
           ${stat("per-bag", "Price per bag", "$0.00")}
           ${stat("per-ton", "Price per ton (40 bags)", "$0.00")}
-          ${stat("per-acre", "Cost per acre", "$0.00")}
-          ${stat("per-k", "Cost per 1,000 sq ft", "$0.00")}
+          ${stat("u1", "Cost per acre", "$0.00")}
+          ${stat("u2", "Cost per 1,000 sq ft", "$0.00")}
         </div>
         <div class="mt-5 flex flex-col gap-3 sm:flex-row">
           <a class="btn-primary flex-1" id="quote" href="mailto:${SITE.email}">${icon("mail", "h-4 w-4")}Email this estimate</a>
@@ -937,29 +1011,19 @@ function calculatorPage() {
 
     <div class="card mt-6 p-5 sm:p-7" aria-labelledby="cmp-h">
       <div class="flex flex-col justify-between gap-1 sm:flex-row sm:items-end">
-        <h2 id="cmp-h" class="text-xl font-semibold">Compare all products for your area</h2>
+        <h2 id="cmp-h" class="text-xl font-semibold">Compare products for your project</h2>
         <p class="text-sm text-stone-500">Tap a row to select it.</p>
       </div>
       <div class="-mx-5 mt-4 overflow-x-auto sm:mx-0">
         <table class="w-full min-w-[640px] text-sm tabular-nums">
-          <thead>
-            <tr class="border-b border-stone-200 text-xs text-stone-500">
-              <th scope="col" class="py-2.5 pl-5 pr-3 text-left font-medium sm:pl-0">Product</th>
-              <th scope="col" class="px-3 py-2.5 text-right font-medium">Rate / 1,000 sq ft</th>
-              <th scope="col" class="px-3 py-2.5 text-right font-medium">Bags / acre</th>
-              <th scope="col" class="px-3 py-2.5 text-right font-medium">Cost / acre</th>
-              <th scope="col" class="px-3 py-2.5 text-right font-medium">Cost / 1,000 sq ft</th>
-              <th scope="col" class="px-3 py-2.5 text-right font-medium">Bags to order</th>
-              <th scope="col" class="py-2.5 pl-3 pr-5 text-right font-medium sm:pr-0">Total</th>
-            </tr>
-          </thead>
+          <thead id="cmp-head"></thead>
           <tbody id="cmp"></tbody>
         </table>
       </div>
-      <p class="mt-4 text-xs text-stone-500">* Bridge products require custom pricing because input costs fluctuate. Figures use the most recent prices and are subject to change.</p>
+      <p class="mt-4 text-xs text-stone-500" id="bridge-foot">* Bridge products require custom pricing because input costs fluctuate. Figures use the most recent prices and are subject to change.</p>
     </div>
 
-    <p class="mt-6 max-w-3xl text-sm text-stone-500">Estimates use wholesale pricing per ton (40 × 50&nbsp;lb bags) and round up to whole bags. Cost per acre and per 1,000&nbsp;sq&nbsp;ft are based on exact product use. Prices are subject to change; shipping and tax are not included. <a href="contact.html#quote" class="font-medium text-field-700 underline">Contact us</a> for a formal quote.</p>
+    <p class="mt-6 max-w-3xl text-sm text-stone-500">Estimates use wholesale pricing per ton (40 × 50&nbsp;lb bags) and round up to whole bags. Per-unit costs are based on exact product use. Turf rates scale to your nitrogen target; all other rates follow Sigma AgriScience's label recommendations, so always check the product label before applying. Prices are subject to change; shipping and tax are not included. <a href="contact.html#quote" class="font-medium text-field-700 underline">Contact us</a> for a formal quote.</p>
   </div>
 </section>
 
@@ -982,7 +1046,7 @@ function calculatorPage() {
     file: "calculator.html",
     title: "Fertilizer Cost Calculator",
     active: "calculator",
-    description: "Estimate how many 50 lb bags of Sigma AgriScience fertilizer you need and what it will cost for your acreage or square footage.",
+    description: "Estimate how many 50 lb bags of Sigma AgriScience fertilizer you need and what it will cost for turf, garden beds, crops, containers, potting media or trees.",
     body,
     scripts: ["assets/js/pricing-data.js", "assets/js/calculator.js"],
   });
@@ -1105,7 +1169,14 @@ fs.writeFileSync(path.join(OUT, "robots.txt"), `User-agent: *\nAllow: /\nSitemap
 fs.writeFileSync(path.join(OUT, ".nojekyll"), "");
 
 // Shared pricing for the calculator.
-fs.writeFileSync(path.join(OUT, "assets/js/pricing-data.js"), `// Generated from src/data/pricing.json by src/build.mjs. Do not edit.\nwindow.TE_PRICING = ${JSON.stringify(PRICING)};\n`);
+// Calculator products: priced rows from pricing.json plus any product with label rates but no price yet (e.g. Sigma Si),
+// each carrying its non-turf application rates.
+const CALC_PRODUCTS = [
+  ...PRICING.products.map((x) => ({ ...x, apps: x.slug && BY_SLUG[x.slug] ? applicationRates(BY_SLUG[x.slug]) : {} })),
+  ...PRODUCTS.filter((p) => !PRICING.products.some((x) => x.slug === p.slug) && Object.keys(applicationRates(p)).length)
+    .map((p) => ({ group: p.lineLabel, name: p.name, ton: null, rate: null, slug: p.slug, apps: applicationRates(p) })),
+];
+fs.writeFileSync(path.join(OUT, "assets/js/pricing-data.js"), `// Generated from src/data/pricing.json and src/data/products.json by src/build.mjs. Do not edit.\nwindow.TE_PRICING = ${JSON.stringify(PRICING)};\nwindow.TE_CALC = ${JSON.stringify(CALC_PRODUCTS)};\n`);
 
 // One-page "Pricing at a Glance" sheet, rendered to PDF by scripts/render-pdf.mjs (npm run build:pdf).
 fs.mkdirSync(path.join(ROOT, "build"), { recursive: true });
