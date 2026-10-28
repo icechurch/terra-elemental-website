@@ -12,6 +12,7 @@ const BAG_LBS = 50;
 const BAGS_PER_TON = 40;
 const SQFT_PER_ACRE = 43560;
 const GRAMS_PER_LB = 453.592;
+const GAL_PER_CU_YD = 201.974;
 
 const $ = (id) => document.getElementById(id);
 const usd = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" });
@@ -44,6 +45,7 @@ const HINTS = {
 
 let mode = "turf";
 let unit = "acres";
+let mediaUnit = "yd";
 let nLevel = 1;
 const level = { beds: "med", veg: "med", containers: "low", media: "med", trees: "incorporation" };
 let selected = 0;
@@ -78,7 +80,8 @@ function inputs() {
     apps: Math.max(1, Math.round(parseFloat($("apps").value) || 1)),
     gal: +$("pot-size").value,
     pots: Math.round(val("pot-count")),
-    yards: val("yards"),
+    mediaQty: val("yards"),
+    yards: mediaUnit === "yd" ? val("yards") : val("yards") / GAL_PER_CU_YD,
     trees: Math.round(val("tree-count")),
     caliper: val("caliper"),
   };
@@ -163,15 +166,17 @@ function projectText(inp) {
     case "beds": return [`Application: Garden & landscape beds`, `Area: ${areaText}`, `Rate: ${lvName}`, `Applications: ${inp.apps}`];
     case "veg": return [`Application: Vegetables & crops`, `Area: ${areaText}`, `Rate: ${lvName}`];
     case "containers": return [`Application: Containers & nursery`, `Containers: ${num(inp.pots)} × ${inp.gal}-gallon`, `Rate: ${lvName}`, `Applications: ${inp.apps}`];
-    case "media": return [`Application: Potting media`, `Media: ${num(inp.yards, 2)} cubic yards`, `Rate: ${lvName}`];
+    case "media": return [`Application: Potting media`, `Media: ${mediaText(inp)}`, `Rate: ${lvName}`];
     default: return [`Application: Trees & shrubs`, `Trees: ${num(inp.trees)} at ${num(inp.caliper, 1)}" average trunk diameter`, `Method: ${lvName}`];
   }
 }
 
+const mediaText = (inp) => (mediaUnit === "yd" ? `${num(inp.mediaQty, 2)} cubic yards` : `${num(inp.mediaQty)} gallons`);
+
 function forWhat(inp) {
   switch (mode) {
     case "containers": return ` for ${num(inp.pots)} × ${inp.gal}-gallon containers${inp.apps > 1 ? `, ${inp.apps} applications` : ""}`;
-    case "media": return ` for ${num(inp.yards, 2)} cubic yards of media`;
+    case "media": return ` for ${mediaText(inp)} of media`;
     case "trees": return ` for ${num(inp.trees)} tree${inp.trees === 1 ? "" : "s"}`;
     case "veg": return "";
     default: return inp.apps > 1 ? ` for ${inp.apps} applications` : "";
@@ -186,6 +191,9 @@ function render() {
   $("area-hint").textContent = unit === "acres"
     ? `= ${num(inp.sqft)} sq ft`
     : `= ${num(inp.sqft / SQFT_PER_ACRE, 2)} acres`;
+  $("media-hint").textContent = mediaUnit === "yd"
+    ? `= ${num(inp.yards * GAL_PER_CU_YD)} gallons (1 cubic yard is about 202 gallons or 27 cubic feet)`
+    : `= ${num(inp.yards, 2)} cubic yards (1 cubic yard is about 202 gallons)`;
 
   $("meta").innerHTML = "";
   const chips = mode === "turf"
@@ -371,6 +379,18 @@ function init() {
       $("area").value = next === "sqft" ? Math.round(area * SQFT_PER_ACRE) : +(area / SQFT_PER_ACRE).toFixed(3);
       unit = next;
       document.querySelectorAll("#unit-seg button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+      render();
+    });
+  });
+
+  document.querySelectorAll("#media-unit-seg button").forEach((b) => {
+    b.addEventListener("click", () => {
+      if (b.dataset.unit === mediaUnit) return;
+      // Convert the current value so the amount of media stays the same when switching units.
+      const { yards } = inputs();
+      mediaUnit = b.dataset.unit;
+      $("yards").value = mediaUnit === "gal" ? +(yards * GAL_PER_CU_YD).toFixed(1) : +yards.toFixed(3);
+      document.querySelectorAll("#media-unit-seg button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
       render();
     });
   });

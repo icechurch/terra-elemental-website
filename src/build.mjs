@@ -949,9 +949,15 @@ function calculatorPage() {
         </div>
 
         <div class="mt-6" data-show="media">
-          <label for="yards" class="field-label">Potting media to amend (cubic yards)</label>
-          <input id="yards" type="number" inputmode="decimal" min="0" step="any" value="10" class="field-input">
-          <p class="mt-1.5 text-sm text-stone-500">1 cubic yard is about 27 cubic feet, or roughly 202 gallons.</p>
+          <label for="yards" class="field-label">Potting media to amend</label>
+          <div class="flex gap-2">
+            <input id="yards" type="number" inputmode="decimal" min="0" step="any" value="10" class="field-input min-w-0 flex-1">
+            <div class="inline-flex shrink-0 rounded-lg bg-stone-100 p-1" id="media-unit-seg" role="group" aria-label="Media unit">
+              <button type="button" data-unit="yd" aria-pressed="true" class="${seg}">Cubic yards</button>
+              <button type="button" data-unit="gal" aria-pressed="false" class="${seg}">Gallons</button>
+            </div>
+          </div>
+          <p class="mt-1.5 text-sm text-stone-500" id="media-hint"></p>
         </div>
 
         <div class="mt-6 grid grid-cols-2 gap-3" data-show="trees">
