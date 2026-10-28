@@ -150,6 +150,19 @@ def save_webp(src, dest, max_w, max_h=None, quality=80):
     return im.size
 
 
+# Typos in Sigma's published rates, corrected per Terra Elemental (2026-10-27).
+def apply_rate_corrections(products):
+    by_slug = {p["slug"]: p for p in products}
+    # Sigma Si landscape beds, low rate: published as 195 lb / 1,000 sq ft.
+    for sec in by_slug["sigma-si"]["rates"]:
+        if sec["heading"] == "Ornamentals":
+            row = next(r for r in sec["rows"] if r["text"].startswith("195 lb"))
+            row["text"] = "19.5 lb. per 1000 sq. ft."
+    # Sigma 7-2-1 Bio, 5-gallon container low rate: published as 150 grams.
+    pot = next(c for c in by_slug["sigma-7-2-1-bio"]["containers"] if c["size"] == "5 Gallon")
+    pot["low"] = "86 grams"
+
+
 def parse_sections(sections):
     out = {"analysis": [], "derived": "", "notes": [], "biologicals": [], "rates": [], "containers": [], "features": []}
     for sec in sections or []:
@@ -237,6 +250,7 @@ def main(scrape, logo_full, logo_mark, hero=None):
             **sec,
         })
 
+    apply_rate_corrections(products)
     OUT_DATA.parent.mkdir(parents=True, exist_ok=True)
     OUT_DATA.write_text(json.dumps(products, indent=2, ensure_ascii=False), encoding="utf-8")
 

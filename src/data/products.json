@@ -1232,7 +1232,7 @@
       },
       {
         "size": "5 Gallon",
-        "low": "150 grams",
+        "low": "86 grams",
         "high": "186 grams"
       },
       {
@@ -2682,7 +2682,7 @@
           },
           {
             "label": "Landscape",
-            "text": "195 lb. per 1000 sq. ft."
+            "text": "19.5 lb. per 1000 sq. ft."
           },
           {
             "label": "Medium Rate",
