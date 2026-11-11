@@ -1,4 +1,4 @@
-// Site-wide behavior: mobile menu, product filters, quote form.
+// Site-wide behavior: mobile menu, product filters, science tabs, field results gallery, quote form.
 (function () {
   const year = document.querySelector("[data-year]");
   if (year) year.textContent = new Date().getFullYear();
@@ -36,6 +36,128 @@
     buttons.forEach((b) => b.addEventListener("click", () => apply(b.dataset.filter, true)));
     const initial = new URLSearchParams(location.search).get("line");
     if (initial && group.querySelector(`[data-filter="${initial}"]`)) apply(initial, false);
+  }
+
+  // Tabs (science.html deep dive). Without JS every panel shows. #panel-id or #anything-inside-a-panel opens that tab.
+  const tabs = document.querySelector("[data-tabs]");
+  if (tabs) {
+    const buttons = [...tabs.querySelectorAll('[role="tab"]')];
+    const panels = [...tabs.querySelectorAll("[data-tab-panel]")];
+    const strip = tabs.querySelector('[role="tablist"]').parentElement;
+    const select = (id, focus) => {
+      buttons.forEach((b) => {
+        const on = b.getAttribute("aria-controls") === id;
+        b.setAttribute("aria-selected", String(on));
+        b.tabIndex = on ? 0 : -1;
+        if (on && focus) b.focus({ preventScroll: true });
+        // Scroll only the tab strip sideways (on phones), never the page.
+        if (on) {
+          const l = b.offsetLeft - strip.offsetLeft, r = l + b.offsetWidth;
+          if (l < strip.scrollLeft) strip.scrollLeft = l - 16;
+          else if (r > strip.scrollLeft + strip.clientWidth) strip.scrollLeft = r - strip.clientWidth + 16;
+        }
+      });
+      panels.forEach((p) => p.classList.toggle("hidden", p.id !== id));
+    };
+    buttons.forEach((b, i) => {
+      b.addEventListener("click", () => {
+        select(b.getAttribute("aria-controls"));
+        history.replaceState(null, "", `#${b.getAttribute("aria-controls")}`);
+      });
+      b.addEventListener("keydown", (e) => {
+        const step = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+        if (!step) return;
+        e.preventDefault();
+        select(buttons[(i + step + buttons.length) % buttons.length].getAttribute("aria-controls"), true);
+      });
+    });
+    const fromHash = () => {
+      const target = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      const panel = target && panels.find((p) => p === target || p.contains(target));
+      if (!panel) return false;
+      select(panel.id);
+      requestAnimationFrame(() => (panel === target ? document.getElementById("deep-dive") : target).scrollIntoView());
+      return true;
+    };
+    if (!fromHash()) select(panels[0].id);
+    window.addEventListener("hashchange", fromHash);
+  }
+
+  // Field results: tag filter and photo/video detail view.
+  const fieldData = document.getElementById("field-data");
+  if (fieldData) {
+    const items = JSON.parse(fieldData.textContent);
+    const grid = document.querySelector("[data-field-grid]");
+    const filter = document.querySelector("[data-field-filter]");
+    let visible = items.map((x) => x.id);
+
+    filter.querySelectorAll("[data-tag]").forEach((b) => b.addEventListener("click", () => {
+      const tag = b.dataset.tag;
+      filter.querySelectorAll("[data-tag]").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+      visible = [];
+      grid.querySelectorAll("[data-tags]").forEach((li) => {
+        const show = tag === "all" || li.dataset.tags.split(" ").includes(tag);
+        li.classList.toggle("hidden", !show);
+        if (show) visible.push(li.querySelector("[data-field-open]").dataset.fieldOpen);
+      });
+    }));
+
+    const dlg = document.querySelector("[data-field-dialog]");
+    const $ = (k) => dlg.querySelector(`[data-field-${k}]`);
+    let current = null;
+    const show = (id) => {
+      const x = items.find((i) => i.id === id);
+      current = id;
+      const box = $("media");
+      box.replaceChildren();
+      if (x.video) {
+        const v = document.createElement("video");
+        Object.assign(v, { src: x.video, poster: x.image, controls: true, autoplay: true, muted: true, playsInline: true, loop: true });
+        v.className = "max-h-[60dvh] w-full md:max-h-[calc(100dvh-1.5rem)]";
+        if (x.captions) {
+          const t = document.createElement("track");
+          Object.assign(t, { kind: "captions", srclang: "en", label: "English", src: x.captions, default: true });
+          v.append(t);
+        }
+        box.append(v);
+      } else {
+        // Show the already-loaded grid thumbnail while the full-size photo downloads.
+        const img = document.createElement("img");
+        Object.assign(img, { src: x.thumb, alt: x.title });
+        const full = new Image();
+        full.onload = () => { if (current === x.id) img.src = x.image; };
+        full.src = x.image;
+        img.className = "max-h-[55dvh] w-full object-contain md:max-h-[calc(100dvh-1.5rem)]";
+        box.append(img);
+      }
+      $("title").textContent = x.title;
+      $("caption").textContent = x.caption;
+      $("stage").textContent = x.stage;
+      $("doing").textContent = x.doing;
+      $("fits").textContent = x.fits;
+      const list = visible.includes(id) ? visible : items.map((i) => i.id);
+      $("pos").textContent = `${list.indexOf(id) + 1} of ${list.length}`;
+      dlg.querySelector(".overflow-y-auto")?.scrollTo(0, 0);
+    };
+    const move = (step) => {
+      const list = visible.includes(current) ? visible : items.map((i) => i.id);
+      show(list[(list.indexOf(current) + step + list.length) % list.length]);
+    };
+    document.querySelectorAll("[data-field-open]").forEach((el) => el.addEventListener("click", (e) => {
+      if (typeof dlg.showModal !== "function") return; // very old browsers: follow the link to the photo
+      e.preventDefault();
+      show(el.dataset.fieldOpen);
+      dlg.showModal();
+    }));
+    $("prev").addEventListener("click", () => move(-1));
+    $("next").addEventListener("click", () => move(1));
+    $("close").addEventListener("click", () => dlg.close());
+    dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
+    dlg.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") move(1);
+      if (e.key === "ArrowLeft") move(-1);
+    });
+    dlg.addEventListener("close", () => $("media").replaceChildren());
   }
 
   // Quote form: builds a pre-filled email (static hosting has no form backend).

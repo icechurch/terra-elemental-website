@@ -1,0 +1,532 @@
+{
+  "tags": {
+    "veg": "Vegetables & field crops",
+    "tree": "Fruit & tree crops",
+    "nursery": "Nursery & transplants",
+    "soil": "Roots & soil life"
+  },
+  "items": [
+    {
+      "id": "f-pineapple-roots",
+      "title": "Pineapple root trial",
+      "caption": "Grown with Sigma 2-4-2 Bio 2X",
+      "image": "assets/img/field/f-pineapple-roots.webp",
+      "thumb": "assets/img/field/f-pineapple-roots-sm.webp",
+      "width": 1024,
+      "height": 768,
+      "tags": [
+        "tree",
+        "soil"
+      ],
+      "stage": "Root check",
+      "doing": "Plants pulled from each treatment on the same day and laid out together. The left plant was grown with Sigma 2-4-2 Bio 2X plus a boron-zinc micronutrient; the two on the right, labeled “testigo” (control), had no treatment. Pineapple has a small, shallow root system, so root mass decides how well it takes up water and nutrients.",
+      "fits": "Sigma 2-4-2 Bio 2X carries double the humic acids and biology of Sigma's standard grades. Compare the roots for yourself: that is what a living root zone looks like when it is pulled out of the ground."
+    },
+    {
+      "id": "f-china-demo",
+      "title": "Spinach demonstration plot",
+      "caption": "Spinach trial · China",
+      "image": "assets/img/field/f-china-demo.webp",
+      "thumb": "assets/img/field/f-china-demo-sm.webp",
+      "width": 1280,
+      "height": 960,
+      "tags": [
+        "veg"
+      ],
+      "stage": "Demonstration plot, China",
+      "doing": "The signs say it all: 示范 means “demonstration” and 对照 means “control”. The demonstration plot on the left and the control on the right sit on the same soil, under the same weather, separated only by a walkway, which is the fairest way to see what a program does.",
+      "fits": "Spinach is a fast, shallow-rooted leaf crop, so it shows differences in nutrition and root-zone biology quickly, in leaf size, color and stand."
+    },
+    {
+      "id": "f-squash",
+      "title": "Zucchini field trial",
+      "caption": "Video · 31 s · Italy · English captions",
+      "image": "assets/img/field/f-squash.webp",
+      "thumb": "assets/img/field/f-squash-sm.webp",
+      "width": 352,
+      "height": 640,
+      "tags": [
+        "veg"
+      ],
+      "stage": "Field trial, Italy",
+      "doing": "A grower walks the zucchini rows of an Italian field trial. Zucchini sets fruit continuously, so smooth, marketable fruit and balanced growth across the whole harvest are what growers judge a program by.",
+      "fits": "The plants were treated with a Sigma biologically enhanced liquid at 200 ml per 100 liters of spray, every 4 days. The captions give an English summary of what he says.",
+      "video": "assets/video/f-squash.mp4",
+      "captions": "assets/video/f-squash.en.vtt"
+    },
+    {
+      "id": "f-straw-close",
+      "title": "Strawberries ready to pick",
+      "caption": "Raised beds, high tunnel",
+      "image": "assets/img/field/f-straw-close.webp",
+      "thumb": "assets/img/field/f-straw-close-sm.webp",
+      "width": 1050,
+      "height": 1400,
+      "tags": [
+        "veg"
+      ],
+      "stage": "Fruit set and ripening",
+      "doing": "Strawberries flower and fruit for weeks at a time, so the plant needs a steady supply of nitrogen, potassium and calcium rather than one big feeding. In raised, mulched beds the roots are confined to a small volume of soil, which makes the health of that root zone decisive.",
+      "fits": "Sigma’s granular base feeds organic nitrogen that soil microbes release gradually through the season. The liquid package adds Bacillus, mycorrhizae and Trichoderma to colonize the bed, plus seaweed and fish for the high-demand fruiting weeks."
+    },
+    {
+      "id": "f-tom-truss",
+      "title": "Plum tomatoes on the vine",
+      "caption": "Greenhouse harvest",
+      "image": "assets/img/field/f-tom-truss.webp",
+      "thumb": "assets/img/field/f-tom-truss-sm.webp",
+      "width": 768,
+      "height": 1024,
+      "tags": [
+        "veg"
+      ],
+      "stage": "Fruit fill on the vine",
+      "doing": "A tomato plant takes up most of its potassium while the fruit is filling. Potassium moves sugars into the fruit and supports firm flesh and even color, so supply has to keep pace from first truss to last.",
+      "fits": "Humic acids in Sigma granulars help hold nutrients in the root zone so they stay available between feedings. The liquid package is sprayed at each growth stage to match the crop’s demand."
+    },
+    {
+      "id": "f-tom-cut",
+      "title": "Plum tomatoes, cut open",
+      "caption": "Checking fruit at harvest",
+      "image": "assets/img/field/f-tom-cut.webp",
+      "thumb": "assets/img/field/f-tom-cut-sm.webp",
+      "width": 1024,
+      "height": 768,
+      "tags": [
+        "veg"
+      ],
+      "stage": "Harvest check",
+      "doing": "Cutting fruit open is how a grower checks quality: color right through the wall, firm flesh and no dark patch at the blossom end. Blossom-end rot is a calcium delivery problem, usually tied to uneven water and a root system that can’t keep up.",
+      "fits": "Mycorrhizal fungi extend the reach of the roots well beyond the root hairs, helping the plant take up water, phosphorus and micronutrients. Sigma builds that biology into the soil from planting onward."
+    },
+    {
+      "id": "f-tom-coco",
+      "title": "Cherry tomatoes on the high wire",
+      "caption": "Greenhouse, coco slabs",
+      "image": "assets/img/field/f-tom-coco.webp",
+      "thumb": "assets/img/field/f-tom-coco-sm.webp",
+      "width": 576,
+      "height": 1024,
+      "tags": [
+        "veg"
+      ],
+      "stage": "Harvest on the high wire",
+      "doing": "High-wire tomatoes grow in coco slabs, a clean, nearly sterile substrate with a small root volume. Everything the plant gets comes through the drip, and a root zone with no soil life is a fragile one.",
+      "fits": "Sigma liquids go in through the fertigation, bringing Bacillus and Trichoderma that colonize the coco and give it the active root zone that soil would normally provide. Fish and seaweed add nutrition through a long harvest."
+    },
+    {
+      "id": "f-melon-bed",
+      "title": "Melon sizing on the vine",
+      "caption": "Raised bed with marigolds",
+      "image": "assets/img/field/f-melon-bed.webp",
+      "thumb": "assets/img/field/f-melon-bed-sm.webp",
+      "width": 1050,
+      "height": 1400,
+      "tags": [
+        "veg"
+      ],
+      "stage": "Fruit sizing",
+      "doing": "A melon’s size is largely set in the weeks after pollination, and its sugar builds late, when potassium moves into the fruit. Marigolds planted through the bed bring in pollinators and beneficial insects, a common practice on regenerative farms.",
+      "fits": "Organic nutrition released steadily by soil microbes, plus biology and carbon in a mulched bed, keeps the vine productive from flowering through ripening."
+    },
+    {
+      "id": "f-pumpkin",
+      "title": "Pumpkin on the vine",
+      "caption": "Raised bed garden",
+      "image": "assets/img/field/f-pumpkin.webp",
+      "thumb": "assets/img/field/f-pumpkin-sm.webp",
+      "width": 1050,
+      "height": 1400,
+      "tags": [
+        "veg"
+      ],
+      "stage": "Fruit fill",
+      "doing": "A big pumpkin draws on the leaves of the whole vine, and the vine can put down extra roots where it touches the soil. Steady water, potassium and calcium through fruit fill are what carry it to full size.",
+      "fits": "Sigma’s granular base in the bed, biology in the root zone and mulch on top build the kind of soil that holds water and nutrients through a long fill."
+    },
+    {
+      "id": "f-fungi-mulch",
+      "title": "Soil biology under the mulch",
+      "caption": "After a biological application · Italy",
+      "image": "assets/img/field/f-fungi-mulch.webp",
+      "thumb": "assets/img/field/f-fungi-mulch-sm.webp",
+      "width": 1024,
+      "height": 768,
+      "tags": [
+        "soil"
+      ],
+      "stage": "Under the mulch, after a biological application",
+      "doing": "Lift the plastic and the soil along the drip line is covered in white, cottony threads. That is fungal mycelium: living fungi spreading through the moist soil and feeding on organic matter. It is not mold on the crop; it is the soil coming alive where water and biology meet.",
+      "fits": "White mycelium like this is typical of Trichoderma, one of the three biologies in Sigma’s liquid package. Trichoderma colonizes the soil and root zone around the plants, and turns green as it matures. Mycorrhizae work the same zone too, though their threads are too fine to see."
+    },
+    {
+      "id": "f-roots-drip",
+      "title": "Roots following the drip line",
+      "caption": "Mulch peeled back",
+      "image": "assets/img/field/f-roots-drip.webp",
+      "thumb": "assets/img/field/f-roots-drip-sm.webp",
+      "width": 1024,
+      "height": 768,
+      "tags": [
+        "soil"
+      ],
+      "stage": "Root check under the mulch",
+      "doing": "With the mulch peeled back, the roots are white, branching and running along the drip line. White, actively growing roots with plenty of fine branches are what a grower wants to see: that is where water and nutrients are taken up.",
+      "fits": "Biology applied through the drip moves with the water into this same zone. Mycorrhizal fungi then extend the root system’s reach beyond the wetted band."
+    },
+    {
+      "id": "f-graft-plug",
+      "title": "Grafted tomato transplant",
+      "caption": "Nursery, roots out of the plug",
+      "image": "assets/img/field/f-graft-plug.webp",
+      "thumb": "assets/img/field/f-graft-plug-sm.webp",
+      "width": 575,
+      "height": 1024,
+      "tags": [
+        "nursery",
+        "soil"
+      ],
+      "stage": "Grafted transplant in the nursery",
+      "doing": "Grafted tomatoes combine a fruiting variety with a vigorous rootstock. A plug fully knitted with roots holds together at transplanting and gets into the field soil fast.",
+      "fits": "Sigma biology in the nursery means the roots are already colonized before the plant ever reaches the field."
+    },
+    {
+      "id": "f-plug-roots",
+      "title": "Root ball ready to plant",
+      "caption": "Vegetable transplant, nursery",
+      "image": "assets/img/field/f-plug-roots.webp",
+      "thumb": "assets/img/field/f-plug-roots-sm.webp",
+      "width": 787,
+      "height": 1400,
+      "tags": [
+        "nursery",
+        "soil"
+      ],
+      "stage": "Ready to transplant",
+      "doing": "White roots wrapped around the whole plug, covered in fine root hairs. Root tips and root hairs are where a plant takes in water and nutrients, so a plug like this transplants with a strong start.",
+      "fits": "Sigma liquids and Sigma soil and bed mixes bring biology and carbon into the growing media from the first day of propagation."
+    },
+    {
+      "id": "f-lettuce-roots",
+      "title": "Greenhouse lettuce, roots out",
+      "caption": "Leaf lettuce at harvest",
+      "image": "assets/img/field/f-lettuce-roots.webp",
+      "thumb": "assets/img/field/f-lettuce-roots-sm.webp",
+      "width": 461,
+      "height": 1024,
+      "tags": [
+        "veg",
+        "soil"
+      ],
+      "stage": "Harvest, greenhouse",
+      "doing": "Lettuce has a short season and a shallow root system, so it has little time to recover from a slow start. A dense, healthy root ball like this one is what carries the head to full size.",
+      "fits": "Microbe-released organic nitrogen matches lettuce’s late, steady demand, and biology in the root zone helps the crop use what is already there."
+    },
+    {
+      "id": "f-cole-field",
+      "title": "Cole crops to the mountains",
+      "caption": "Open field",
+      "image": "assets/img/field/f-cole-field.webp",
+      "thumb": "assets/img/field/f-cole-field-sm.webp",
+      "width": 1050,
+      "height": 1400,
+      "tags": [
+        "veg"
+      ],
+      "stage": "Mid-season, heads forming",
+      "doing": "Cabbage-family crops run a long season and are heavy feeders: nitrogen for leaf, plus more sulfur and boron than most vegetables. Uniform plants across a field this size mean the whole stand is getting what it needs.",
+      "fits": "Sigma’s granular base gives a slow, steady organic nitrogen supply over the long season, and the liquid package adds biology and seaweed at key growth stages."
+    },
+    {
+      "id": "f-arugula",
+      "title": "Arugula beds",
+      "caption": "Greenhouse, baby leaf",
+      "image": "assets/img/field/f-arugula.webp",
+      "thumb": "assets/img/field/f-arugula-sm.webp",
+      "width": 1024,
+      "height": 768,
+      "tags": [
+        "veg"
+      ],
+      "stage": "Baby leaf, ready to cut",
+      "doing": "Arugula is sown thick and cut young, often more than once. Cycles are short, so nitrogen has to be steady, and leafy greens must stay under strict nitrate limits in many markets.",
+      "fits": "Microbe-released organic nitrogen feeds the crop steadily instead of all at once, and biology keeps the root zone active between cuts."
+    },
+    {
+      "id": "f-potato-hills",
+      "title": "Potatoes hilled up",
+      "caption": "Open field, tuber bulking",
+      "image": "assets/img/field/f-potato-hills.webp",
+      "thumb": "assets/img/field/f-potato-hills-sm.webp",
+      "width": 1024,
+      "height": 768,
+      "tags": [
+        "veg"
+      ],
+      "stage": "Hilled, tubers bulking",
+      "doing": "Hilling covers the developing tubers so they don’t turn green, and gives them loose soil to grow into. During bulking, potatoes take up more potassium than any other nutrient.",
+      "fits": "Sigma’s granular base goes in the furrow at planting, so organic nutrition and biology sit right where the tubers form."
+    },
+    {
+      "id": "f-coffee-cherries",
+      "title": "Coffee cherries filling",
+      "caption": "Shade-grown coffee",
+      "image": "assets/img/field/f-coffee-cherries.webp",
+      "thumb": "assets/img/field/f-coffee-cherries-sm.webp",
+      "width": 1024,
+      "height": 768,
+      "tags": [
+        "tree"
+      ],
+      "stage": "Cherries filling on the branch",
+      "doing": "Coffee sets heavy clusters of cherries along each branch, and filling them draws hard on nitrogen and potassium. A tree that runs short during fill drops cherries or bears poorly the following year.",
+      "fits": "Under shade trees, coffee roots feed in a layer of leaf litter and organic matter. Sigma granulars and biology build on that, feeding the soil life that cycles nutrients to the tree."
+    },
+    {
+      "id": "f-coffee-nursery",
+      "title": "Coffee seedling nursery",
+      "caption": "Under shade cloth",
+      "image": "assets/img/field/f-coffee-nursery.webp",
+      "thumb": "assets/img/field/f-coffee-nursery-sm.webp",
+      "width": 1024,
+      "height": 768,
+      "tags": [
+        "nursery",
+        "tree"
+      ],
+      "stage": "Seedlings in the nursery",
+      "doing": "Coffee seedlings spend months in bags under shade cloth before going to the field. The root system they build here carries them through transplanting onto steep, often poor hillsides.",
+      "fits": "Sigma biology and carbon in the nursery mix colonize the roots early, so seedlings go to the field with an active root zone already in place."
+    },
+    {
+      "id": "f-coffee-hillside",
+      "title": "Hillside coffee plantation",
+      "caption": "Agronomists walking the slope",
+      "image": "assets/img/field/f-coffee-hillside.webp",
+      "thumb": "assets/img/field/f-coffee-hillside-sm.webp",
+      "width": 1024,
+      "height": 590,
+      "tags": [
+        "tree"
+      ],
+      "stage": "Field visit on the slope",
+      "doing": "Much of the world’s best coffee grows on steep hillsides under shade trees, where every bag of fertilizer is carried in by hand. On slopes like this, rain moves soluble nutrients downhill fast, so what stays in the root zone matters.",
+      "fits": "Sigma granulars release organic nutrition slowly and carry humic acids that help hold nutrients in place, so less washes away between applications."
+    },
+    {
+      "id": "f-coffee-seedbed",
+      "title": "Coffee seedbeds",
+      "caption": "Germination beds under shade",
+      "image": "assets/img/field/f-coffee-seedbed.webp",
+      "thumb": "assets/img/field/f-coffee-seedbed-sm.webp",
+      "width": 1024,
+      "height": 768,
+      "tags": [
+        "nursery",
+        "tree"
+      ],
+      "stage": "Germination beds",
+      "doing": "Coffee seed germinates slowly, and seedlings stay in these beds until they are ready to move into bags. A large commercial nursery raises hundreds of thousands of plants at once.",
+      "fits": "Biology in the bed mix colonizes the very first roots, giving every seedling an active root zone from the start."
+    },
+    {
+      "id": "f-olive-nursery",
+      "title": "Container olive trees",
+      "caption": "Container nursery · Florida",
+      "image": "assets/img/field/f-olive-nursery.webp",
+      "thumb": "assets/img/field/f-olive-nursery-sm.webp",
+      "width": 1050,
+      "height": 1400,
+      "tags": [
+        "nursery",
+        "tree"
+      ],
+      "stage": "Container trees ready for sale",
+      "doing": "A Florida grower raising olive trees in large containers on drip. In a container, the tree lives on a fixed volume of mix, so feeding has to be steady and the mix has to stay alive: a tired, lifeless mix shows quickly in pale, thin canopies.",
+      "fits": "This grower feeds with Sigma 6-2-6 Bio, a granular with organic nitrogen, potassium for wood and leaf, humic acids and soil biology. Top-dressed on the container, it releases slowly with each irrigation."
+    },
+    {
+      "id": "f-citrus-walk",
+      "title": "Walking the citrus",
+      "caption": "Grove check with the grower",
+      "image": "assets/img/field/f-citrus-walk.webp",
+      "thumb": "assets/img/field/f-citrus-walk-sm.webp",
+      "width": 1024,
+      "height": 768,
+      "tags": [
+        "tree"
+      ],
+      "stage": "Grove walk",
+      "doing": "Walking the rows with the grower is how a program gets set: canopy color, fruit load, the leaf litter under the trees. Citrus needs steady nitrogen and potassium plus micronutrients, especially zinc, manganese and iron.",
+      "fits": "Sigma programs for orchards build soil carbon and biology under the canopy year after year, with nutrition timed from bloom through fruit sizing."
+    },
+    {
+      "id": "f-papaya",
+      "title": "Papaya in full fruit",
+      "caption": "Greenhouse, drip irrigated",
+      "image": "assets/img/field/f-papaya.webp",
+      "thumb": "assets/img/field/f-papaya-sm.webp",
+      "width": 1050,
+      "height": 1400,
+      "tags": [
+        "tree"
+      ],
+      "stage": "Flowering and fruiting together",
+      "doing": "Papaya flowers and sets fruit continuously up the trunk, so one tree carries flowers, young fruit and mature fruit at the same time. That means nutrient demand never stops, especially nitrogen, potassium, calcium and boron.",
+      "fits": "Liquids through the drip keep pace with year-round fruiting, while Sigma biology and carbon keep the root zone under the trees active."
+    },
+    {
+      "id": "f-banana-bags",
+      "title": "Banana bunches bagged for harvest",
+      "caption": "Hillside plantation",
+      "image": "assets/img/field/f-banana-bags.webp",
+      "thumb": "assets/img/field/f-banana-bags-sm.webp",
+      "width": 1050,
+      "height": 1400,
+      "tags": [
+        "tree"
+      ],
+      "stage": "Bunches filling under the bag",
+      "doing": "Each bunch is bagged on the plant to protect the fruit skin while it fills, which takes about three months. Bananas move more potassium into the fruit than almost any other crop.",
+      "fits": "A steady potassium supply, such as Sigma Sunflower Hull Ash 0-4-30, together with biology and carbon in the root mat under the plants, supports fruit fill bunch after bunch."
+    },
+    {
+      "id": "f-rice",
+      "title": "Walking the rice",
+      "caption": "Bridge program · At heading",
+      "image": "assets/img/field/f-rice.webp",
+      "thumb": "assets/img/field/f-rice-sm.webp",
+      "width": 1200,
+      "height": 525,
+      "tags": [
+        "veg"
+      ],
+      "stage": "Heading · Bridge program",
+      "doing": "By heading, rice yield is largely set: the nitrogen that built the panicle went on earlier, around panicle initiation. What happens in the soil now affects grain fill and next season’s ground.",
+      "fits": "This field runs a Bridge program: Sigma organic granulars blended with conventional fertilizer. The conventional side delivers fast nitrogen at the critical stages; the Sigma side adds organic nutrition, humic acids, Bacillus and mycorrhizae that build the soil season after season. The best of both worlds, without changing how the field is managed."
+    },
+    {
+      "id": "f-avo-apply",
+      "title": "Feeding the avocado grove",
+      "caption": "Granular band under the canopy",
+      "image": "assets/img/field/f-avo-apply.webp",
+      "thumb": "assets/img/field/f-avo-apply-sm.webp",
+      "width": 720,
+      "height": 1280,
+      "tags": [
+        "tree"
+      ],
+      "stage": "Granular application, mature avocado grove",
+      "doing": "Avocado feeder roots are shallow and spread out to the edge of the canopy and beyond, right under the leaf litter. The crew spreads the granules in a wide band from near the trunk out past the drip line, then rakes the leaves back over it.",
+      "fits": "Sigma’s granular Bio fertilizers carry nutrients, organic carbon and biology together, so they feed the tree and the soil life that breaks down the leaf litter."
+    },
+    {
+      "id": "f-avo-granules",
+      "title": "Granules under the leaf litter",
+      "caption": "Close-up of the band, before raking back",
+      "image": "assets/img/field/f-avo-granules.webp",
+      "thumb": "assets/img/field/f-avo-granules-sm.webp",
+      "width": 720,
+      "height": 1280,
+      "tags": [
+        "tree",
+        "soil"
+      ],
+      "stage": "Close-up of the band",
+      "doing": "Granules spread evenly on bare soil under the canopy, ready to be covered with the raked leaves. Covering the band keeps it moist and out of the sun, which is where soil biology does its best work.",
+      "fits": "Sigma granulars release steadily as soil life works on them, instead of all at once, which suits a tree crop fed a few times a year."
+    },
+    {
+      "id": "f-avo-flush",
+      "title": "New flush on a young avocado",
+      "caption": "Bronze new leaves with fruit set",
+      "image": "assets/img/field/f-avo-flush.webp",
+      "thumb": "assets/img/field/f-avo-flush-sm.webp",
+      "width": 960,
+      "height": 1280,
+      "tags": [
+        "tree"
+      ],
+      "stage": "New flush with fruit set",
+      "doing": "The copper-colored leaves at the tips are a new flush: avocado leaves come out bronze and turn green as they harden off. Fruit is already set lower in the canopy, so the tree is feeding new growth and fruit at the same time.",
+      "fits": "Steady nutrition from Sigma’s granular base, with biology in the root zone, carries the tree through flush and fruit fill without big swings."
+    },
+    {
+      "id": "f-avo-mycelium",
+      "title": "White mycelium over the granules",
+      "caption": "Video · 15 s · Avocado orchard floor",
+      "image": "assets/img/field/f-avo-mycelium.webp",
+      "thumb": "assets/img/field/f-avo-mycelium-sm.webp",
+      "width": 464,
+      "height": 832,
+      "tags": [
+        "tree",
+        "soil"
+      ],
+      "stage": "Days after a granular application",
+      "doing": "Across the orchard floor, white threads have spread over and between the granules. That is fungal mycelium colonizing the band and the leaf litter around it: the soil coming alive where moisture, organic matter and biology meet.",
+      "fits": "White mycelium like this is typical of Trichoderma, one of the biologies in Sigma’s products. It colonizes the band and spreads into the root zone, turning green as it matures.",
+      "video": "assets/video/f-avo-mycelium.mp4"
+    },
+    {
+      "id": "f-cauliflower",
+      "title": "Cauliflower in full canopy",
+      "caption": "Open field",
+      "image": "assets/img/field/f-cauliflower.webp",
+      "thumb": "assets/img/field/f-cauliflower-sm.webp",
+      "width": 1024,
+      "height": 768,
+      "tags": [
+        "veg"
+      ],
+      "stage": "Full canopy, before heading",
+      "doing": "Cauliflower builds a big leaf canopy before it forms a curd; those leaves are the factory for the head. A dense, even, blue-green canopy from row to row is a sign of steady nitrogen and a healthy root system.",
+      "fits": "Sigma’s granular base at planting and a side-dress carry nitrogen and biology through the canopy stage into heading."
+    },
+    {
+      "id": "f-cucumber",
+      "title": "Cucumbers setting fruit",
+      "caption": "Open field",
+      "image": "assets/img/field/f-cucumber.webp",
+      "thumb": "assets/img/field/f-cucumber-sm.webp",
+      "width": 1024,
+      "height": 768,
+      "tags": [
+        "veg"
+      ],
+      "stage": "Flowering and fruit set",
+      "doing": "Each yellow flower with a small fruit behind it is a female flower: the fruit is already forming. Cucumbers set and size fruit fast, so they need a steady supply of water, nitrogen and potassium.",
+      "fits": "Sigma’s granular base in the row, with biology in the root zone, keeps nutrition steady through a fast picking cycle."
+    },
+    {
+      "id": "f-roma-tunnel",
+      "title": "Roma tomatoes, heavy set",
+      "caption": "High tunnel, first fruit coloring",
+      "image": "assets/img/field/f-roma-tunnel.webp",
+      "thumb": "assets/img/field/f-roma-tunnel-sm.webp",
+      "width": 1024,
+      "height": 768,
+      "tags": [
+        "veg"
+      ],
+      "stage": "Heavy set, first fruit coloring",
+      "doing": "Clusters of plum tomatoes hang the full height of the plants, with the first fruit turning color at the bottom. A load like this puts heavy demand on potassium and calcium through fruit fill.",
+      "fits": "Sigma’s granular base in the bed and liquids through the drip feed both the plant and the root-zone biology through a long harvest."
+    },
+    {
+      "id": "f-field-day",
+      "title": "Grower field day",
+      "caption": "Greenhouse tomatoes",
+      "image": "assets/img/field/f-field-day.webp",
+      "thumb": "assets/img/field/f-field-day-sm.webp",
+      "width": 1024,
+      "height": 768,
+      "tags": [
+        "veg"
+      ],
+      "stage": "Grower field day",
+      "doing": "Growers walking the greenhouse rows to see the crop for themselves. A field day lets growers compare programs and put their questions straight to the agronomists.",
+      "fits": "Sigma works with growers, agronomists and distributor partners to show results in the field, not just on paper."
+    }
+  ]
+}

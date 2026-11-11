@@ -11,6 +11,8 @@ Static marketing site for Terra Elemental, a San Luis Valley, Colorado distribut
 | Product detail (13 pages) | `docs/products/<slug>.html` |
 | Solutions (parks, athletic fields, landscape, golf, agriculture) | `docs/solutions.html` |
 | Cost Calculator (`?product=<slug>` preselects a product) | `docs/calculator.html` |
+| The Science (plain-language summary up top, tabbed deep dive below; `#biology`, `#carbon`, `#nitrogen`, `#quality`, `#research` open a tab) | `docs/science.html` |
+| Field Results (filterable photo and video gallery with an agronomy note for each) | `docs/field-results.html` |
 | About / owners | `docs/about.html` |
 | Contact & quote request (`?product=<slug>` prefills the form) | `docs/contact.html` |
 
@@ -23,7 +25,8 @@ The HTML in `docs/` is **generated**, so edit the sources and rebuild:
 - `src/styles.css` and `tailwind.config.js`: brand colors, fonts, shared component classes
 - `src/data/pricing.json`: wholesale prices and rates. Feeds both the calculator and the Pricing at a Glance PDF; update the `effective` date when prices change
 - `docs/assets/js/calculator.js`: calculator math for all six application types and the Bridge custom-pricing notice (hand-written). Turf uses the N-based rates in `pricing.json`; beds, crops, containers, potting media and trees use the label rates parsed from `products.json` by `applicationRates()` in `src/build.mjs`
-- `docs/assets/js/main.js`: mobile menu, product filter, quote form
+- `src/data/science.json` and `src/data/field.json`: strains, research cards, outside resources and field files for the Science and Field Results pages. Microbe counts, humic acids and the nitrogen chart on the Science page come from `products.json` (the labels), not this file
+- `docs/assets/js/main.js`: mobile menu, product filter, science tabs, field results gallery, quote form
 
 ```bash
 npm install
@@ -47,6 +50,16 @@ python scripts/prepare_assets.py ../SigmaScrape path/to/logo-full.png path/to/lo
 ```
 
 Product text, labels, SDS sheets and images are Sigma AgriScience's, used with permission.
+
+### Science and Field Results content
+
+`scripts/prepare_science_field.py` regenerates `src/data/science.json`, `src/data/field.json`, the field photos (`docs/assets/img/field/`), videos (`docs/assets/video/`) and the Sigma Bio technical brief from the scrape of Sigma's science and field pages. Gallery filter tags and the three featured side-by-side trials are set at the top of the script:
+
+```bash
+python scripts/prepare_science_field.py ../SigmaScrape/ag_science_and_field
+```
+
+The outside resources (USDA, university and journal publications) are linked, never re-hosted.
 
 ## Quote form
 

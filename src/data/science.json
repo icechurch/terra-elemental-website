@@ -1,0 +1,266 @@
+{
+  "strains": [
+    {
+      "name": "Bacillus subtilis",
+      "group": "Bacteria · Bacillus",
+      "role": "Stress tolerance, nutrient uptake, root biofilm and biomass.",
+      "value": "−41%",
+      "finding": "Less sodium reached the shoots of plants under salt stress, and chlorophyll ran about 57% higher at the strongest salt level.",
+      "conditions": "White clover, greenhouse pots.",
+      "source": "Han et al. (2014), Frontiers in Plant Science 5:525",
+      "url": "https://doi.org/10.3389/fpls.2014.00525"
+    },
+    {
+      "name": "Bacillus amyloliquefaciens",
+      "group": "Bacteria · Bacillus",
+      "role": "Growth hormones and root-zone competition.",
+      "value": "5×",
+      "finding": "More of the root growth hormone IAA (auxin) released when tryptophan, an amino acid found in root exudates, was available. Strains that could not make IAA promoted plant growth less.",
+      "conditions": "Laboratory cultures and plant growth tests.",
+      "source": "Idris et al. (2007), Molecular Plant-Microbe Interactions 20:619",
+      "url": "https://doi.org/10.1094/MPMI-20-6-0619"
+    },
+    {
+      "name": "Brevibacillus laterosporus",
+      "group": "Bacteria · Bacillus group",
+      "role": "Enzyme activity, nutrient release and root growth.",
+      "value": "IAA ↑",
+      "finding": "Fresh weight, dry weight, plant height and lateral root growth all rose significantly, with higher IAA in treated plants as the bacteria colonized the roots.",
+      "conditions": "Apple rootstock seedlings (Malus robusta).",
+      "source": "Wang et al. (2022), Horticultural Plant Journal 8:22",
+      "url": "https://doaj.org/article/0d07382d632547f28b25611e3a5975d0"
+    },
+    {
+      "name": "Bacillus licheniformis",
+      "group": "Bacteria · Bacillus",
+      "role": "Germination, root branching and root-zone competition.",
+      "value": "+75%",
+      "finding": "More shoot dry mass, with root mass close to double the untreated plants.",
+      "conditions": "Tomato, greenhouse rhizotrons.",
+      "source": "Nunes et al. (2022), Brazilian Journal of Microbiology 54:397",
+      "url": "https://doi.org/10.1007/s42770-022-00874-3"
+    },
+    {
+      "name": "Glomus intraradices",
+      "group": "Fungi · endomycorrhizae",
+      "role": "The most aggressive colonizer: phosphorus, water and hard-to-reach nutrients.",
+      "value": "2×",
+      "finding": "Faster phosphate uptake in colonized plants recovering from drought, with root phosphorus about 30% higher.",
+      "conditions": "Maize, greenhouse.",
+      "source": "Le Pioufle et al. (2019), Frontiers in Plant Science 10:897",
+      "url": "https://doi.org/10.3389/fpls.2019.00897"
+    },
+    {
+      "name": "Glomus etunicatum",
+      "group": "Fungi · endomycorrhizae",
+      "role": "Function under salinity and drought.",
+      "value": "4×",
+      "finding": "Higher photosynthetic efficiency in colonized seedlings at high salt than in uncolonized seedlings.",
+      "conditions": "Persimmon rootstock seedlings, greenhouse pots.",
+      "source": "Incesu et al. (2025), Frontiers in Plant Science 16",
+      "url": "https://doi.org/10.3389/fpls.2025.1595144"
+    },
+    {
+      "name": "Glomus aggregatum",
+      "group": "Fungi · endomycorrhizae",
+      "role": "Trades host carbon for nutrients the root cannot reach.",
+      "value": "P · Zn · Cu",
+      "finding": "Uptake of phosphorus, zinc and copper rose significantly, along with dry matter, at every phosphate rate tested.",
+      "conditions": "Leucaena, pot study.",
+      "source": "Manjunath, Hue & Habte (1989), Plant and Soil 114:127",
+      "url": "https://doi.org/10.1007/BF02203090"
+    },
+    {
+      "name": "Glomus mosseae",
+      "group": "Fungi · endomycorrhizae",
+      "role": "Delivers phosphorus and nitrogen from soil beyond the root.",
+      "value": "49%",
+      "finding": "Of the plant’s total phosphate came through the fungal hyphae from soil the roots could not reach, along with 35% of its nitrogen.",
+      "conditions": "Couchgrass and white clover, compartment pots.",
+      "source": "George et al. (1992), Canadian Journal of Botany 70:2130",
+      "url": "https://doi.org/10.1139/b92-265"
+    },
+    {
+      "name": "Trichoderma viride",
+      "group": "Fungi · Trichoderma",
+      "role": "Frees bound phosphorus for the plant.",
+      "value": "+54%",
+      "finding": "More shoot dry weight when the only added phosphorus was an insoluble organic source, and +34% with insoluble calcium phosphate.",
+      "conditions": "Sweet clover (Melilotus officinalis), pot study.",
+      "source": "Song et al. (2023), Scientific Reports 13:12345",
+      "url": "https://doi.org/10.1038/s41598-023-39501-y"
+    },
+    {
+      "name": "Trichoderma harzianum",
+      "group": "Fungi · Trichoderma",
+      "role": "Colonizes and persists in the root zone; root growth.",
+      "value": "100×",
+      "finding": "Rise in Trichoderma populations on treated greens, holding at 100,000 CFU per gram or more through winter.",
+      "conditions": "Creeping bentgrass greens, four years of field trials.",
+      "source": "Lo, Nelson & Harman (1996), Plant Disease 80:736",
+      "url": "https://doi.org/10.1094/PD-80-0736"
+    }
+  ],
+  "research": [
+    {
+      "value": "+16%",
+      "topic": "Biofertilizers · 171 studies",
+      "text": "Average crop yield gain from microbial biofertilizers in a global meta-analysis, rising to +20% in dry climates, with better nitrogen and phosphorus use efficiency.",
+      "source": "Schütz et al. (2018), Frontiers in Plant Science 8:2204",
+      "url": "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2017.02204/full"
+    },
+    {
+      "value": "+23%",
+      "topic": "Mycorrhizae · rainfed crops",
+      "text": "Yield increase from mycorrhizal fungi across 13 rainfed crops (546 paired observations), with shoot biomass up 24% and root biomass up 30%.",
+      "source": "Wu et al. (2022), PeerJ 10:e12861",
+      "url": "https://peerj.com/articles/12861/"
+    },
+    {
+      "value": "+21%",
+      "topic": "Humic substances · 81 studies",
+      "text": "Average increase in root dry weight from humic substances. Response varies by source and rate; leonardite humics sit at the low end of the range.",
+      "source": "Rose et al. (2014), Advances in Agronomy",
+      "url": "https://doi.org/10.1016/B978-0-12-800138-7.00002-4"
+    },
+    {
+      "value": "100–300",
+      "topic": "Soil carbon · nutrient holding",
+      "text": "Cation exchange capacity of humus in meq per 100 g, compared with 2 to 15 for kaolinite clay and under 2 for sand. Sandy soils rely on organic matter to hold nutrients.",
+      "source": "Cotching, Brown & Lemon, Cations and CEC fact sheet, GRDC",
+      "url": "https://www.soilquality.org.au/factsheets/cations-and-cec-tas"
+    },
+    {
+      "value": "60% · 4 wk",
+      "topic": "Organic nitrogen release",
+      "text": "Share of feather meal nitrogen that becomes plant-available in 4 weeks (75% by 10 weeks). Poultry litter releases more slowly, about 27% in 4 weeks.",
+      "source": "Sullivan et al. (2019), Oregon State Extension EM 9235",
+      "url": "https://extension.oregonstate.edu/sites/extd8/files/documents/em9235.pdf"
+    },
+    {
+      "value": "+30%",
+      "topic": "Soil management · 54 field studies",
+      "text": "Increase in mycorrhizal root colonization from reduced tillage and winter cover crops. Practices that protect soil life protect the inoculum.",
+      "source": "Bowles et al. (2017), Journal of Applied Ecology 54:1785",
+      "url": "https://doi.org/10.1111/1365-2664.12815"
+    }
+  ],
+  "resources": [
+    {
+      "group": "Soil health foundations",
+      "items": [
+        {
+          "url": "https://www.sare.org/wp-content/uploads/Building-Soils-for-Better-Crops.pdf",
+          "org": "SARE · USDA",
+          "title": "Building Soils for Better Crops, 4th edition",
+          "description": "The standard free textbook on soil organic matter, soil biology and nutrient cycling, written for growers.",
+          "type": "Free book · PDF"
+        },
+        {
+          "url": "https://www.nrcs.usda.gov/sites/default/files/2025-07/2%20Principles%20of%20Soil%20Health%203.0.pdf",
+          "org": "USDA NRCS",
+          "title": "Principles of Soil Health",
+          "description": "The federal soil-health framework: keep soil covered, minimize disturbance, keep living roots, maximize diversity.",
+          "type": "Fact sheet · PDF"
+        },
+        {
+          "url": "https://www.css.cornell.edu/extension/soil-health/manual.pdf",
+          "org": "Cornell University",
+          "title": "Comprehensive Assessment of Soil Health",
+          "description": "How labs measure soil biology, structure and chemistry, and how to read a soil-health report.",
+          "type": "Training manual · PDF"
+        },
+        {
+          "url": "https://www.agronomy.org/files/s4t/lessons/nrcs-soil-food-web-and-soil-biology-primer.pdf",
+          "org": "USDA NRCS",
+          "title": "The Soil Food Web and Soil Biology Primer",
+          "description": "Who lives in the soil, from bacteria and fungi to nematodes, and what each group does for the crop.",
+          "type": "Lesson · PDF"
+        }
+      ]
+    },
+    {
+      "group": "Beneficial microbes",
+      "items": [
+        {
+          "url": "https://journals.flvc.org/edis/article/view/135720",
+          "org": "University of Florida IFAS",
+          "title": "Biology, Ecology and Benefits of Arbuscular Mycorrhizal Fungi in Agricultural Ecosystems",
+          "description": "How mycorrhizal fungi colonize crop roots, what they trade with the plant and which practices help or hurt them.",
+          "type": "Extension publication"
+        },
+        {
+          "url": "https://scholarspace.manoa.hawaii.edu/items/4754a035-a01d-4414-8ad5-437743bd02f4",
+          "org": "University of Hawaii",
+          "title": "Producing and Applying Arbuscular Mycorrhizal Inoculum",
+          "description": "Practical guidance on mycorrhizal inoculum: how it is made, applied and checked in the field.",
+          "type": "Extension publication"
+        }
+      ]
+    },
+    {
+      "group": "Nitrogen and nutrient management",
+      "items": [
+        {
+          "url": "https://extension.oregonstate.edu/catalog/em-9235-osu-organic-fertilizer-cover-crop-calculator-predicting-plant-available-nitrogen",
+          "org": "Oregon State University",
+          "title": "Organic Fertilizer and Cover Crop Calculator",
+          "description": "Estimates how much plant-available nitrogen an organic fertilizer releases over a season, and what it costs per pound.",
+          "type": "Calculator + guide"
+        },
+        {
+          "url": "https://hub.ofrf.org/resource/organic-nitrogen-management",
+          "org": "Organic Farming Research Foundation",
+          "title": "Organic Nitrogen Management",
+          "description": "Planning nitrogen from organic sources: timing, mineralization and matching release to crop demand.",
+          "type": "Guide"
+        },
+        {
+          "url": "https://www.canr.msu.edu/news/the-4r-s-of-nutrient-management",
+          "org": "Michigan State University",
+          "title": "The 4Rs of Nutrient Management",
+          "description": "Right source, right rate, right time, right place: the industry framework for efficient fertilizer use.",
+          "type": "Article"
+        },
+        {
+          "url": "https://www.nrcs.usda.gov/getting-assistance/other-topics/nutrient-management",
+          "org": "USDA NRCS",
+          "title": "Nutrient Management",
+          "description": "The conservation standard for planning nutrient applications, with links to state technical guides.",
+          "type": "Program page"
+        }
+      ]
+    },
+    {
+      "group": "Carbon and amendments",
+      "items": [
+        {
+          "url": "https://vtechworks.lib.vt.edu/items/201b54a7-41f6-4658-8f8c-ef2c22a00406",
+          "org": "Virginia Tech",
+          "title": "Biochar in Agricultural Systems",
+          "description": "What biochar is, how it changes soil water holding, nutrient retention and microbial habitat, and where it pays.",
+          "type": "Extension publication"
+        }
+      ]
+    },
+    {
+      "group": "Organic certification",
+      "items": [
+        {
+          "url": "https://www.omri.org/",
+          "org": "OMRI",
+          "title": "Organic Materials Review Institute",
+          "description": "Look up OMRI-listed products, including Sigma, before using them in certified organic production.",
+          "type": "Products list"
+        },
+        {
+          "url": "https://www.ams.usda.gov/rules-regulations/organic/national-list",
+          "org": "USDA AMS",
+          "title": "The National List",
+          "description": "The federal list of substances allowed and prohibited in certified organic crop production.",
+          "type": "Regulation"
+        }
+      ]
+    }
+  ]
+}

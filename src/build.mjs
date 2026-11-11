@@ -94,6 +94,10 @@ const ICONS = {
   sprout: '<path d="M12 21v-9M12 12C12 8 9 6 5 6c0 4 3 6 7 6zM12 10c0-3.5 2.5-6 7-6 0 4-3 6-7 6z"/>',
   chat: '<path d="M4 5h16v11H8l-4 4z"/>',
   layers: '<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/>',
+  chevron: '<path d="M6 9l6 6 6-6"/>',
+  chevLeft: '<path d="M15 18l-6-6 6-6"/>',
+  chevRight: '<path d="M9 18l6-6-6-6"/>',
+  play: '<path d="M8 5v14l11-7z" fill="currentColor"/>',
 };
 const icon = (name, cls = "h-5 w-5") =>
   `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name]}</svg>`;
@@ -101,6 +105,8 @@ const icon = (name, cls = "h-5 w-5") =>
 const NAV = [
   { href: "products.html", label: "Products", key: "products" },
   { href: "solutions.html", label: "Solutions", key: "solutions" },
+  { href: "science.html", label: "Science", key: "science" },
+  { href: "field-results.html", label: "Field Results", key: "field" },
   { href: "about.html", label: "About", key: "about" },
   { href: "contact.html", label: "Contact", key: "contact" },
 ];
@@ -115,7 +121,7 @@ function layout({ file, title, description, active, body, scripts = [] }) {
     const on = n.key === active;
     return mobile
       ? `<a href="${r}${n.href}" class="block rounded-lg px-3 py-3 text-base font-medium ${on ? "bg-forest-50 text-forest-900" : "text-stone-700 hover:bg-stone-50"}"${on ? ' aria-current="page"' : ""}>${n.label}</a>`
-      : `<a href="${r}${n.href}" class="rounded-md px-3 py-2 text-sm font-medium transition-colors ${on ? "text-field-700" : "text-stone-700 hover:text-forest-900"}"${on ? ' aria-current="page"' : ""}>${n.label}</a>`;
+      : `<a href="${r}${n.href}" class="whitespace-nowrap rounded-md px-2 py-2 text-sm font-medium transition-colors xl:px-3 ${on ? "text-field-700" : "text-stone-700 hover:text-forest-900"}"${on ? ' aria-current="page"' : ""}>${n.label}</a>`;
   };
   const calcOn = active === "calculator";
 
@@ -153,10 +159,10 @@ ${file === "404.html" ? `<script>
     <a href="${r}index.html" class="shrink-0" aria-label="${SITE.name} home">
       <img src="${r}assets/img/logo-lockup.png" alt="${SITE.name}" width="915" height="275" class="h-10 w-auto lg:h-12">
     </a>
-    <nav class="hidden items-center gap-1 lg:flex" aria-label="Main">
-      ${NAV.slice(0, 2).map((n) => navLink(n)).join("\n      ")}
-      <a href="${r}calculator.html" class="inline-flex items-center gap-1.5 rounded-md px-3 py-2 text-sm font-medium transition-colors ${calcOn ? "text-field-700" : "text-stone-700 hover:text-forest-900"}"${calcOn ? ' aria-current="page"' : ""}>${icon("calc", "h-4 w-4")}Cost Calculator</a>
-      ${NAV.slice(2).map((n) => navLink(n)).join("\n      ")}
+    <nav class="hidden items-center gap-0.5 lg:flex xl:gap-1" aria-label="Main">
+      ${NAV.slice(0, 4).map((n) => navLink(n)).join("\n      ")}
+      <a href="${r}calculator.html" class="inline-flex items-center gap-1.5 whitespace-nowrap rounded-md px-2 py-2 text-sm font-medium transition-colors xl:px-3 ${calcOn ? "text-field-700" : "text-stone-700 hover:text-forest-900"}"${calcOn ? ' aria-current="page"' : ""}>${icon("calc", "h-4 w-4")}<span class="hidden xl:inline">Cost&nbsp;</span>Calculator</a>
+      ${NAV.slice(4).map((n) => navLink(n)).join("\n      ")}
     </nav>
     <div class="flex items-center gap-2">
       <a href="${r}contact.html#quote" class="btn-primary hidden sm:inline-flex">Request a Quote</a>
@@ -167,9 +173,9 @@ ${file === "404.html" ? `<script>
   </div>
   <div id="mobile-menu" class="hidden border-t border-stone-200 bg-white lg:hidden">
     <nav class="container-site space-y-1 py-4" aria-label="Mobile">
-      ${NAV.slice(0, 2).map((n) => navLink(n, true)).join("\n      ")}
+      ${NAV.slice(0, 4).map((n) => navLink(n, true)).join("\n      ")}
       <a href="${r}calculator.html" class="flex items-center gap-2 rounded-lg px-3 py-3 text-base font-medium ${calcOn ? "bg-forest-50 text-forest-900" : "text-stone-700 hover:bg-stone-50"}">${icon("calc")}Cost Calculator</a>
-      ${NAV.slice(2).map((n) => navLink(n, true)).join("\n      ")}
+      ${NAV.slice(4).map((n) => navLink(n, true)).join("\n      ")}
       <div class="grid gap-2 pt-3 sm:grid-cols-2">
         <a href="${r}contact.html#quote" class="btn-primary w-full">Request a Quote</a>
         <a href="tel:${SITE.phoneHref}" class="btn-outline w-full">${icon("phone", "h-4 w-4")}${SITE.phone}</a>
@@ -194,6 +200,8 @@ ${body}
       <ul class="mt-4 space-y-2.5 text-sm">
         <li><a class="hover:text-white" href="${r}products.html">All Products</a></li>
         <li><a class="hover:text-white" href="${r}solutions.html">Solutions</a></li>
+        <li><a class="hover:text-white" href="${r}science.html">The Science</a></li>
+        <li><a class="hover:text-white" href="${r}field-results.html">Field Results</a></li>
         <li><a class="hover:text-white" href="${r}calculator.html">Cost Calculator</a></li>
         <li><a class="hover:text-white" href="${r}${PRICE_PDF}" download>Pricing at a Glance (PDF)</a></li>
         <li><a class="hover:text-white" href="${r}about.html">About Us</a></li>
@@ -374,6 +382,10 @@ function home() {
           ["Humic acids & organic carbon", "Hold nutrients and moisture in the root zone and feed the soil's microbial life."],
         ].map(([t, d]) => `<div class="flex gap-4"><span class="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-field-600 text-white">${icon("check", "h-3.5 w-3.5")}</span><div><dt class="font-semibold text-forest-950">${t}</dt><dd class="mt-1 text-sm leading-relaxed text-stone-600">${d}</dd></div></div>`).join("\n        ")}
       </dl>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <a href="science.html" class="btn-dark">How it works ${icon("arrow", "h-4 w-4")}</a>
+        <a href="field-results.html" class="btn-outline">See field results</a>
+      </div>
     </div>
   </div>
 </section>
@@ -1151,6 +1163,480 @@ function pricingSheet() {
 </body></html>`;
 }
 
+// ---------- science & field results ----------
+// Content from Sigma AgriScience's science and field pages (used with permission), adapted for Terra Elemental.
+// Microbe counts, humic acids and nitrogen splits come from the product labels in products.json, not Sigma's web copy.
+const SCIENCE = JSON.parse(fs.readFileSync(path.join(ROOT, "src/data/science.json"), "utf8"));
+const FIELD = JSON.parse(fs.readFileSync(path.join(ROOT, "src/data/field.json"), "utf8"));
+const BRIEF_PDF = "assets/docs/sigma-bio-technical-brief.pdf";
+const fieldImg = (id) => FIELD.items.find((x) => x.id === id);
+
+const sectionHead = ({ eyebrow, title, lede, dark = false, center = false }) => `
+    <div class="max-w-2xl ${center ? "mx-auto text-center" : ""}">
+      <p class="eyebrow ${dark ? "!text-sun-300" : ""}">${eyebrow}</p>
+      <h2 class="mt-3 text-3xl font-semibold sm:text-4xl ${dark ? "!text-white" : ""}">${title}</h2>
+      ${lede ? `<p class="mt-4 leading-relaxed ${dark ? "text-forest-100" : "text-stone-600"}">${lede}</p>` : ""}
+    </div>`;
+const research = (text) => `<p class="mt-4 rounded-xl bg-sky-50 p-4 text-sm leading-relaxed text-sky-900"><span class="font-semibold">Research:</span> ${text}</p>`;
+const bullets = (items, cls = "") => `<ul class="mt-4 space-y-2 ${cls}">${items.map((t) => `<li class="flex gap-2 text-sm leading-relaxed text-stone-700"><span class="mt-0.5 shrink-0 text-field-600">${icon("check", "h-4 w-4")}</span><span>${t}</span></li>`).join("")}</ul>`;
+const extLink = (url, label) => `<a href="${url}" target="_blank" rel="noopener" class="inline-flex items-center gap-1 font-medium text-sky-700 underline decoration-sky-200 underline-offset-2 hover:text-sky-800">${label}${icon("external", "h-3.5 w-3.5")}</a>`;
+
+// Products whose label lists biology, grouped by identical guaranteed counts.
+function countRows() {
+  const rows = new Map();
+  for (const p of PRODUCTS.filter((x) => x.biologicals.length)) {
+    const b = Object.fromEntries(p.biologicals.map((x) => [x.item, x.value]));
+    const key = JSON.stringify(b);
+    if (!rows.has(key)) rows.set(key, { b, names: [] });
+    rows.get(key).names.push(p);
+  }
+  return [...rows.values()];
+}
+
+// Water-soluble vs water-insoluble share of nitrogen, from each label's guaranteed analysis.
+function nitrogenSplit() {
+  return PRODUCTS.filter((p) => p.line === "agriculture" || p.slug === "sigma-12-2-6-bio-bridge").map((p) => {
+    let wsn = 0, win = 0;
+    for (const a of p.analysis.filter((x) => x.sub)) {
+      const v = parseFloat(a.value);
+      if (/insoluble/i.test(a.item)) win += v;
+      else if (/soluble nitrogen|ammoniacal/i.test(a.item)) wsn += v;
+    }
+    const quick = Math.round((wsn / (wsn + win)) * 100);
+    return { p, quick, slow: 100 - quick };
+  }).filter((x) => !Number.isNaN(x.quick));
+}
+
+function sciencePage() {
+  const steps = [
+    { t: "Nutrients are released", d: "Soil microbes break down the organic nitrogen and phosphorus in each granule into forms roots can take up.", time: "8 to 12 weeks", src: "Organic N-P-K in every granule", photo: "C" },
+    { t: "Bacillus colonize the root", d: "Beneficial bacteria form a film on the root surface, cycle nutrients out of organic matter and free phosphorus locked up by calcium, iron and aluminum.", time: "About a day", src: "Bacillus, 2.8 million CFU/lb in most grades", photo: "B" },
+    { t: "Mycorrhizae extend the root", d: "Fungal threads grow from inside the root out past the soil it has already drained, and bring back phosphorus, zinc, copper and water.", time: "Weeks", src: "Four Glomus species, about 6 propagules/lb", photo: "A, B" },
+    { t: "Carbon holds nutrients", d: "Humic carbon adds exchange sites that hold potassium, calcium, magnesium and ammonium where roots can reach them.", time: "Season-long", src: "Humic acids, 3 to 6%", photo: "A" },
+    { t: "Trichoderma recycle residue", d: "Fast-growing fungi release enzymes that break down crop residue and leaf litter, returning its nutrients to the soil.", time: "Weeks", src: "Trichoderma, 480,000 CFU/lb in most grades", photo: "D" },
+  ];
+  const photos = [
+    ["A", "f-roots-drip", "Fine roots spreading along a drip line, where water carries released nutrients to them."],
+    ["B", "f-plug-roots", "Dense, white feeder roots: the surface Bacillus colonize and mycorrhizae enter."],
+    ["C", "f-avo-granules", "Sigma granules under the canopy: the organic nitrogen, phosphorus and carbon source."],
+    ["D", "f-avo-mycelium", "Fungal mycelium spreading over Sigma granules on an orchard floor."],
+  ];
+  const organisms = [
+    { name: "Bacillus bacteria", tag: "Bacteria", what: "Rod-shaped soil bacteria, among the most widely studied plant-growth-promoting rhizobacteria.", points: ["Colonize the root surface and the soil right around it", "Help release phosphorus bound to calcium, iron and aluminum", "Form a biofilm on the root within about a day", "Cycle nutrients out of organic matter", "Form endospores, so they survive storage and dry soil until conditions are right"], species: "B. subtilis · B. amyloliquefaciens · B. licheniformis · Brevibacillus laterosporus" },
+    { name: "Mycorrhizal fungi", tag: "Fungi", what: "Arbuscular mycorrhizal fungi live inside root cells and trade nutrients for sugars from the plant, a partnership found in most crops and turfgrasses.", points: ["Fungal threads (hyphae) extend far past the root depletion zone", "Take up phosphorus, zinc and copper the root cannot reach", "Move water to the plant in dry soil", "Help bind soil into stable crumbs"], species: "Glomus intraradices · G. etunicatum · G. aggregatum · G. mosseae" },
+    { name: "Trichoderma", tag: "Fungi", what: "Fast-growing soil fungi that work through crop residue and colonize root surfaces.", points: ["Release cellulase enzymes that break down crop residue and leaf litter", "Return the nutrients in that residue to the soil", "Colonize root surfaces and support root growth", "Some strains help free phosphorus and zinc"], species: "Trichoderma harzianum · T. viride" },
+  ];
+  const tabs = [
+    { id: "biology", label: "The biology" },
+    { id: "carbon", label: "Soil carbon" },
+    { id: "nitrogen", label: "Nitrogen release" },
+    { id: "quality", label: "Choosing a biological" },
+    { id: "research", label: "The research" },
+  ];
+  const humic = PRODUCTS.filter((p) => p.biologicals.length && p.line !== "bridge").reduce((m, p) => {
+    const v = p.biologicals.find((x) => x.item === "Humic Acids")?.value;
+    (m[v] ||= []).push(p.npk);
+    return m;
+  }, {});
+  const humicList = Object.entries(humic).map(([v, npks]) => `<li><span class="font-semibold text-forest-950">${v.replace(".0", "")}</span> in Sigma ${[...new Set(npks)].join(", ")} Bio</li>`).join("");
+
+  const strainCard = (s) => `
+          <details class="group card overflow-hidden">
+            <summary class="flex cursor-pointer list-none items-center gap-4 p-4 hover:bg-stone-50 [&::-webkit-details-marker]:hidden">
+              <span class="w-20 shrink-0 text-center font-serif ${s.value.length > 5 ? "text-base" : "text-xl"} whitespace-nowrap font-semibold text-field-700 tabular-nums">${esc(s.value)}</span>
+              <span class="min-w-0 flex-1"><span class="block font-semibold italic text-forest-950">${esc(s.name)}</span><span class="block text-xs leading-snug text-stone-500">${esc(s.role)}</span></span>
+              <span class="shrink-0 text-stone-400 transition group-open:rotate-180">${icon("chevron", "h-5 w-5")}</span>
+            </summary>
+            <div class="border-t border-stone-200 px-4 pb-4 pt-3 text-sm leading-relaxed text-stone-700">
+              <p>${esc(s.finding)}</p>
+              <p class="mt-2 text-xs text-stone-500"><span class="font-semibold">Test conditions:</span> ${esc(s.conditions)}</p>
+              <p class="mt-2 text-xs">${extLink(s.url, esc(s.source))}</p>
+            </div>
+          </details>`;
+  const bacteria = SCIENCE.strains.filter((s) => s.group.startsWith("Bacteria"));
+  const fungi = SCIENCE.strains.filter((s) => !s.group.startsWith("Bacteria"));
+
+  const panels = {
+    biology: `
+      <div class="grid gap-5 lg:grid-cols-3">
+        ${organisms.map((o) => `
+        <article class="card flex flex-col p-6">
+          <p class="text-xs font-semibold uppercase tracking-wide text-field-700">${o.tag}</p>
+          <h3 class="mt-1 text-xl font-semibold">${o.name}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-stone-600">${o.what}</p>
+          ${bullets(o.points)}
+          <p class="mt-auto pt-5 text-xs leading-relaxed text-stone-500"><span class="font-semibold text-stone-700">In Sigma:</span> <i>${o.species}</i></p>
+        </article>`).join("")}
+      </div>
+
+      <div class="mt-6 grid gap-5 lg:grid-cols-2">
+        <div class="rounded-2xl bg-forest-50 p-6">
+          <h3 class="text-lg font-semibold">Why three groups, not one?</h3>
+          <p class="mt-2 text-sm leading-relaxed text-stone-700">Each does a different job, and combinations add complementary functions. In a meta-analysis of mycorrhizal studies, mixed-species inoculum produced stronger plant responses than single species (Hoeksema et al. 2010), and co-inoculating bacteria with mycorrhizal fungi usually adds up rather than competes (Berrios et al. 2024).</p>
+        </div>
+        <div class="rounded-2xl border border-sun-300 bg-sun-300/15 p-6">
+          <h3 class="text-lg font-semibold">Good to know</h3>
+          <p class="mt-2 text-sm leading-relaxed text-stone-700">Cole crops (cabbage, broccoli, cauliflower, canola) and the beet and spinach family don't form mycorrhizal partnerships. Bacillus, Trichoderma, humic carbon and organic nitrogen still work for them, and mycorrhizae carry over to the next crop in the rotation.</p>
+        </div>
+      </div>
+
+      <h3 class="mt-12 text-2xl font-semibold">Guaranteed counts</h3>
+      <p class="mt-2 max-w-2xl text-sm text-stone-600">Printed on every product label, per pound. CFU (colony-forming units) counts live bacteria and Trichoderma; propagules are the spores and root fragments that start a mycorrhizal colonization.</p>
+      <div class="mt-5 overflow-x-auto rounded-2xl border border-stone-200">
+        <table class="w-full min-w-[40rem] text-left text-sm">
+          <thead class="bg-stone-50 text-xs uppercase tracking-wide text-stone-500"><tr><th class="px-4 py-3 font-semibold">Products</th><th class="px-4 py-3 font-semibold">Beneficial bacteria</th><th class="px-4 py-3 font-semibold">Mycorrhizae</th><th class="px-4 py-3 font-semibold">Trichoderma</th><th class="px-4 py-3 font-semibold">Humic acids</th></tr></thead>
+          <tbody class="divide-y divide-stone-200">
+            ${countRows().map(({ b, names }) => `<tr><td class="px-4 py-3"><div class="flex flex-wrap gap-1.5">${names.map((p) => `<a href="products/${p.slug}.html" class="chip hover:bg-forest-100">${nameHtml(p.name.replace("Sigma ", ""))}</a>`).join("")}</div></td><td class="px-4 py-3 tabular-nums">${b["Beneficial Bacteria"]}</td><td class="px-4 py-3 tabular-nums">${b["Endomycorrhizae"]}</td><td class="px-4 py-3 tabular-nums">${b["Trichoderma"]}</td><td class="px-4 py-3 tabular-nums">${b["Humic Acids"]}</td></tr>`).join("\n            ")}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-12 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+        <div class="max-w-2xl">
+          <h3 class="text-2xl font-semibold">Meet the 10 strains</h3>
+          <p class="mt-2 text-sm text-stone-600">Each organism in Sigma's biology has published research behind it. Open a strain to see the study. These studies tested each organism on its own, under the conditions listed; they aren't trials of Sigma products.</p>
+        </div>
+        <a href="${BRIEF_PDF}" download class="btn-outline shrink-0">${icon("download", "h-4 w-4")}Technical brief (PDF, ${fmtSize(fs.statSync(path.join(OUT, BRIEF_PDF)).size)})</a>
+      </div>
+      <div class="mt-6 grid gap-8 lg:grid-cols-2">
+        <div><p class="mb-3 text-xs font-semibold uppercase tracking-wide text-stone-500">Bacteria · ${bacteria.length}</p><div class="space-y-3">${bacteria.map(strainCard).join("")}</div></div>
+        <div><p class="mb-3 text-xs font-semibold uppercase tracking-wide text-stone-500">Fungi · ${fungi.length}</p><div class="space-y-3">${fungi.map(strainCard).join("")}</div></div>
+      </div>`,
+
+    carbon: `
+      <p class="max-w-2xl text-stone-700">Microbes need carbon to eat and a place to live. Humic carbon and organic matter provide both, and they hold nutrients in the root zone.</p>
+      <div class="mt-6 grid gap-5 lg:grid-cols-2">
+        ${[
+          ["Humic and fulvic acids", "Stable carbon fractions from humate (leonardite), built into every Sigma granular.", ["Add negatively charged exchange sites (CEC) that hold K⁺, Ca²⁺, Mg²⁺ and NH₄⁺", "Bind iron, zinc and manganese in forms roots can still take up", "Stimulate root growth", "Buffer the soil around the granule"], "across 81 studies, humic substances raised shoot and root growth about 20% on average. The response depends on source and rate; leonardite humics sat at the low end, around 12% for shoots (Rose et al. 2014)."],
+          ["Soil organic matter", "Every organic input, from the granule to clippings and crop residue, builds it over time.", ["Holds water and releases it to roots between rains", "Supplies nitrogen, phosphorus and sulfur as it breaks down", "Glues soil into crumbs that drain and breathe", "Feeds the whole soil food web"], "humus holds 100 to 300 meq of exchangeable nutrients per 100 g, against under 2 for sand (GRDC). Each 1% of organic matter adds roughly 2,000 to 3,000 gallons of plant-available water per acre in the topsoil, most in sandy soils (Minasny &amp; McBratney 2018; Libohova et al. 2017)."],
+        ].map(([t, d, pts, r]) => `
+        <article class="card flex flex-col p-6">
+          <h3 class="text-xl font-semibold">${t}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-stone-600">${d}</p>
+          ${bullets(pts)}
+          <div class="mt-auto">${research(r)}</div>
+        </article>`).join("")}
+      </div>
+
+      <div class="mt-6 rounded-2xl bg-forest-50 p-6">
+        <h3 class="text-lg font-semibold">How much is in each bag</h3>
+        <p class="mt-1 text-sm text-stone-600">Humic acids, guaranteed on every label:</p>
+        <ul class="mt-3 space-y-1 text-sm text-stone-700">${humicList}<li>Organic matter from poultry manure, feather meal, bone meal and other organic inputs in every granule (8-5-1 Bio is manure-free)</li></ul>
+      </div>`,
+
+    nitrogen: `
+      <div class="grid gap-10 lg:grid-cols-[1.2fr_1fr]">
+        <div>
+          <p class="text-stone-700">Most of the nitrogen in a Sigma organic granule is water-insoluble. Soil microbes turn it into plant-available ammonium and nitrate over 8 to 12 weeks.</p>
+          <div class="mt-6 card p-6">
+            <h3 class="text-lg font-semibold">Quick and slow nitrogen in each grade</h3>
+            <p class="mt-1 text-xs text-stone-500">Share of the label's soluble and insoluble nitrogen.</p>
+            <div class="mt-4 flex flex-wrap gap-4 text-xs text-stone-600"><span class="inline-flex items-center gap-1.5"><span class="h-3 w-3 rounded-sm bg-sun-400"></span>Water-soluble: available now</span><span class="inline-flex items-center gap-1.5"><span class="h-3 w-3 rounded-sm bg-forest-700"></span>Water-insoluble: released by microbes</span></div>
+            <ul class="mt-5 space-y-3">
+              ${nitrogenSplit().map(({ p, quick, slow }) => `<li class="grid grid-cols-[6.5rem_1fr] items-center gap-3 text-sm"><a href="products/${p.slug}.html" class="font-semibold text-forest-950 hover:text-field-700">${p.npk}${p.line === "bridge" ? ' <span class="font-normal text-stone-500">Bridge</span>' : ""}</a><span class="flex h-6 overflow-hidden rounded-md text-[11px] font-semibold tabular-nums" role="img" aria-label="${quick}% water-soluble, ${slow}% water-insoluble"><span class="flex items-center justify-start bg-sun-400 px-1.5 text-forest-950" style="width:${quick}%">${quick}%</span><span class="flex items-center justify-end bg-forest-700 px-1.5 text-white" style="width:${slow}%">${slow}%</span></span></li>`).join("\n              ")}
+            </ul>
+            <p class="mt-4 text-xs text-stone-500">The 12-2-6 Bio Bridge is shown for contrast: its polymer-coated nitrogen is soluble but released over time by the coating.</p>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold">What that means on the ground</h3>
+          ${bullets(["A small soluble share gets plants going; the rest follows as they grow", "Release speeds up in warm, moist soil, when plants grow fastest, and slows in cold soil", "Less nitrate sits in the soil at any one time, so less is exposed to leaching after heavy rain or irrigation", "Plan earlier applications in cool spring soils, or use a Bio Bridge blend when you need fast green-up"])}
+          ${research("university release data: feather meal makes about 60% of its nitrogen available in 4 weeks and 75% in 10; poultry litter about 27% and 42% (Oregon State Extension EM 9235). Cool soil slows the first week most; by week 8 the gap is small (Hartz &amp; Johnstone 2006).")}
+        </div>
+      </div>`,
+
+    quality: `
+      <p class="max-w-2xl text-stone-700">Not every product that says "biological" delivers live organisms to the ground. Here's what matters, and how Sigma handles each one.</p>
+      <div class="mt-6 grid gap-6 lg:grid-cols-2">
+        <div class="card p-6">
+          <h3 class="text-xl font-semibold">In every Sigma granular</h3>
+          <dl class="mt-4 space-y-4">
+            ${[
+              ["GranCORE granule", "Powder granulated into a true round granule with a molasses and lignin sulfonate binder: consistent bulk density and an even spread."],
+              ["Every prill inoculated", "Each granule carries the biology, not just a coating on part of the batch."],
+              ["Counts on the label", "Bacteria, mycorrhizae and Trichoderma are guaranteed per pound on every label, alongside the N-P-K."],
+              ["Humic acids built in", "3% in standard grades and 6% in 2-4-2 Bio."],
+              ["Consistent sizing", "Large SGN 250 and fine SGN 110, so the product spreads and blends evenly."],
+              ["OMRI Listed organic grades", "Certificates are linked from each organic product's page."],
+              ["Documented", "A label and safety data sheet for every product, registered state by state."],
+            ].map(([t, d]) => `<div class="flex gap-3"><span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-field-600 text-white">${icon("check", "h-3.5 w-3.5")}</span><div><dt class="font-semibold text-forest-950">${t}</dt><dd class="mt-0.5 text-sm leading-relaxed text-stone-600">${d}</dd></div></div>`).join("")}
+          </dl>
+        </div>
+        <div class="card p-6">
+          <h3 class="text-xl font-semibold">Questions to ask any supplier</h3>
+          <ol class="mt-4 space-y-4">
+            ${[
+              ["Are the organisms guaranteed on the label?", "Look for counts per pound or per gallon (CFU for bacteria and Trichoderma, propagules for mycorrhizae), not just \"contains microbes\"."],
+              ["Which species are in it?", "Names should be listed. A product with bacteria, mycorrhizae and Trichoderma covers more jobs than a single organism."],
+              ["Will they survive storage?", "Spore-forming bacteria such as Bacillus stay viable far longer than non-spore formers. Ask for the shelf life and storage conditions."],
+              ["Is there food in the product?", "Microbes need carbon. Humic acids, molasses or organic matter in the same product give them a start."],
+              ["Is it tested?", "Ask for a certificate of analysis, and whether heavy metals and pathogens are screened, as OMRI review and state programs require."],
+              ["Is it registered where you use it?", "Fertilizers and beneficial-substance products are registered state by state."],
+              ["Will it spread and blend?", "A stated size guide number (SGN) and a hard, round granule mean an even pass and clean blends."],
+            ].map(([t, d], i) => `<li class="flex gap-3"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-forest-900 text-xs font-semibold text-white">${i + 1}</span><div><p class="font-semibold text-forest-950">${t}</p><p class="mt-0.5 text-sm leading-relaxed text-stone-600">${d}</p></div></li>`).join("")}
+          </ol>
+        </div>
+      </div>
+      ${research("the AAPFCO beneficial-substance rules adopted in California require each microbe to be listed by species with a viable count (CDFA, 2024). Sigma prints species and counts on every label. OMRI review of manure-based inputs requires testing for heavy metals and pathogens.")}
+      <a href="products.html" class="btn-outline mt-6">Labels, SDS sheets and OMRI certificates ${icon("arrow", "h-4 w-4")}</a>`,
+
+    research: `
+      <p class="max-w-2xl text-stone-700">Published, peer-reviewed findings on the organisms and materials in Sigma products. Each card links to its source.</p>
+      <div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        ${SCIENCE.research.map((x) => `
+        <article class="card flex flex-col p-6">
+          <p class="text-xs font-semibold uppercase tracking-wide text-stone-500">${esc(x.topic)}</p>
+          <p class="mt-2 font-serif text-4xl font-semibold text-field-700 tabular-nums">${esc(x.value)}</p>
+          <p class="mt-3 flex-1 text-sm leading-relaxed text-stone-700">${esc(x.text)}</p>
+          <p class="mt-4 text-xs">${extLink(x.url, esc(x.source))}</p>
+        </article>`).join("")}
+      </div>
+      <div class="mt-8 rounded-2xl border border-sun-300 bg-sun-300/15 p-6 sm:p-8">
+        <h3 class="text-xl font-semibold">The honest part</h3>
+        <p class="mt-2 text-sm text-stone-700">Biology adds to good management; it doesn't replace it. The research also shows:</p>
+        ${bullets([
+          "Results vary by field: in 54 maize fields, mycorrhizal inoculation ranged from −12% to +40%, and about one field in four responded significantly (Lutz et al. 2023).",
+          "High nitrogen rates reduce the plant's response to mycorrhizae (Hoeksema et al. 2010), and fungicide use cut mycorrhizal phosphorus delivery by 43% across 150 cereal fields (Edlinger et al. 2022).",
+          "Organic farms leach about 31% less nitrogen per acre, but not less per unit of yield (Tuomisto et al. 2012). Rate and timing still matter.",
+          "Humic responses depend on source, rate and soil; the biggest gains come on low-fertility, acid or sandy soils.",
+        ])}
+      </div>`,
+  };
+
+  const glossary = [
+    ["CFU", "Colony-forming units. A count of live bacterial or fungal cells able to grow into colonies."],
+    ["Propagule", "Any mycorrhizal structure that can start a new colonization: spores, hyphal fragments or colonized root pieces."],
+    ["SGN", "Size guide number. Median particle diameter in mm × 100. SGN 110 is a fine grade for greens, beds and precision spreading; SGN 250 is the standard field grade."],
+    ["WSN / WIN", "Water-soluble and water-insoluble nitrogen. WIN releases slowly through microbial mineralization."],
+    ["CEC", "Cation exchange capacity. The soil's ability to hold K⁺, Ca²⁺, Mg²⁺ and NH₄⁺. Low in sandy, low-organic-matter soils."],
+    ["Rhizosphere", "The narrow zone of soil influenced by root exudates, where microbial activity is highest."],
+    ["Humic acids", "Stable organic fractions, here derived from leonardite, that increase CEC and nutrient retention."],
+    ["Biostimulant", "A material that improves nutrient efficiency, stress tolerance or quality traits, independent of its nutrient content."],
+    ["Mineralization", "The microbial breakdown of organic nitrogen, phosphorus and sulfur into the mineral forms plants take up, such as ammonium and nitrate."],
+    ["Endospore", "A tough, dormant cell some bacteria, including Bacillus, form to survive heat, drought and storage. It germinates when conditions turn favorable."],
+    ["Hyphae", "The thin threads that make up a fungus. Mycorrhizal hyphae grow out from the root into the surrounding soil."],
+    ["Depletion zone", "The shell of soil right around a root that the root has already drawn nutrients from, especially slow-moving phosphorus."],
+    ["Glomalin", "A sticky protein made by mycorrhizal fungi that helps bind soil particles into stable aggregates."],
+    ["Chelation", "A bond between an organic molecule and a metal nutrient such as iron or zinc that keeps it soluble and available to roots."],
+    ["Organic program", "Sigma organic granulars only. Organic nitrogen, humate and beneficial microbes go out with every application."],
+    ["Bridge program", "Sigma's organic base and soil biology working alongside conventional fertilizer, so you keep the analysis, results and price point you count on while building healthier soil. Bio Bridge grades do it in one granule, or Sigma products can be blended into the program you already run."],
+    ["Conventional program", "Straight synthetic fertilizer at typical rates: the baseline other programs are compared against. Add Sigma biology to it and it becomes a Bridge program."],
+  ];
+
+  const body = `
+${pageHeader({ eyebrow: "The Science", title: "How living soil feeds your plants", lede: "Organic nutrients, beneficial microbes and soil carbon working together in the root zone. Start with the short version; the details are below whenever you want them.", image: fieldImg("f-roots-drip").image })}
+
+<section class="py-14 sm:py-20">
+  <div class="container-site">
+    ${sectionHead({ eyebrow: "The short version", title: "Three things in every bag, working together" })}
+    <div class="mt-10 grid gap-5 md:grid-cols-3">
+      ${[
+        ["leaf", "Feed", "Slow-release organic nutrients", "Soil microbes turn the organic nitrogen and phosphorus in each granule into plant food over 8 to 12 weeks. Plants get a steady supply instead of a flush, and nothing burns."],
+        ["sprout", "Colonize", "Live beneficial biology", "Three groups of organisms, Bacillus bacteria, mycorrhizal fungi and Trichoderma, colonize roots, extend their reach and free up nutrients already in your soil."],
+        ["layers", "Hold", "Soil carbon", "Humic acids and organic matter hold nutrients and water in the root zone, right where roots can reach them, and give the biology a place to live."],
+      ].map(([ic, k, t, d]) => `
+      <article class="card p-7">
+        <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-field-50 text-field-700">${icon(ic, "h-6 w-6")}</span>
+        <p class="mt-5 text-xs font-semibold uppercase tracking-[0.16em] text-field-600">${k}</p>
+        <h3 class="mt-1 text-2xl font-semibold">${t}</h3>
+        <p class="mt-3 leading-relaxed text-stone-600">${d}</p>
+      </article>`).join("")}
+    </div>
+    <div class="mt-8 grid gap-px overflow-hidden rounded-2xl bg-forest-800 sm:grid-cols-3">
+      ${[
+        ["Average crop yield gain from microbial biofertilizers, across 171 studies", 0],
+        ["Yield gain from mycorrhizal fungi across 13 rainfed crops", 1],
+        ["More root growth from humic substances, across 81 studies", 2],
+      ].map(([cap, i]) => { const x = SCIENCE.research[i]; return `<div class="bg-forest-900 p-6"><p class="font-serif text-3xl font-semibold text-sun-300">${esc(x.value)}</p><p class="mt-1 text-sm text-forest-100">${cap}</p><p class="mt-2 text-xs text-forest-300">${esc(x.source.split(",")[0])}</p></div>`; }).join("")}
+    </div>
+    <p class="mt-3 text-right text-sm"><a href="science.html#research" data-tab-link="research" class="inline-flex items-center gap-1 font-semibold text-field-700 hover:text-field-600">See all the research ${icon("arrow", "h-4 w-4")}</a></p>
+  </div>
+</section>
+
+<section class="bg-stone-50 py-14 sm:py-20">
+  <div class="container-site grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:gap-14">
+    <div>
+      ${sectionHead({ eyebrow: "How it works", title: "What happens in the root zone", lede: "Five processes, from the day a granule lands to the end of the season. The photos are from crops in Sigma programs." })}
+      <div class="mt-8 grid grid-cols-2 gap-3">
+        ${photos.map(([k, id, cap]) => `<figure class="relative overflow-hidden rounded-2xl"><img src="${fieldImg(id).thumb}" alt="${esc(cap)}" class="aspect-square w-full object-cover" loading="lazy"><figcaption class="absolute left-2 top-2 flex h-7 w-7 items-center justify-center rounded-full bg-white font-semibold text-forest-950 shadow" title="${esc(cap)}">${k}</figcaption></figure>`).join("")}
+      </div>
+      <ul class="mt-4 space-y-1 text-xs leading-relaxed text-stone-500">${photos.map(([k, , cap]) => `<li><span class="font-semibold text-stone-700">${k}</span> ${esc(cap)}</li>`).join("")}</ul>
+    </div>
+    <div>
+      <ol class="space-y-4">
+        ${steps.map((s, i) => `
+        <li class="card flex gap-4 p-5">
+          <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-forest-900 font-semibold text-white">${i + 1}</span>
+          <div class="min-w-0 flex-1">
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-1"><h3 class="text-lg font-semibold">${s.t}</h3><span class="chip">${s.time}</span></div>
+            <p class="mt-1.5 text-sm leading-relaxed text-stone-700">${s.d}</p>
+            <p class="mt-2 text-xs text-stone-500">${s.src} · Photo ${s.photo}</p>
+          </div>
+        </li>`).join("")}
+      </ol>
+      <p class="mt-4 text-xs text-stone-500">Timing depends on soil temperature, moisture and organic matter.</p>
+    </div>
+  </div>
+</section>
+
+<section id="deep-dive" class="py-14 sm:py-20">
+  <div class="container-site">
+    ${sectionHead({ eyebrow: "Deep dive", title: "The details, one topic at a time", lede: "For agronomists, grounds managers and anyone who wants the full picture. Pick a topic." })}
+    <div class="mt-8" data-tabs>
+      <div class="-mx-4 overflow-x-auto px-4 sm:mx-0 sm:px-0">
+        <div class="inline-flex min-w-full gap-1 rounded-2xl bg-stone-100 p-1.5 sm:min-w-0" role="tablist" aria-label="Science topics">
+          ${tabs.map((t, i) => `<button type="button" role="tab" id="tab-${t.id}" aria-controls="${t.id}" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}" class="shrink-0 rounded-xl px-4 py-2.5 text-sm font-semibold text-stone-600 transition hover:text-forest-950 aria-selected:bg-white aria-selected:text-forest-950 aria-selected:shadow-sm">${t.label}</button>`).join("")}
+        </div>
+      </div>
+      ${tabs.map((t) => `
+      <div id="${t.id}" role="tabpanel" aria-labelledby="tab-${t.id}" tabindex="0" class="mt-8 focus:outline-none" data-tab-panel>
+        <h3 class="sr-only">${t.label}</h3>
+        ${panels[t.id]}
+      </div>`).join("")}
+    </div>
+  </div>
+</section>
+
+<section class="bg-stone-50 py-14 sm:py-20">
+  <div class="container-site grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:gap-14">
+    <div>
+      ${sectionHead({ eyebrow: "Go deeper", title: "Trusted outside reading", lede: "Free publications and tools from USDA, land-grant universities and organic certifiers. They're independent of Sigma and Terra Elemental and don't endorse any product." })}
+      <a href="${BRIEF_PDF}" download class="card mt-8 flex items-center gap-4 p-4 transition hover:shadow-md">
+        <img src="assets/img/field/brief-cover-sm.webp" alt="" class="h-20 w-auto rounded-md shadow ring-1 ring-stone-200" loading="lazy">
+        <span class="flex-1"><span class="block font-semibold text-forest-950">Sigma Bio technical brief</span><span class="block text-sm text-stone-500">What each organism does, with the research behind it. 7 pages, PDF.</span></span>
+        <span class="text-stone-400">${icon("download")}</span>
+      </a>
+    </div>
+    <div class="space-y-3">
+      ${SCIENCE.resources.map((g, gi) => `
+      <details class="group card overflow-hidden"${gi === 0 ? " open" : ""}>
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 p-5 hover:bg-stone-50 [&::-webkit-details-marker]:hidden"><span class="font-semibold text-forest-950">${esc(g.group)} <span class="ml-1 font-normal text-stone-500">${g.items.length}</span></span><span class="shrink-0 text-stone-400 transition group-open:rotate-180">${icon("chevron", "h-5 w-5")}</span></summary>
+        <ul class="divide-y divide-stone-200 border-t border-stone-200">
+          ${g.items.map((x) => `<li><a href="${x.url}" target="_blank" rel="noopener" class="group/r flex gap-4 p-5 hover:bg-forest-50/50"><span class="min-w-0 flex-1"><span class="block text-xs font-medium uppercase tracking-wide text-field-700">${esc(x.org)} · ${esc(x.type)}</span><span class="mt-1 block font-semibold text-forest-950 group-hover/r:text-field-700">${esc(x.title)}</span><span class="mt-1 block text-sm leading-relaxed text-stone-600">${esc(x.description)}</span></span><span class="mt-1 shrink-0 text-stone-400">${icon("external", "h-4 w-4")}</span></a></li>`).join("")}
+        </ul>
+      </details>`).join("")}
+    </div>
+  </div>
+</section>
+
+<section class="py-14 sm:py-16">
+  <div class="container-site">
+    <details class="group card overflow-hidden">
+      <summary class="flex cursor-pointer list-none items-center justify-between gap-4 p-6 hover:bg-stone-50 [&::-webkit-details-marker]:hidden"><span><span class="block font-serif text-2xl font-semibold text-forest-950">Glossary</span><span class="mt-1 block text-sm text-stone-500">CFU, propagules, SGN, CEC and the other terms on this page</span></span><span class="shrink-0 text-stone-400 transition group-open:rotate-180">${icon("chevron", "h-6 w-6")}</span></summary>
+      <dl class="grid gap-x-10 gap-y-5 border-t border-stone-200 p-6 sm:grid-cols-2 lg:grid-cols-3">
+        ${glossary.map(([t, d]) => `<div><dt class="font-semibold text-forest-950">${t}</dt><dd class="mt-1 text-sm leading-relaxed text-stone-600">${d}</dd></div>`).join("\n        ")}
+      </dl>
+    </details>
+    <div class="mt-8 flex flex-col items-start justify-between gap-4 rounded-2xl bg-forest-50 p-6 sm:flex-row sm:items-center">
+      <p class="text-stone-700"><span class="font-semibold text-forest-950">See it in the field.</span> Roots, mycelium and crops from growers using Sigma products.</p>
+      <a href="field-results.html" class="btn-dark shrink-0">Field Results ${icon("arrow", "h-4 w-4")}</a>
+    </div>
+    <p class="mt-6 text-xs text-stone-500">Sigma products are fertilizers and soil amendments, not pesticides. Results vary with soil, crop, climate and management. Always read and follow the product label. Science content courtesy of Sigma AgriScience.</p>
+  </div>
+</section>
+${ctaBand()}`;
+  return layout({
+    file: "science.html",
+    title: "The Science",
+    active: "science",
+    description: "How Sigma AgriScience biofertilizers work: slow-release organic nutrients, Bacillus, mycorrhizae and Trichoderma, and humic carbon, with the published research behind them.",
+    body,
+  });
+}
+
+function fieldPage() {
+  const items = FIELD.items;
+  const count = (tag) => FIELD.items.filter((x) => x.tags.includes(tag)).length;
+  const media = (x, cls) => x.video
+    ? `<span class="relative block"><img src="${x.thumb}" alt="" class="${cls}" loading="lazy"><span class="absolute inset-0 flex items-center justify-center"><span class="flex h-14 w-14 items-center justify-center rounded-full bg-white/90 text-forest-950 shadow-lg">${icon("play", "h-6 w-6 translate-x-0.5")}</span></span></span>`
+    : `<img src="${x.thumb}" alt="${esc(x.title)}" class="${cls}" loading="lazy">`;
+  // The detail view is filled in by main.js from this data; without JS each card links to the full photo.
+  const data = items.map(({ id, title, caption, image, thumb, video, captions, stage, doing, fits }) => ({ id, title, caption, image, thumb, video, captions, stage, doing, fits }));
+
+  const body = `
+${pageHeader({ eyebrow: "Field Results", title: "Real crops. Real roots.", lede: "Photos and videos from growers using Sigma AgriScience products in the U.S. and around the world. Tap any photo for the agronomy behind it.", image: fieldImg("f-cole-field").image })}
+
+<section class="border-y border-stone-200 bg-forest-50/60">
+  <div class="container-site grid gap-6 py-10 md:grid-cols-3">
+    ${[
+      ["root", "White roots are working roots", "Fine, white, branching roots are actively growing and taking up water and nutrients."],
+      ["sprout", "White threads are soil life", "Cottony mycelium on the soil or granules is beneficial fungi at work, not mold on the crop."],
+      ["layers", "Uniform stands tell the story", "Even color and size across a whole field means every plant is getting what it needs."],
+    ].map(([ic, t, d]) => `<div class="flex gap-4"><span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-field-700 shadow-sm">${icon(ic)}</span><div><p class="font-semibold text-forest-950">${t}</p><p class="mt-1 text-sm leading-relaxed text-stone-600">${d}</p></div></div>`).join("\n    ")}
+  </div>
+</section>
+
+<section class="py-14 sm:py-20">
+  <div class="container-site">
+    <div class="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+      ${sectionHead({ eyebrow: "The field files", title: "Browse by crop", lede: "Vegetables, orchards, nurseries and what's happening below the surface." })}
+    </div>
+    <div class="mt-8 flex flex-wrap gap-2" data-field-filter role="group" aria-label="Filter field files">
+      <button type="button" data-tag="all" aria-pressed="true" class="rounded-full border border-stone-300 bg-white px-4 py-2 text-sm font-medium text-stone-700 transition hover:border-forest-400 aria-pressed:border-forest-900 aria-pressed:bg-forest-900 aria-pressed:text-white">All <span class="opacity-60">${items.length}</span></button>
+      ${Object.entries(FIELD.tags).map(([k, label]) => `<button type="button" data-tag="${k}" aria-pressed="false" class="rounded-full border border-stone-300 bg-white px-4 py-2 text-sm font-medium text-stone-700 transition hover:border-forest-400 aria-pressed:border-forest-900 aria-pressed:bg-forest-900 aria-pressed:text-white">${label} <span class="opacity-60">${count(k)}</span></button>`).join("\n      ")}
+    </div>
+    <ul class="mt-8 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-4" data-field-grid>
+      ${items.map((x) => `
+      <li data-tags="${x.tags.join(" ")}">
+        <a href="${x.video || x.image}" data-field-open="${x.id}" class="group relative block overflow-hidden rounded-2xl bg-stone-100">
+          ${media(x, "aspect-[4/5] w-full object-cover transition duration-500 group-hover:scale-105")}
+          <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-950/90 via-forest-950/50 to-transparent p-3 pt-10 sm:p-4 sm:pt-12">
+            <span class="block text-sm font-semibold leading-snug text-white sm:text-base">${esc(x.title)}</span>
+            <span class="mt-0.5 block text-xs text-forest-100">${esc(x.caption)}</span>
+          </span>
+        </a>
+      </li>`).join("")}
+    </ul>
+  </div>
+</section>
+
+<dialog class="field-dialog m-auto w-[min(64rem,calc(100%-1.5rem))] max-h-[calc(100dvh-1.5rem)] overflow-hidden rounded-3xl bg-white p-0 shadow-2xl backdrop:bg-forest-950/80" data-field-dialog aria-labelledby="field-dialog-title">
+  <div class="grid max-h-[calc(100dvh-1.5rem)] overflow-y-auto md:grid-cols-[1.1fr_1fr] md:overflow-hidden">
+    <div class="flex items-center justify-center bg-forest-950 md:max-h-[calc(100dvh-1.5rem)]" data-field-media></div>
+    <div class="flex flex-col md:max-h-[calc(100dvh-1.5rem)] md:overflow-y-auto">
+      <div class="flex items-center justify-between gap-2 border-b border-stone-200 px-5 py-3">
+        <div class="flex gap-1">
+          <button type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-lg text-stone-600 hover:bg-stone-100" data-field-prev aria-label="Previous">${icon("chevLeft")}</button>
+          <button type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-lg text-stone-600 hover:bg-stone-100" data-field-next aria-label="Next">${icon("chevRight")}</button>
+        </div>
+        <span class="text-xs text-stone-500 tabular-nums" data-field-pos></span>
+        <button type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-lg text-stone-600 hover:bg-stone-100" data-field-close aria-label="Close">${icon("close")}</button>
+      </div>
+      <div class="p-6">
+        <p class="text-xs font-semibold uppercase tracking-wide text-field-700" data-field-stage></p>
+        <h2 id="field-dialog-title" class="mt-1 text-2xl font-semibold" data-field-title></h2>
+        <p class="mt-1 text-sm text-stone-500" data-field-caption></p>
+        <h3 class="mt-6 font-sans text-sm font-semibold text-forest-950">What the crop is doing</h3>
+        <p class="mt-1 text-sm leading-relaxed text-stone-700" data-field-doing></p>
+        <h3 class="mt-5 font-sans text-sm font-semibold text-forest-950">Where Sigma fits</h3>
+        <p class="mt-1 text-sm leading-relaxed text-stone-700" data-field-fits></p>
+        <div class="mt-6 flex flex-wrap gap-3 border-t border-stone-200 pt-5">
+          <a href="science.html" class="btn-outline">How the biology works</a>
+          <a href="contact.html#quote" class="btn-primary">Request a Quote</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>
+<script type="application/json" id="field-data">${JSON.stringify(data).replace(/</g, "\\u003c")}</script>
+
+<section class="bg-stone-50 py-12">
+  <div class="container-site flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+    <p class="max-w-2xl text-stone-700"><span class="font-semibold text-forest-950">Growing in the San Luis Valley?</span> These field files come from growers in many climates. Tell us about your ground and we'll build a program for high, dry Colorado conditions.</p>
+    <a href="science.html" class="btn-outline shrink-0">The science behind it ${icon("arrow", "h-4 w-4")}</a>
+  </div>
+  <p class="container-site mt-6 text-xs text-stone-500">Photos, videos and agronomy notes courtesy of Sigma AgriScience and its growers. Results vary with soil, crop, climate and management.</p>
+</section>
+${ctaBand()}`;
+  return layout({
+    file: "field-results.html",
+    title: "Field Results",
+    active: "field",
+    description: "Field results from growers using Sigma AgriScience organic biofertilizers: root checks, soil life and crops from vegetables to orchards, with the agronomy behind each photo.",
+    body,
+  });
+}
+
 // ---------- write ----------
 const pages = {
   "index.html": home(),
@@ -1159,6 +1645,8 @@ const pages = {
   "about.html": aboutPage(),
   "contact.html": contactPage(),
   "calculator.html": calculatorPage(),
+  "science.html": sciencePage(),
+  "field-results.html": fieldPage(),
   "404.html": notFound(),
 };
 for (const p of PRODUCTS) pages[`products/${p.slug}.html`] = productPage(p);
