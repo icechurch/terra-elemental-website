@@ -33,7 +33,7 @@ npm install
 npm run build
 ```
 
-`npm run build` also renders `docs/assets/docs/terra-elemental-pricing.pdf` with a locally installed Chrome or Edge (set `CHROME_PATH` if it isn't found).
+`npm run build` adds a content hash to the CSS and JS links in every page (`scripts/stamp-assets.mjs`), so visitors get the new files right after a deploy instead of a cached copy. Run the full `npm run build` before deploying, not just `build:html`. It also renders `docs/assets/docs/terra-elemental-pricing.pdf` with a locally installed Chrome or Edge (set `CHROME_PATH` if it isn't found).
 
 Preview locally with `python -m http.server 8080 --directory docs`, then open http://localhost:8080.
 
